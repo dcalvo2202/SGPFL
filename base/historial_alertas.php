@@ -413,23 +413,80 @@ $grouped_alerts = groupAlertsByDate($alerts);
             margin-right: 0.25rem;
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             .page-header {
                 padding: 1.5rem;
             }
-            
+
             .page-header h1 {
-                font-size: 1.4rem;
+                font-size: 1.45rem;
             }
-            
+
             .action-bar {
                 flex-direction: column;
                 align-items: stretch;
             }
+
+            .action-bar form,
+            .btn-back,
+            .btn-mark-all {
+                width: 100%;
+            }
+
+            .notification-card {
+                padding: 0.9rem;
+            }
+
+            .notification-content {
+                gap: 0.9rem;
+            }
+
+            .notification-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .notification-title {
+                font-size: 1.15rem;
+            }
+
+            .notification-time {
+                font-size: 0.95rem;
+                white-space: normal;
+            }
+
+            .notification-message {
+                font-size: 1rem;
+            }
+
+            .notification-actions {
+                flex-direction: column;
+            }
+
+            .btn-mark-read,
+            .read-status {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-info {
+                font-size: 1rem;
+                padding: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 1.25rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.25rem;
+            }
             
             .notification-content {
                 flex-direction: column;
-                gap: 1.15rem;
+                gap: 0.85rem;
             }
             
             .notification-icon {
@@ -437,13 +494,10 @@ $grouped_alerts = groupAlertsByDate($alerts);
                 height: 40px;
                 font-size: 1.2rem;
             }
-            
-            .notification-header {
-                flex-direction: column;
-            }
-            
-            .notification-time {
-                font-size: 1rem;
+
+            .notification-card.unread::before {
+                top: 0.75rem;
+                right: 0.75rem;
             }
         }
     </style>

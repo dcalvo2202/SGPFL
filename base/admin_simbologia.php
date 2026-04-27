@@ -29,7 +29,7 @@ if ($current_user_rol !== 1) {
                 <div class="card-body">
                     <?php
                         ob_start();
-                        include(__DIR__ . '/home.php');
+                        include(__DIR__ . '/home_legacy.php');
                         $home_content = ob_get_clean();
                         $home_content = preg_replace('/<head>.*?<\/head>/is', '', $home_content);
                         $home_content = str_ireplace('<form>', '<form onsubmit="return false;" action="javascript:void(0);">', $home_content);
