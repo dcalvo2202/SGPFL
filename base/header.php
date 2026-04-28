@@ -238,10 +238,18 @@ try {
             align-items: center;
             justify-content: space-between;
             position: relative;
+            width: 100%;
         }
         .header-right {
             display: flex;
             align-items: center;
+            gap: 1rem;
+        }
+        .header-container-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
             gap: 1rem;
         }
         @media (max-width: 754px) {
@@ -253,27 +261,33 @@ try {
                 padding-right: 1rem;
                 gap: 0.65rem;
             }
+            .header-container-main {
+                gap: 0.75rem;
+            }
             .header-left {
-                justify-content: center;
-                text-align: center;
-                flex-wrap: wrap;
-                gap: 1rem;
+                justify-content: flex-start;
+                text-align: left;
+                flex-wrap: nowrap;
+                gap: 0.75rem;
                 flex: 1;
+                min-width: 0;
             }
             .logo-una {
                 height: 44px !important;
                 width: 44px !important;
             }
             .header-text h5 {
-                font-size: 1.25rem !important;
+                font-size: 0.9rem !important;
                 line-height: 1.08;
             }
             .header-text small {
-                font-size: 1rem !important;
+                font-size: 0.76rem !important;
             }
             /* En tablet, mostrar hamburguesa y ocultar menú inline */
             .hamburger-menu {
                 display: block !important;
+                margin-left: auto;
+                flex-shrink: 0;
             }
             .header-right {
                 display: none !important;
@@ -383,21 +397,23 @@ try {
             }
 
             .header-text h5 {
-                font-size: 1.40rem !important;
+                font-size: 0.84rem !important;
                 line-height: 1.03;
                 margin-bottom: 0.1rem !important;
             }
 
             .header-text small {
-                font-size: 1.15rem !important;
+                font-size: 0.6rem !important;
                 line-height: 1;
             }
 
             .hamburger-menu {
                 display: block !important;
-                padding: 0.5rem 0.5rem;
-                font-size: 3rem;
+                padding: 0.25rem 0.5rem;
+                font-size: 1.25rem;
                 margin: 0;
+                flex-shrink: 0;
+                margin-left: auto;
             }
 
             .mobile-menu.active {
@@ -453,14 +469,17 @@ try {
     </style>
     <header class="navbar-una" style="background: linear-gradient(135deg, #CD1719, #A01215) !important; padding: 1.25rem 0;">
         <div class="container-fluid px-4">
-            <div class="navbar-container">
-                <div class="header-left d-flex align-items-center">
+            <div class="header-container-main">
+                <!-- Lado Izquierdo: Logo y Título -->
+                <div class="header-left d-flex align-items-center" style="flex: 0 1 auto;">
                     <img src="<?= htmlspecialchars($base_url) ?>img/logo.webp" alt="Logo UNA" class="logo-una" style="height: 70px;">
                     <div class="header-text ms-3">
                         <h5 class="mb-0 text-white fw-bold">Universidad Nacional de Costa Rica</h5>
                         <small class="text-light opacity-85">Escuela de Informática</small>
                     </div>
                 </div>
+                
+                <!-- Lado Derecho: Hamburguesa (móvil) o Menú (desktop) -->
                 <button class="hamburger-menu" id="hamburgerMenu" title="Menú">
                     <i class="bi bi-list"></i>
                 </button>
