@@ -140,6 +140,8 @@ $page_title = 'Chat - SGPFL';
         // Pasar la URL base al JavaScript del chat
         window.CHAT_BASE_URL = '<?= rtrim($base_url, "/") . "/" ?>';
     </script>
+    <!-- Incluir login.js explicitamente porque $disable_prototype_js desactiva su carga automatica -->
+    <script src="<?= htmlspecialchars($base_url . 'inc/js/login.js') ?>"></script>
     <script src="<?= htmlspecialchars($base_url . 'inc/js/chat.js') ?>"></script>
 
 </body>
