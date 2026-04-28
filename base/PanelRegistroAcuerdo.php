@@ -35,6 +35,10 @@ $selected_project_id = isset($_GET['project_id']) ? (int)$_GET['project_id'] : 0
 $selected_minute_id = isset($_GET['minute_id']) ? (int)$_GET['minute_id'] : 0;
 $active_tab = (isset($_GET['tab']) && $_GET['tab'] === 'asistentes') ? 'asistentes' : 'acuerdos';
 
+$q_project_id = isset($_GET['q_project_id']) ? trim($_GET['q_project_id']) : '';
+$q_student    = isset($_GET['q_student'])    ? trim($_GET['q_student'])    : '';
+$q_minute_id  = isset($_GET['q_minute_id'])  ? (int)$_GET['q_minute_id']  : 0;
+
 $form_error = '';
 $projects = [];
 $minutes = [];
@@ -64,6 +68,23 @@ try {
     }
 
     $connection->set_charset('utf8');
+
+    // Si se busca por ID de acuerdo, determinar el proyecto al que pertenece
+    if ($q_minute_id > 0 && $selected_project_id === 0) {
+        $stmt_find_min = $connection->prepare(
+            'SELECT project_id FROM project_minutes WHERE id = ? LIMIT 1'
+        );
+        if ($stmt_find_min !== false) {
+            $stmt_find_min->bind_param('i', $q_minute_id);
+            $stmt_find_min->execute();
+            $row_find_min = $stmt_find_min->get_result()->fetch_assoc();
+            $stmt_find_min->close();
+            if ($row_find_min) {
+                $selected_project_id = (int)$row_find_min['project_id'];
+                $selected_minute_id  = $q_minute_id;
+            }
+        }
+    }
 
     if ($current_user_rol === 2) {
         $sql_projects = "
@@ -160,6 +181,44 @@ try {
         }
 
         $stmt_projects->close();
+    }
+
+    // Filtro por ID numérico o código identificador del proyecto
+    if ($q_project_id !== '') {
+        $q_lc = strtolower($q_project_id);
+        $projects = array_values(array_filter(
+            $projects,
+            static fn(array $p): bool =>
+                str_contains((string)$p['id_aprobado'], $q_project_id) ||
+                str_contains(strtolower((string)$p['identificador']), $q_lc)
+        ));
+    }
+
+    // Filtro por estudiante (cédula o nombre) — busca en minutas del proyecto
+    if ($q_student !== '' && !empty($projects)) {
+        $search_like = '%' . $q_student . '%';
+        $stmt_stu = $connection->prepare("
+            SELECT DISTINCT pm.project_id
+            FROM project_minute_attendees pma
+            INNER JOIN sis_user su ON su.id = pma.user_id
+            INNER JOIN project_minutes pm ON pm.id = pma.minute_id
+            WHERE pma.participant_role = 'ESTUDIANTE'
+              AND (su.id LIKE ? OR su.nombre LIKE ?)
+        ");
+        if ($stmt_stu !== false) {
+            $stmt_stu->bind_param('ss', $search_like, $search_like);
+            $stmt_stu->execute();
+            $result_stu = $stmt_stu->get_result();
+            $student_project_ids = [];
+            while ($row_stu = $result_stu->fetch_assoc()) {
+                $student_project_ids[] = (int)$row_stu['project_id'];
+            }
+            $stmt_stu->close();
+            $projects = array_values(array_filter(
+                $projects,
+                static fn(array $p): bool => in_array((int)$p['id_aprobado'], $student_project_ids, true)
+            ));
+        }
     }
 
     $available_project_ids = array_map(
@@ -298,6 +357,78 @@ try {
             <p class="lead">
                 Panel de consulta para visualizar acuerdos previos registrados en las minutas y el detalle de asistentes.
             </p>
+        </div>
+
+        <!-- Búsqueda rápida -->
+        <div class="card document-table mb-4">
+            <div class="card-body p-4">
+                <h2 class="minute-section-title mb-3">
+                    <i class="bi bi-funnel"></i> Búsqueda y filtros
+                </h2>
+                <form method="get" action="PanelRegistroAcuerdo.php" class="row g-3 align-items-end">
+                    <div class="col-lg-4">
+                        <label for="q_project_id" class="form-label fw-semibold">ID / código de proyecto</label>
+                        <input
+                            type="text"
+                            id="q_project_id"
+                            name="q_project_id"
+                            class="form-control"
+                            placeholder="Ej. 12 o UNA-CTFG-…"
+                            value="<?php echo h($q_project_id); ?>"
+                        >
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="q_student" class="form-label fw-semibold">Estudiante (cédula o nombre)</label>
+                        <input
+                            type="text"
+                            id="q_student"
+                            name="q_student"
+                            class="form-control"
+                            placeholder="Ej. 504410118 o López"
+                            value="<?php echo h($q_student); ?>"
+                        >
+                    </div>
+                    <div class="col-lg-2">
+                        <label for="q_minute_id" class="form-label fw-semibold">ID de acuerdo</label>
+                        <input
+                            type="number"
+                            id="q_minute_id"
+                            name="q_minute_id"
+                            class="form-control"
+                            placeholder="Ej. 3"
+                            min="1"
+                            value="<?php echo $q_minute_id > 0 ? h((string)$q_minute_id) : ''; ?>"
+                        >
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-search me-1"></i> Buscar
+                            </button>
+                            <?php if ($q_project_id !== '' || $q_student !== '' || $q_minute_id > 0): ?>
+                                <a href="PanelRegistroAcuerdo.php" class="btn btn-outline-secondary btn-sm">
+                                    <i class="bi bi-x-circle me-1"></i> Limpiar
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </form>
+                <?php if ($q_project_id !== '' || $q_student !== '' || $q_minute_id > 0): ?>
+                    <div class="mt-3">
+                        <small class="text-muted">Filtros activos:
+                            <?php if ($q_project_id !== ''): ?>
+                                <span class="badge bg-light text-dark border me-1">Proyecto: <?php echo h($q_project_id); ?></span>
+                            <?php endif; ?>
+                            <?php if ($q_student !== ''): ?>
+                                <span class="badge bg-light text-dark border me-1">Estudiante: <?php echo h($q_student); ?></span>
+                            <?php endif; ?>
+                            <?php if ($q_minute_id > 0): ?>
+                                <span class="badge bg-light text-dark border me-1">Acuerdo ID: <?php echo $q_minute_id; ?></span>
+                            <?php endif; ?>
+                        </small>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
 
         <?php if ($form_error !== ''): ?>
