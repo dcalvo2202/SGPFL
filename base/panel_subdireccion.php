@@ -195,6 +195,15 @@ try {
                             <p>Aprobar o rechazar comités propuestos desde solicitudes aprobadas y listar comités actuales.</p>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>PanelRegistroAcuerdo.php'" style="border-left: 4px solid #c8151a;">
+                            <div class="card-icon" style="color: #c8151a;">
+                                <i class="bi bi-journal-text"></i>
+                            </div>
+                            <h5>Consulta de Acuerdos</h5>
+                            <p>Consultar minutas registradas y el detalle de asistentes por proyecto aprobado.</p>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
