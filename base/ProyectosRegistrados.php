@@ -54,8 +54,165 @@ main { padding: 24px 0; }
 
 /* Responsive: pila acciones bajo el texto en pantallas pequeñas */
 @media (max-width: 576px) {
-  .list-row { grid-template-columns: 1fr; }
-  .item-actions { margin-top:8px; }
+  .list-row { flex-direction: column; gap: 8px; }
+  .item-actions { 
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .document-table .list-group-item { 
+    padding: 12px;
+    min-height: auto;
+  }
+  .document-table .fw-semibold {
+    font-size: 0.95rem;
+    word-break: break-word;
+  }
+  .document-table .list-group-item small {
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 4px;
+  }
+}
+
+/* Extra responsive para pantallas muy pequeñas (420px) */
+@media (max-width: 420px) {
+  .document-table .list-group-item { 
+    padding: 10px 8px;
+    min-height: auto;
+  }
+  .document-table .fw-semibold {
+    font-size: 0.9rem;
+  }
+  .item-actions {
+    gap: 6px;
+  }
+  .item-actions button,
+  .item-actions a,
+  .item-actions form {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .item-actions button,
+  .item-actions a {
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.8rem !important;
+  }
+  .status-badge {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Extra responsive para pantallas ultra pequeñas (360px) */
+@media (max-width: 360px) {
+  .document-table .list-group-item { 
+    padding: 8px 6px;
+  }
+  .document-table .fw-semibold {
+    font-size: 0.85rem;
+  }
+  .item-actions {
+    gap: 4px;
+  }
+  .item-actions button,
+  .item-actions a {
+    padding: 0.35rem 0.4rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Filtros responsive */
+.form-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; }
+.form-filters input,
+.form-filters select {
+  flex: 1 1 auto;
+  min-width: 150px;
+}
+.form-filters .btn-group { display: flex; gap: 6px; flex-wrap: wrap; }
+
+@media (max-width: 754px) {
+  .form-filters {
+    gap: 6px;
+  }
+  .form-filters input,
+  .form-filters select {
+    min-width: 0;
+    width: 100%;
+  }
+  .form-filters .btn-group {
+    width: 100%;
+    justify-content: stretch;
+  }
+  .form-filters .btn-group button,
+  .form-filters .btn-group a {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-filters {
+    gap: 6px;
+    margin-bottom: 0.75rem;
+  }
+  .form-filters input,
+  .form-filters select {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .form-filters .btn-group {
+    width: 100%;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-filters .btn-group button,
+  .form-filters .btn-group a {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+  .form-filters .w-100 {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .form-filters {
+    gap: 5px;
+  }
+  .form-filters input,
+  .form-filters select {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.65rem;
+  }
+  .form-filters .btn-group button,
+  .form-filters .btn-group a {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .form-filters {
+    gap: 4px;
+  }
+  .form-filters input,
+  .form-filters select {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.55rem;
+  }
+  .form-filters .btn-group button,
+  .form-filters .btn-group a {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.85rem;
+  }
 }
 CSS;
 
@@ -224,45 +381,35 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
       </div>
 
       <!-- Filtros -->
-      <form class="row g-2 mb-4" method="get" action="">
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <input type="search" class="form-control" name="q" placeholder="Buscar por nombre..."
-                 value="<?php echo htmlspecialchars($q, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2">
-          <select name="estado" class="form-select">
-            <option value=""  <?php echo $estado===0?'selected':''; ?>>Todos</option>
-            <option value="1" <?php echo $estado===1?'selected':''; ?>>Aprobado</option>
-            <option value="2" <?php echo $estado===2?'selected':''; ?>>Prorrogado</option>
-            <option value="3" <?php echo $estado===3?'selected':''; ?>>Vencido</option>
-            <option value="4" <?php echo $estado===4?'selected':''; ?>>Cancelado</option>
-          </select>
-        </div>
-        <div class="col-sm-6 col-md-5 col-lg-4">
-          <select name="comite" class="form-select">
-            <option value="0">Todos los comités</option>
-            <?php foreach ($comites as $c): ?>
-              <option value="<?php echo (int)$c['Id']; ?>" <?php echo $comite_id===(int)$c['Id']?'selected':''; ?>>
-                Comité #<?php echo (int)$c['Id']; ?> — T: <?php echo htmlspecialchars($c['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($c['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($c['asesor2_nombre']); ?>
-              </option>
-            <?php endforeach; ?>
-          </select>
-        </div>
-
-        <!-- Nuevo: filtro por miembro del comité (visible para todos) -->
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <input type="text" class="form-control" name="prof" placeholder="Miembro del comité (ID o nombre)"
-                 value="<?php echo htmlspecialchars($prof, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
-        </div>
-
-        <div class="w-100 d-none d-md-block"></div>
-        <div class="col-sm-6 col-md-3 col-lg-2">
-          <input type="date" class="form-control" name="f_ini" value="<?php echo htmlspecialchars($f_ini); ?>" placeholder="Desde">
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2">
-          <input type="date" class="form-control" name="f_fin" value="<?php echo htmlspecialchars($f_fin); ?>" placeholder="Hasta">
-        </div>
-        <div class="col-auto">
+      <form class="form-filters" method="get" action="">
+        <input type="search" class="form-control" name="q" placeholder="Buscar por nombre..."
+               value="<?php echo htmlspecialchars($q, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
+        
+        <select name="estado" class="form-select">
+          <option value="" <?php echo $estado===0?'selected':''; ?>>Todos</option>
+          <option value="1" <?php echo $estado===1?'selected':''; ?>>Aprobado</option>
+          <option value="2" <?php echo $estado===2?'selected':''; ?>>Prorrogado</option>
+          <option value="3" <?php echo $estado===3?'selected':''; ?>>Vencido</option>
+          <option value="4" <?php echo $estado===4?'selected':''; ?>>Cancelado</option>
+        </select>
+        
+        <select name="comite" class="form-select">
+          <option value="0">Todos los comités</option>
+          <?php foreach ($comites as $c): ?>
+            <option value="<?php echo (int)$c['Id']; ?>" <?php echo $comite_id===(int)$c['Id']?'selected':''; ?>>
+              Comité #<?php echo (int)$c['Id']; ?> — T: <?php echo htmlspecialchars($c['tutor_nombre']); ?> / A1: <?php echo htmlspecialchars($c['asesor1_nombre']); ?> / A2: <?php echo htmlspecialchars($c['asesor2_nombre']); ?>
+            </option>
+          <?php endforeach; ?>
+        </select>
+        
+        <input type="text" class="form-control" name="prof" placeholder="Miembro del comité (ID o nombre)"
+               value="<?php echo htmlspecialchars($prof, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
+        
+        <input type="date" class="form-control" name="f_ini" value="<?php echo htmlspecialchars($f_ini); ?>" placeholder="Desde">
+        
+        <input type="date" class="form-control" name="f_fin" value="<?php echo htmlspecialchars($f_fin); ?>" placeholder="Hasta">
+        
+        <div class="btn-group">
           <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i> Buscar</button>
           <?php if ($q !== '' || $comite_id>0 || $f_ini!=='' || $f_fin!=='' || isset($_GET['estado']) || $prof!==''): ?>
             <a class="btn btn-outline-secondary" href="ProyectosRegistrados.php">Limpiar</a>

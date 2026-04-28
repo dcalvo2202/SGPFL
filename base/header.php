@@ -277,17 +277,18 @@ try {
                 width: 44px !important;
             }
             .header-text h5 {
-                font-size: 0.9rem !important;
+                font-size: 1.50rem !important;
                 line-height: 1.08;
             }
             .header-text small {
-                font-size: 0.76rem !important;
+                font-size: 1.30rem !important;
             }
             /* En tablet, mostrar hamburguesa y ocultar menú inline */
             .hamburger-menu {
                 display: block !important;
                 margin-left: auto;
                 flex-shrink: 0;
+                font-size: 3rem;
             }
             .header-right {
                 display: none !important;
@@ -397,20 +398,20 @@ try {
             }
 
             .header-text h5 {
-                font-size: 0.84rem !important;
+                font-size: 1.40rem !important;
                 line-height: 1.03;
                 margin-bottom: 0.1rem !important;
             }
 
             .header-text small {
-                font-size: 0.6rem !important;
+                font-size: 1.25rem !important;
                 line-height: 1;
             }
 
             .hamburger-menu {
                 display: block !important;
                 padding: 0.25rem 0.5rem;
-                font-size: 1.25rem;
+                font-size: 2.5rem;
                 margin: 0;
                 flex-shrink: 0;
                 margin-left: auto;

@@ -104,6 +104,20 @@ if (!is_array($logs)) {
 <!DOCTYPE html>
 <html lang="es">
 <?php include('head.php'); ?>
+<link rel="stylesheet" href="inc/css/admin_panels_responsive.css">
+<style>
+    /* Estilos específicos de admin_auditoria */
+    @media (max-width: 576px) {
+        .auditoria-table-wrapper .table td:nth-child(1)::before { content: "Fecha/Hora"; }
+        .auditoria-table-wrapper .table td:nth-child(2)::before { content: "Usuario"; }
+        .auditoria-table-wrapper .table td:nth-child(3)::before { content: "Nombre"; }
+        .auditoria-table-wrapper .table td:nth-child(4)::before { content: "Acción"; }
+        .auditoria-table-wrapper .table td:nth-child(5)::before { content: "Resultado"; }
+        .auditoria-table-wrapper .table td:nth-child(6)::before { content: "IP"; }
+        .auditoria-table-wrapper .table td:nth-child(7)::before { content: "Dispositivo"; }
+        .auditoria-table-wrapper .table td:nth-child(8)::before { content: "Detalle"; }
+    }
+</style>
 <body class="fondo-una d-flex flex-column min-vh-100">
 
     <?php include 'header.php'; ?>
@@ -212,8 +226,9 @@ if (!is_array($logs)) {
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="mb-3">Listado de eventos</h5>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover align-middle">
+                    <div class="auditoria-table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
                             <thead class="table-light">
                                 <tr>
                                     <th>Fecha/Hora</th>
@@ -268,6 +283,7 @@ if (!is_array($logs)) {
                                 <?php endif; ?>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
