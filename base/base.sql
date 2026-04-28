@@ -2531,7 +2531,7 @@ CREATE TABLE `google_calendar_tokens` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_user_token` (`id_user`),
   CONSTRAINT `google_calendar_tokens_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `sis_login` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 CREATE TABLE `google_calendar_sync_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2548,4 +2548,4 @@ CREATE TABLE `google_calendar_sync_log` (
   UNIQUE KEY `unique_event_mapping` (`id_user`,`event_type`,`event_id`),
   KEY `idx_sync_status` (`sync_status`),
   CONSTRAINT `google_calendar_sync_log_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `sis_login` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
