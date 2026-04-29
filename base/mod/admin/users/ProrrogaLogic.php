@@ -363,64 +363,159 @@ class ProrrogaLogic {
     }
 
     /**
+     * Obtener todos los usuarios asociados al proyecto (estudiantes + comité)
+     * @param int $proposal_id
+     * @return array Array de user_ids
+     */
+    private function getAllProjectUsers($proposal_id) {
+        $users = [];
+
+        // 1. Obtener dueño de la propuesta
+        $sqlOwner = "SELECT user_id FROM tfg_proposals WHERE id = ? LIMIT 1";
+        $stmtOwner = $this->conn->prepare($sqlOwner);
+        if ($stmtOwner) {
+            $stmtOwner->bind_param('i', $proposal_id);
+            $stmtOwner->execute();
+            $resultOwner = $stmtOwner->get_result();
+            if ($row = $resultOwner->fetch_assoc()) {
+                $userId = (string) ($row['user_id'] ?? '');
+                if ($userId !== '') {
+                    $users[$userId] = true;
+                }
+            }
+            $stmtOwner->close();
+        }
+
+        // 2. Obtener miembros activos del proyecto registrado
+        $sqlMembers = "SELECT DISTINCT pm.user_id
+                       FROM registered_projects rp
+                       INNER JOIN project_members pm ON pm.project_id = rp.id AND pm.status = 'Activo'
+                       WHERE rp.tfg_proposal_id = ?";
+        $stmtMembers = $this->conn->prepare($sqlMembers);
+        if ($stmtMembers) {
+            $stmtMembers->bind_param('i', $proposal_id);
+            $stmtMembers->execute();
+            $resultMembers = $stmtMembers->get_result();
+            while ($row = $resultMembers->fetch_assoc()) {
+                $userId = (string) ($row['user_id'] ?? '');
+                if ($userId !== '') {
+                    $users[$userId] = true;
+                }
+            }
+            $stmtMembers->close();
+        }
+
+        // 3. Obtener miembros del comité (tutor, asesor_1, asesor_2)
+        $sqlCommittee = "SELECT DISTINCT c.tutor, c.asesor_1, c.asesor_2
+                         FROM proyecto_aprobado pa
+                         INNER JOIN comite c ON c.Id = pa.comite_id
+                         WHERE pa.proposal_id = ?";
+        $stmtCommittee = $this->conn->prepare($sqlCommittee);
+        if ($stmtCommittee) {
+            $stmtCommittee->bind_param('i', $proposal_id);
+            $stmtCommittee->execute();
+            $resultCommittee = $stmtCommittee->get_result();
+            if ($row = $resultCommittee->fetch_assoc()) {
+                foreach (['tutor', 'asesor_1', 'asesor_2'] as $role) {
+                    $userId = (string) ($row[$role] ?? '');
+                    if ($userId !== '') {
+                        $users[$userId] = true;
+                    }
+                }
+            }
+            $stmtCommittee->close();
+        }
+
+        return array_keys($users);
+    }
+
+    /**
      * Sincronizar la prórroga aprobada con Google Calendar.
+     * Sincroniza para TODOS los estudiantes y miembros del comité.
      * No bloquea el flujo de aprobación si falla.
      * @param int $request_id
      * @param array $requestData
      */
     private function syncApprovedExtensionRequest($request_id, array $requestData) {
         try {
-            $userId = (string) ($requestData['user_id'] ?? '');
             $proposalId = (int) ($requestData['proposal_id'] ?? 0);
-            if ($userId === '' || $proposalId <= 0) {
+            if ($proposalId <= 0) {
                 return ['status' => 'failed', 'message' => 'Datos de la solicitud incompletos para sincronizar.'];
             }
 
             if (!class_exists('Service\\GoogleCalendarService')) {
-                $this->logExtensionSyncAttempt(
-                    $userId,
-                    (int) $request_id,
-                    'failed',
-                    'GoogleCalendarService no está disponible en este entorno.'
-                );
                 return ['status' => 'failed', 'message' => 'Servicio de Google Calendar no disponible.'];
             }
 
             $googleCalendarService = new Service\GoogleCalendarService($this->conn);
-            if (!$googleCalendarService->isSyncEnabled($userId)) {
-                $this->logExtensionSyncAttempt(
-                    $userId,
-                    (int) $request_id,
-                    'failed',
-                    'Google Calendar no está conectado o la sincronización está deshabilitada para el usuario.'
-                );
-                return ['status' => 'failed', 'message' => 'usuario sin Google Calendar conectado.'];
+            
+            // Obtener todos los usuarios asociados al proyecto
+            $allUsers = $this->getAllProjectUsers($proposalId);
+            
+            if (empty($allUsers)) {
+                return ['status' => 'failed', 'message' => 'No se encontraron usuarios asociados al proyecto.'];
             }
 
             $projectData = $this->buildExtensionProjectData($proposalId);
             $projectData['status'] = 'aprobada';
             $projectData['request_date'] = $requestData['request_date'] ?? date('Y-m-d H:i:s');
 
-            // Registrar el intento antes de enviar a Google para trazabilidad.
-            $this->logExtensionSyncAttempt($userId, (int) $request_id, 'pending', null);
+            // Sincronizar para cada usuario que tenga Google Calendar habilitado
+            $syncedCount = 0;
+            $failedCount = 0;
+            
+            foreach ($allUsers as $userId) {
+                $userId = (string) $userId;
+                
+                // Registrar intento
+                $this->logExtensionSyncAttempt($userId, (int) $request_id, 'pending', null);
 
-            $syncOk = $googleCalendarService->syncExtensionRequest(
-                $userId,
-                (int) $request_id,
-                $projectData
-            );
+                try {
+                    if (!$googleCalendarService->isSyncEnabled($userId)) {
+                        $this->logExtensionSyncAttempt(
+                            $userId,
+                            (int) $request_id,
+                            'skipped',
+                            'Usuario sin Google Calendar conectado.'
+                        );
+                        continue;
+                    }
 
-            if ($syncOk) {
-                return ['status' => 'synced', 'message' => 'sincronización exitosa'];
+                    $syncOk = $googleCalendarService->syncExtensionRequest(
+                        $userId,
+                        (int) $request_id,
+                        $projectData
+                    );
+
+                    if ($syncOk) {
+                        $syncedCount++;
+                    } else {
+                        $failedCount++;
+                        $this->logExtensionSyncAttempt(
+                            $userId,
+                            (int) $request_id,
+                            'failed',
+                            'Error al sincronizar con Google Calendar'
+                        );
+                    }
+                } catch (Throwable $e) {
+                    $failedCount++;
+                    $this->logExtensionSyncAttempt(
+                        $userId,
+                        (int) $request_id,
+                        'failed',
+                        $e->getMessage()
+                    );
+                    error_log('ProrrogaLogic::syncApprovedExtensionRequest Error para usuario ' . $userId . ': ' . $e->getMessage());
+                }
             }
 
-            return ['status' => 'failed', 'message' => 'falló el envío del evento a Google Calendar'];
+            $message = "Sincronización completada. Sincronizados: $syncedCount, Fallos: $failedCount";
+            $status = ($syncedCount > 0) ? 'synced' : 'failed';
+            
+            return ['status' => $status, 'message' => $message];
         } catch (Throwable $e) {
-            $userId = (string) ($requestData['user_id'] ?? '');
-            if ($userId !== '') {
-                $this->logExtensionSyncAttempt($userId, (int) $request_id, 'failed', $e->getMessage());
-            }
-            error_log('ProrrogaLogic::syncApprovedExtensionRequest Google Sync Error: ' . $e->getMessage());
+            error_log('ProrrogaLogic::syncApprovedExtensionRequest Error general: ' . $e->getMessage());
             return ['status' => 'failed', 'message' => $e->getMessage()];
         }
     }

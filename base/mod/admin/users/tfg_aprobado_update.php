@@ -270,7 +270,8 @@ try {
         $nombre_title,
         substr($fecha_finalizacion, 0, 10),
         $aprobado,
-        $unique
+        $unique,
+        $comite_id
     );
     
     // Enviar alerta a todos los estudiantes del proyecto
@@ -315,6 +316,7 @@ try {
 
 /**
  * Sincroniza (o elimina) el hito principal del proyecto en Google Calendar.
+ * Incluye estudiantes del proyecto Y miembros del comité.
  * No detiene el flujo principal si ocurre un error.
  */
 function pa_sync_project_timeline_google(
@@ -323,7 +325,8 @@ function pa_sync_project_timeline_google(
     string $projectName,
     string $targetDate,
     int $aprobado,
-    array $candidateUsers
+    array $candidateUsers,
+    int $comiteId = 0
 ): void {
     try {
         if (!class_exists('Service\\GoogleCalendarService')) {
@@ -338,6 +341,7 @@ function pa_sync_project_timeline_google(
             }
         }
 
+        // Agregar dueño de propuesta
         $stmtOwner = mysqli_prepare($db, "SELECT user_id FROM tfg_proposals WHERE id = ? LIMIT 1");
         if ($stmtOwner) {
             mysqli_stmt_bind_param($stmtOwner, 'i', $proposalId);
@@ -350,6 +354,25 @@ function pa_sync_project_timeline_google(
                 }
             }
             mysqli_stmt_close($stmtOwner);
+        }
+
+        // Agregar miembros del comité si existe
+        if ($comiteId > 0) {
+            $stmtComite = mysqli_prepare($db, "SELECT tutor, asesor_1, asesor_2 FROM comite WHERE Id = ? LIMIT 1");
+            if ($stmtComite) {
+                mysqli_stmt_bind_param($stmtComite, 'i', $comiteId);
+                mysqli_stmt_execute($stmtComite);
+                $rsComite = mysqli_stmt_get_result($stmtComite);
+                if ($rsComite && ($comiteRow = mysqli_fetch_assoc($rsComite))) {
+                    foreach (['tutor', 'asesor_1', 'asesor_2'] as $role) {
+                        $memberId = (string) ($comiteRow[$role] ?? '');
+                        if ($memberId !== '') {
+                            $users[$memberId] = true;
+                        }
+                    }
+                }
+                mysqli_stmt_close($stmtComite);
+            }
         }
 
         if (empty($users)) {

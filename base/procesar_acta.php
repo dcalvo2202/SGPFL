@@ -409,46 +409,93 @@ fclose($fp);
 |--------------------------------------------------------------------------
 */
 try {
-    $gc_user_id = $mySessionController->getVar('usuario');
-    if ($gc_user_id !== '' && $gc_user_id !== null) {
-        require_once __DIR__ . '/vendor/autoload.php';
-        require_once __DIR__ . '/inc/db/bdcommon.inc';
+    require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/inc/db/bdcommon.inc';
 
-        $gc_conn = new mysqli($db_host, $usuario, $clave, $db);
-        if (!$gc_conn->connect_error) {
-            $gc_conn->set_charset('utf8');
+    $gc_conn = new mysqli($db_host, $usuario, $clave, $db);
+    if (!$gc_conn->connect_error) {
+        $gc_conn->set_charset('utf8');
 
-            if (class_exists('Service\GoogleCalendarService')) {
-                $googleCalendarService = new Service\GoogleCalendarService($gc_conn);
+        if (class_exists('Service\GoogleCalendarService')) {
+            $googleCalendarService = new Service\GoogleCalendarService($gc_conn);
 
-                if ($googleCalendarService->isSyncEnabled($gc_user_id)) {
-                    $gc_attendees = array_filter([
-                        $nombre_estudiante_1,
-                        $nombre_estudiante_2,
-                        $presidente_nombre,
-                        $director_nombre,
-                        $tutor_nombre,
-                        $asesor_nombre,
-                    ]);
-
-                    $minutesData = [
-                        'project_name' => $titulo_tfg,
-                        'meeting_date' => $fecha,
-                        'attendees'    => implode(', ', $gc_attendees),
-                        'notes'        => $observaciones_detalle,
-                    ];
-
-                    $googleCalendarService->syncProjectMinutes(
-                        $gc_user_id,
-                        $numero_acta,
-                        $minutesData
-                    );
+            // Obtener todos los usuarios asociados al proyecto (estudiantes + comité)
+            $gc_user_ids = [];
+            
+            // 1. Obtener cedulas de estudiantes y buscar sus user_ids
+            $cedulas = array_filter([$cedula_estudiante_1, $cedula_estudiante_2]);
+            foreach ($cedulas as $cedula) {
+                $stmtUser = $gc_conn->prepare("SELECT id FROM sis_user WHERE id = ? LIMIT 1");
+                if ($stmtUser) {
+                    $stmtUser->bind_param('s', $cedula);
+                    $stmtUser->execute();
+                    $rsUser = $stmtUser->get_result();
+                    if ($rsUser && ($rowUser = $rsUser->fetch_assoc())) {
+                        $uid = (string) ($rowUser['id'] ?? '');
+                        if ($uid !== '') {
+                            $gc_user_ids[$uid] = true;
+                        }
+                    }
+                    $stmtUser->close();
                 }
             }
-            $gc_conn->close();
+
+            // 2. Obtener IDs de comité (presidente, director, tutor, asesor)
+            $comite_names = array_filter([$presidente_nombre, $director_nombre, $tutor_nombre, $asesor_nombre]);
+            foreach ($comite_names as $nombre) {
+                $stmtComite = $gc_conn->prepare("SELECT id FROM sis_user WHERE nombre LIKE ? LIMIT 1");
+                if ($stmtComite) {
+                    $searchName = '%' . $nombre . '%';
+                    $stmtComite->bind_param('s', $searchName);
+                    $stmtComite->execute();
+                    $rsComite = $stmtComite->get_result();
+                    if ($rsComite && ($rowComite = $rsComite->fetch_assoc())) {
+                        $uid = (string) ($rowComite['id'] ?? '');
+                        if ($uid !== '') {
+                            $gc_user_ids[$uid] = true;
+                        }
+                    }
+                    $stmtComite->close();
+                }
+            }
+
+            // 3. Preparar datos del acta
+            $gc_attendees = array_filter([
+                $nombre_estudiante_1,
+                $nombre_estudiante_2,
+                $presidente_nombre,
+                $director_nombre,
+                $tutor_nombre,
+                $asesor_nombre,
+            ]);
+
+            $minutesData = [
+                'project_name' => $titulo_tfg,
+                'meeting_date' => $fecha,
+                'attendees'    => implode(', ', $gc_attendees),
+                'notes'        => $observaciones_detalle,
+            ];
+
+            // 4. Sincronizar para cada usuario
+            foreach (array_keys($gc_user_ids) as $gc_user_id) {
+                $gc_user_id = (string) $gc_user_id;
+                
+                if ($googleCalendarService->isSyncEnabled($gc_user_id)) {
+                    try {
+                        $googleCalendarService->syncProjectMinutes(
+                            $gc_user_id,
+                            $numero_acta,
+                            $minutesData
+                        );
+                    } catch (Throwable $e) {
+                        error_log('Google Calendar sync (acta) para usuario ' . $gc_user_id . ': ' . $e->getMessage());
+                    }
+                }
+            }
         }
+        $gc_conn->close();
     }
-} catch (\Throwable $e) {
+} catch (Throwable $e) {
     error_log('Google Calendar sync (acta): ' . $e->getMessage());
 }
 

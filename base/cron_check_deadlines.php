@@ -102,22 +102,107 @@ foreach ($proyectos as $p) {
             // Solo marcar como enviada cuando el correo se entregó correctamente.
             markAlertAsSent($conn, $user_id, $project_id, $dias_restantes);
 
-            // Sincronizar con Google Calendar si el usuario tiene sync activo
+            // Sincronizar con Google Calendar para TODOS los usuarios del proyecto
             if ($gc_conn !== null && class_exists('Service\GoogleCalendarService')) {
                 try {
                     $gcService = new Service\GoogleCalendarService($gc_conn);
-                    if ($gcService->isSyncEnabled($user_id)) {
-                        $deadlineData = [
-                            'project_name'  => $titulo,
-                            'deadline_date' => $fecha_limite,
-                            'description'   => 'Quedan ' . $dias_restantes . ' día(s) para la fecha límite de entrega del TFG.',
-                        ];
-                        $gcService->syncDeadline($user_id, $project_id . '_' . $dias_restantes, $deadlineData);
-                        $log[] = "Google Calendar sync (deadline) para usuario $user_id";
+                    
+                    // 1. Obtener propuesta_id del proyecto
+                    $stmtProposal = $gc_conn->prepare("SELECT proposal_id FROM proyecto_aprobado WHERE id_aprobado = ? LIMIT 1");
+                    if ($stmtProposal) {
+                        $stmtProposal->bind_param('i', $project_id);
+                        $stmtProposal->execute();
+                        $rsProposal = $stmtProposal->get_result();
+                        $proposalData = $rsProposal->fetch_assoc();
+                        $proposal_id = (int) ($proposalData['proposal_id'] ?? 0);
+                        $stmtProposal->close();
+
+                        if ($proposal_id > 0) {
+                            // 2. Obtener todos los usuarios asociados al proyecto
+                            $allProjectUsers = [];
+
+                            // Dueño de la propuesta
+                            $stmtOwner = $gc_conn->prepare("SELECT user_id FROM tfg_proposals WHERE id = ? LIMIT 1");
+                            if ($stmtOwner) {
+                                $stmtOwner->bind_param('i', $proposal_id);
+                                $stmtOwner->execute();
+                                $rsOwner = $stmtOwner->get_result();
+                                if ($row = $rsOwner->fetch_assoc()) {
+                                    $uid = (string) ($row['user_id'] ?? '');
+                                    if ($uid !== '') {
+                                        $allProjectUsers[$uid] = true;
+                                    }
+                                }
+                                $stmtOwner->close();
+                            }
+
+                            // Miembros activos del proyecto registrado
+                            $stmtMembers = $gc_conn->prepare("
+                                SELECT DISTINCT pm.user_id
+                                FROM registered_projects rp
+                                INNER JOIN project_members pm ON pm.project_id = rp.id AND pm.status = 'Activo'
+                                WHERE rp.tfg_proposal_id = ?
+                            ");
+                            if ($stmtMembers) {
+                                $stmtMembers->bind_param('i', $proposal_id);
+                                $stmtMembers->execute();
+                                $rsMembers = $stmtMembers->get_result();
+                                while ($row = $rsMembers->fetch_assoc()) {
+                                    $uid = (string) ($row['user_id'] ?? '');
+                                    if ($uid !== '') {
+                                        $allProjectUsers[$uid] = true;
+                                    }
+                                }
+                                $stmtMembers->close();
+                            }
+
+                            // Miembros del comité
+                            $stmtComite = $gc_conn->prepare("
+                                SELECT DISTINCT c.tutor, c.asesor_1, c.asesor_2
+                                FROM proyecto_aprobado pa
+                                INNER JOIN comite c ON c.Id = pa.comite_id
+                                WHERE pa.id_aprobado = ?
+                            ");
+                            if ($stmtComite) {
+                                $stmtComite->bind_param('i', $project_id);
+                                $stmtComite->execute();
+                                $rsComite = $stmtComite->get_result();
+                                if ($row = $rsComite->fetch_assoc()) {
+                                    foreach (['tutor', 'asesor_1', 'asesor_2'] as $role) {
+                                        $uid = (string) ($row[$role] ?? '');
+                                        if ($uid !== '') {
+                                            $allProjectUsers[$uid] = true;
+                                        }
+                                    }
+                                }
+                                $stmtComite->close();
+                            }
+
+                            // 3. Sincronizar para cada usuario
+                            $deadlineData = [
+                                'project_name'  => $titulo,
+                                'deadline_date' => $fecha_limite,
+                                'description'   => 'Quedan ' . $dias_restantes . ' día(s) para la fecha límite de entrega del TFG.',
+                            ];
+
+                            foreach (array_keys($allProjectUsers) as $gc_user_id) {
+                                $gc_user_id = (string) $gc_user_id;
+                                
+                                if ($gcService->isSyncEnabled($gc_user_id)) {
+                                    try {
+                                        $gcService->syncDeadline($gc_user_id, $project_id . '_' . $dias_restantes, $deadlineData);
+                                        $log[] = "Google Calendar sync (deadline) para usuario $gc_user_id";
+                                    } catch (\Throwable $gc_e) {
+                                        error_log('[cron_check_deadlines] Google Calendar sync para usuario ' . $gc_user_id . ': ' . $gc_e->getMessage());
+                                        $log[] = "Error Google Calendar sync para usuario $gc_user_id: " . $gc_e->getMessage();
+                                    }
+                                }
+                            }
+                        }
                     }
                 } catch (\Throwable $gc_e) {
-                    error_log('[cron_check_deadlines] Google Calendar sync: ' . $gc_e->getMessage());
-                    $log[] = "Error Google Calendar sync para usuario $user_id: " . $gc_e->getMessage();
+                    error_log('[cron_check_deadlines] Google Calendar sync general: ' . $gc_e->getMessage());
+                    $log[] = "Error Google Calendar sync general: " . $gc_e->getMessage();
                 }
             }
         } else {
