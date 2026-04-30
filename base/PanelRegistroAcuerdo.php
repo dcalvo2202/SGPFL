@@ -72,6 +72,8 @@ try {
 
     // Si se busca por ID de acuerdo, determinar el proyecto al que pertenece
     if ($q_minute_id > 0 && $selected_project_id === 0) {
+        $project_from_agreement = 0;
+
         $stmt_find_min = $connection->prepare(
             'SELECT project_id FROM project_minutes WHERE id = ? LIMIT 1'
         );
@@ -81,9 +83,44 @@ try {
             $row_find_min = $stmt_find_min->get_result()->fetch_assoc();
             $stmt_find_min->close();
             if ($row_find_min) {
-                $selected_project_id = (int)$row_find_min['project_id'];
-                $selected_minute_id  = $q_minute_id;
+                $project_from_agreement = (int)$row_find_min['project_id'];
             }
+        }
+
+        if ($project_from_agreement === 0) {
+            $stmt_find_def = $connection->prepare(
+                'SELECT proyecto_id FROM acuerdo_defensa_publica WHERE id = ? LIMIT 1'
+            );
+            if ($stmt_find_def !== false) {
+                $stmt_find_def->bind_param('i', $q_minute_id);
+                $stmt_find_def->execute();
+                $row_find_def = $stmt_find_def->get_result()->fetch_assoc();
+                $stmt_find_def->close();
+                if ($row_find_def) {
+                    $project_from_agreement = (int)$row_find_def['proyecto_id'];
+                }
+            }
+        }
+
+        // En acuerdos de aprobación, el ID del acuerdo corresponde al ID del proyecto aprobado.
+        if ($project_from_agreement === 0) {
+            $stmt_find_app = $connection->prepare(
+                'SELECT id_aprobado FROM proyecto_aprobado WHERE id_aprobado = ? AND aprobado = 1 AND documento IS NOT NULL LIMIT 1'
+            );
+            if ($stmt_find_app !== false) {
+                $stmt_find_app->bind_param('i', $q_minute_id);
+                $stmt_find_app->execute();
+                $row_find_app = $stmt_find_app->get_result()->fetch_assoc();
+                $stmt_find_app->close();
+                if ($row_find_app) {
+                    $project_from_agreement = (int)$row_find_app['id_aprobado'];
+                }
+            }
+        }
+
+        if ($project_from_agreement > 0) {
+            $selected_project_id = $project_from_agreement;
+            $selected_minute_id = $q_minute_id;
         }
     }
 
@@ -227,6 +264,19 @@ try {
         $projects
     );
 
+    // Si se filtra por ID/código y no se seleccionó proyecto aún, autoseleccionar coincidencia exacta.
+    if ($selected_project_id === 0 && $q_project_id !== '' && !empty($projects)) {
+        foreach ($projects as $project) {
+            $project_id_value = (int)$project['id_aprobado'];
+            $project_code_value = strtolower((string)$project['identificador']);
+
+            if ((string)$project_id_value === $q_project_id || $project_code_value === strtolower($q_project_id)) {
+                $selected_project_id = $project_id_value;
+                break;
+            }
+        }
+    }
+
     if ($selected_project_id > 0) {
         if (!in_array($selected_project_id, $available_project_ids, true)) {
             $form_error = 'El proyecto seleccionado no está disponible para su perfil.';
@@ -296,6 +346,27 @@ try {
                     ON su2.id = adp.subido_por
                 WHERE adp.proyecto_id = ?
 
+                UNION ALL
+
+                SELECT
+                    pa.id_aprobado AS id,
+                    pa.id_aprobado AS project_id,
+                    pa.fecha_creacion AS fecha_referencia,
+                    CONCAT(pa.identificador, ' - ', pa.nombre) AS file_name,
+                    'application/pdf' AS mime_type,
+                    OCTET_LENGTH(pa.documento) AS file_size,
+                    pa.fecha_creacion AS created_at,
+                    pa.fecha_creacion AS updated_at,
+                    NULL AS uploaded_by,
+                    'Sistema' AS uploaded_by_name,
+                    NULL AS attended_count,
+                    NULL AS total_participants,
+                    'APROBACION' AS tipo_acuerdo,
+                    NULL AS codigo_acuerdo,
+                    NULL AS fecha_defensa
+                FROM proyecto_aprobado pa
+                WHERE pa.id_aprobado = ? AND pa.aprobado = 1 AND pa.documento IS NOT NULL
+
                 ORDER BY fecha_referencia DESC, created_at DESC, id DESC
             ";
 
@@ -304,7 +375,7 @@ try {
                 throw new RuntimeException('No se pudo preparar la consulta de acuerdos del proyecto.');
             }
 
-            $stmt_minutes->bind_param('ii', $selected_project_id, $selected_project_id);
+            $stmt_minutes->bind_param('iii', $selected_project_id, $selected_project_id, $selected_project_id);
             $stmt_minutes->execute();
             $result_minutes = $stmt_minutes->get_result();
 
@@ -597,9 +668,13 @@ try {
                                                         <span class="badge bg-primary">
                                                             <i class="bi bi-journal-text me-1"></i>Minuta
                                                         </span>
-                                                    <?php else: ?>
+                                                    <?php elseif ($minute['tipo_acuerdo'] === 'DEFENSA_PUBLICA'): ?>
                                                         <span class="badge bg-success">
                                                             <i class="bi bi-mortarboard me-1"></i>Defensa
+                                                        </span>
+                                                    <?php else: ?>
+                                                        <span class="badge bg-warning text-dark">
+                                                            <i class="bi bi-check-circle me-1"></i>Aprobación
                                                         </span>
                                                     <?php endif; ?>
                                                 </td>
@@ -613,9 +688,16 @@ try {
                                                         >
                                                             <i class="bi bi-file-earmark-arrow-down me-1"></i><?php echo h((string)$minute['file_name']); ?>
                                                         </a>
-                                                    <?php else: ?>
+                                                    <?php elseif ($minute['tipo_acuerdo'] === 'DEFENSA_PUBLICA'): ?>
                                                         <a
                                                             href="mod/admin/users/defense_agreement_download.php?defense_id=<?php echo h((string)$minute['id']); ?>"
+                                                            title="Descargar <?php echo h((string)$minute['file_name']); ?>"
+                                                        >
+                                                            <i class="bi bi-file-earmark-arrow-down me-1"></i><?php echo h((string)$minute['file_name']); ?>
+                                                        </a>
+                                                    <?php else: ?>
+                                                        <a
+                                                            href="mod/admin/users/approval_agreement_download.php?approval_id=<?php echo h((string)$minute['id']); ?>"
                                                             title="Descargar <?php echo h((string)$minute['file_name']); ?>"
                                                         >
                                                             <i class="bi bi-file-earmark-arrow-down me-1"></i><?php echo h((string)$minute['file_name']); ?>
@@ -627,8 +709,10 @@ try {
                                                 <td>
                                                     <?php if ($minute['tipo_acuerdo'] === 'MINUTA'): ?>
                                                         Asistentes: <?php echo h((string)$minute['attended_count']); ?>/<?php echo h((string)$minute['total_participants']); ?>
-                                                    <?php else: ?>
+                                                    <?php elseif ($minute['tipo_acuerdo'] === 'DEFENSA_PUBLICA'): ?>
                                                         Código: <?php echo h((string)$minute['codigo_acuerdo']); ?>
+                                                    <?php else: ?>
+                                                        <small class="text-muted">Sin asistentes registrados</small>
                                                     <?php endif; ?>
                                                 </td>
                                                 <td><?php echo h((string)$minute['created_at']); ?></td>
@@ -672,8 +756,10 @@ try {
                                                     #<?php echo h((string)$minute['id']); ?> -
                                                     <?php if ($minute['tipo_acuerdo'] === 'MINUTA'): ?>
                                                         [MINUTA] Fecha: <?php echo h((string)$minute['fecha_referencia']); ?> -
-                                                    <?php else: ?>
+                                                    <?php elseif ($minute['tipo_acuerdo'] === 'DEFENSA_PUBLICA'): ?>
                                                         [DEFENSA] <?php echo h((string)$minute['codigo_acuerdo']); ?> -
+                                                    <?php else: ?>
+                                                        [APROBACIÓN] Fecha: <?php echo h((string)$minute['fecha_referencia']); ?> -
                                                     <?php endif; ?>
                                                     <?php echo h((string)$minute['file_name']); ?>
                                                 </option>
@@ -697,9 +783,13 @@ try {
                                         <?php if ($selected_minute['tipo_acuerdo'] === 'MINUTA'): ?>
                                             - Minuta de sesión <?php echo h((string)$selected_minute['fecha_referencia']); ?>,
                                             archivo <?php echo h((string)$selected_minute['file_name']); ?>.
-                                        <?php else: ?>
+                                        <?php elseif ($selected_minute['tipo_acuerdo'] === 'DEFENSA_PUBLICA'): ?>
                                             - Acuerdo de Defensa Pública (Código: <?php echo h((string)$selected_minute['codigo_acuerdo']); ?>),
                                             fecha de defensa <?php echo h((string)$selected_minute['fecha_defensa']); ?>,
+                                            archivo <?php echo h((string)$selected_minute['file_name']); ?>.
+                                        <?php else: ?>
+                                            - Acuerdo de Aprobación,
+                                            fecha de creación <?php echo h((string)$selected_minute['fecha_referencia']); ?>,
                                             archivo <?php echo h((string)$selected_minute['file_name']); ?>.
                                         <?php endif; ?>
                                     </div>
@@ -709,6 +799,12 @@ try {
                                     <div class="minute-empty-state">
                                         <i class="bi bi-mortarboard"></i>
                                         <h5>Acuerdo de Defensa Pública</h5>
+                                        <p class="mb-0">Este tipo de acuerdo no tiene registro de asistentes. Vea la información en la pestaña de acuerdos.</p>
+                                    </div>
+                                <?php elseif ($selected_minute !== null && $selected_minute['tipo_acuerdo'] === 'APROBACION'): ?>
+                                    <div class="minute-empty-state">
+                                        <i class="bi bi-check-circle"></i>
+                                        <h5>Acuerdo de Aprobación</h5>
                                         <p class="mb-0">Este tipo de acuerdo no tiene registro de asistentes. Vea la información en la pestaña de acuerdos.</p>
                                     </div>
                                 <?php elseif (empty($attendees)): ?>
