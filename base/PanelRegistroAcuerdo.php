@@ -541,7 +541,7 @@ try {
                                 <div class="minute-empty-state">
                                     <i class="bi bi-file-earmark-text"></i>
                                     <h5>Sin acuerdos registrados</h5>
-                                    <p class="mb-0">No hay registros en project_minutes para este proyecto.</p>
+                                    <p class="mb-0">No hay registros en para este proyecto.</p>
                                 </div>
                             <?php else: ?>
                                 <div class="table-responsive">
@@ -599,7 +599,7 @@ try {
                                 <div class="minute-empty-state">
                                     <i class="bi bi-people"></i>
                                     <h5>No hay acuerdos para consultar asistentes</h5>
-                                    <p class="mb-0">Seleccione un proyecto con registros en project_minutes.</p>
+                                    <p class="mb-0">Seleccione un proyecto con registros.</p>
                                 </div>
                             <?php else: ?>
                                 <form method="get" action="PanelRegistroAcuerdo.php" class="row g-3 align-items-end mb-4">
