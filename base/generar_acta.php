@@ -262,6 +262,230 @@ $valoresForm = [
 <!DOCTYPE html>
 <html lang="es">
 <?php include('head.php'); ?>
+<style>
+    /* Estilos responsive para generar_acta.php */
+    .dashboard-header h1 {
+        font-size: 2.3rem;
+        font-weight: 700;
+    }
+
+    .dashboard-header p {
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 754px) {
+        .dashboard-header h1 {
+            font-size: 1.8rem;
+        }
+
+        .dashboard-header p {
+            font-size: 1rem;
+        }
+
+        .row.g-3 [class*="col-"] {
+            flex: 0 0 100% !important;
+            max-width: 100%;
+        }
+
+        .btn-lg {
+            padding: 0.5rem 1rem;
+            font-size: 0.95rem;
+        }
+
+        .form-control,
+        .form-select {
+            font-size: 1.15rem;
+            padding: 0.5rem 0.75rem;
+        }
+
+        .form-label {
+            font-size: 0.95rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .dashboard-header {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .dashboard-header h1 {
+            font-size: 1.4rem;
+            line-height: 1.3;
+        }
+
+        .dashboard-header p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            margin-bottom: 1rem !important;
+        }
+
+        .card-body {
+            padding: 1rem !important;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem !important;
+        }
+
+        .form-control,
+        .form-select {
+            font-size: 1.15rem;
+            padding: 0.45rem 0.65rem;
+            height: auto;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .btn-lg {
+            display: block;
+            width: 100%;
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .text-center.mt-4 {
+            margin-top: 1rem !important;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .dashboard-header h1 {
+            font-size: 1.2rem;
+        }
+
+        .dashboard-header p {
+            font-size: 0.85rem;
+        }
+
+        h4 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem !important;
+        }
+
+        .form-control,
+        .form-select {
+            font-size: 1.15rem;
+            padding: 0.4rem 0.55rem;
+        }
+
+        .form-label {
+            font-size: 0.95rem;
+        }
+
+        .btn-lg {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.85rem;
+        }
+
+        .card-body {
+            padding: 0.75rem !important;
+        }
+
+        .row.g-3 {
+            gap: 0.75rem !important;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .dashboard-header h1 {
+            font-size: 1rem;
+        }
+
+        .dashboard-header p {
+            font-size: 0.8rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .form-control,
+        .form-select {
+            font-size: 1.15rem;
+            padding: 0.35rem 0.5rem;
+        }
+
+        .form-label {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .btn-lg {
+            padding: 0.45rem 0.6rem;
+            font-size: 0.8rem;
+        }
+
+        .card-body {
+            padding: 0.5rem !important;
+        }
+
+        .row.g-3 {
+            gap: 0.5rem !important;
+        }
+
+        .card {
+            margin-bottom: 0.75rem !important;
+        }
+
+        .buttons-container {
+            gap: 0.3rem;
+        }
+    }
+
+    .proyecto-selection-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .proyecto-selection-form .form-group {
+        margin-bottom: 0;
+    }
+
+    .buttons-container {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .buttons-container .btn {
+        flex: 1 1 auto;
+        min-width: 180px;
+    }
+
+    @media (max-width: 576px) {
+        .buttons-container {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .buttons-container .btn {
+            width: 100%;
+            min-width: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .buttons-container .btn:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .buttons-container {
+            gap: 0.4rem;
+        }
+    }
+</style>
 <body class="fondo-una d-flex flex-column min-vh-100">
 <?php include('header.php'); ?>
 
@@ -269,7 +493,7 @@ $valoresForm = [
     <div class="container my-5">
 
         <div class="dashboard-header text-center mb-5">
-            <h1 style="font-size: 2.3rem; font-weight: 700;">Generar Acta de Presentación Pública</h1>
+            <h1>Generar Acta de Presentación Pública</h1>
             <p class="lead">Seleccione un proyecto aprobado para autocompletar la mayor parte de la información.</p>
         </div>
 
@@ -282,8 +506,8 @@ $valoresForm = [
         <!-- SELECCIÓN DE PROYECTO -->
         <div class="card shadow-sm border-0 mb-4">
             <div class="card-body text-dark">
-                <form action="generar_acta.php" method="GET" class="row g-3 align-items-end">
-                    <div class="col-md-10">
+                <form action="generar_acta.php" method="GET" class="proyecto-selection-form">
+                    <div class="form-group mb-3">
                         <label for="proyecto_id" class="form-label fw-bold">Proyecto aprobado:</label>
                         <select name="proyecto_id" id="proyecto_id" class="form-select" required>
                             <option value="">Seleccione...</option>
@@ -296,7 +520,7 @@ $valoresForm = [
                         </select>
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="form-group">
                         <button type="submit" class="btn btn-primary w-100">
                             <i class="bi bi-search"></i> Cargar
                         </button>
@@ -613,12 +837,12 @@ $valoresForm = [
                             </div>
                         </div>
 
-                        <div class="text-center mt-4">
-                            <button type="submit" class="btn btn-success btn-lg">
+                        <div class="buttons-container mt-4">
+                            <button type="submit" class="btn btn-success">
                                 <i class="bi bi-file-earmark-pdf-fill"></i> Generar Acta en PDF
                             </button>
 
-                            <a href="dashboard.php" class="btn btn-secondary btn-lg ms-3">
+                            <a href="dashboard.php" class="btn btn-secondary">
                                 <i class="bi bi-arrow-left-circle"></i> Volver al panel principal
                             </a>
                         </div>
@@ -628,6 +852,12 @@ $valoresForm = [
         <?php else: ?>
             <div class="alert alert-info shadow-sm border-0">
                 Seleccione primero un proyecto aprobado y luego presione <strong>Cargar</strong> para autocompletar el formulario.
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="dashboard.php" class="btn btn-secondary px-4">
+                    <i class="bi bi-arrow-left-circle"></i> Volver al Panel Principal
+                </a>
             </div>
         <?php endif; ?>
     </div>

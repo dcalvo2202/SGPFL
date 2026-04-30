@@ -399,7 +399,7 @@ $conn->close();
         }
 
         .dashboard-header h1 {
-            font-size: 3.2rem !important;
+            font-size: 2rem !important;
             font-weight: 700;
         }
 
@@ -520,6 +520,217 @@ $conn->close();
             font-size: 1rem;
             color: #6c757d;
         }
+
+        /* Tabla de comites responsive */
+        .comites-table-wrapper {
+            width: 100%;
+        }
+
+        .comites-table-wrapper .table td,
+        .comites-table-wrapper .table th {
+            word-break: break-word;
+            text-align: left;
+        }
+
+        .pending-requests-table-wrapper {
+            width: 100%;
+        }
+
+        .pending-requests-table-wrapper .table td,
+        .pending-requests-table-wrapper .table th {
+            word-break: break-word;
+            text-align: left;
+        }
+
+        /* Estilos responsive para tablas a nivel de cards en móvil */
+        @media (max-width: 754px) {
+            .comites-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .comites-toolbar .input-group {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .comites-toolbar .input-group input {
+                font-size: 0.95rem;
+                padding: 0.5rem 0.75rem;
+            }
+
+            .comites-toolbar .input-group button {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.95rem;
+            }
+
+            .comites-summary {
+                text-align: center;
+                width: 100%;
+                font-size: 0.9rem;
+            }
+
+            .table-responsive {
+                border-radius: 0.25rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            /* Convertir tablas a cards en móvil */
+            .comites-table-wrapper .table,
+            .pending-requests-table-wrapper .table {
+                font-size: 0.85rem;
+            }
+
+            .comites-table-wrapper .table thead,
+            .pending-requests-table-wrapper .table thead {
+                display: none;
+            }
+
+            .comites-table-wrapper .table tbody tr,
+            .pending-requests-table-wrapper .table tbody tr {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                border: 1px solid #dee2e6;
+                border-radius: 0.25rem;
+                padding: 0.75rem;
+                margin-bottom: 0.75rem;
+                background-color: #fff;
+                align-items: flex-start;
+            }
+
+            .comites-table-wrapper .table td,
+            .pending-requests-table-wrapper .table td {
+                display: flex;
+                flex-direction: column;
+                padding: 0.25rem 0 !important;
+                border: none !important;
+                text-align: left;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .comites-table-wrapper .table td::before,
+            .pending-requests-table-wrapper .table td::before {
+                font-weight: 600;
+                color: #034991;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 0.25rem;
+                text-align: left;
+                display: block;
+                width: 100%;
+            }
+
+            /* Agregar labels a cada celda - Tabla comites */
+            .comites-table-wrapper .table td:nth-child(1)::before { content: "ID"; }
+            .comites-table-wrapper .table td:nth-child(2)::before { content: "Tutor"; }
+            .comites-table-wrapper .table td:nth-child(3)::before { content: "Asesor 1"; }
+            .comites-table-wrapper .table td:nth-child(4)::before { content: "Asesor 2"; }
+            .comites-table-wrapper .table td:nth-child(5)::before { content: "Proyectos"; }
+
+            /* Agregar labels a cada celda - Tabla solicitudes */
+            .pending-requests-table-wrapper .table td:nth-child(1)::before { content: "Estudiante"; }
+            .pending-requests-table-wrapper .table td:nth-child(2)::before { content: "Tutor"; }
+            .pending-requests-table-wrapper .table td:nth-child(3)::before { content: "Asesor 1"; }
+            .pending-requests-table-wrapper .table td:nth-child(4)::before { content: "Asesor 2"; }
+            .pending-requests-table-wrapper .table td:nth-child(5)::before { content: "Estado"; }
+            .pending-requests-table-wrapper .table td:nth-child(6)::before { content: "Rechazo"; }
+            .pending-requests-table-wrapper .table td:nth-child(7)::before { content: "Acciones"; }
+
+            .comites-toolbar .input-group input {
+                font-size: 0.9rem;
+                padding: 0.45rem 0.65rem;
+            }
+
+            .comites-toolbar .input-group button {
+                padding: 0.45rem 0.65rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .comites-table-wrapper .table,
+            .pending-requests-table-wrapper .table {
+                font-size: 0.8rem;
+            }
+
+            .comites-table-wrapper .table tbody tr,
+            .pending-requests-table-wrapper .table tbody tr {
+                padding: 0.5rem;
+                margin-bottom: 0.5rem;
+                align-items: flex-start;
+            }
+
+            .comites-table-wrapper .table td,
+            .pending-requests-table-wrapper .table td {
+                text-align: left;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .comites-table-wrapper .table td::before,
+            .pending-requests-table-wrapper .table td::before {
+                font-size: 0.75rem;
+                text-align: left;
+                display: block;
+                width: 100%;
+            }
+
+            .comites-toolbar .input-group input {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.55rem;
+            }
+
+            .comites-toolbar .input-group button {
+                padding: 0.4rem 0.55rem;
+                font-size: 0.85rem;
+            }
+
+            .comites-summary {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .comites-table-wrapper .table,
+            .pending-requests-table-wrapper .table {
+                font-size: 0.75rem;
+            }
+
+            .comites-table-wrapper .table td,
+            .pending-requests-table-wrapper .table td {
+                padding: 0.2rem 0 !important;
+                text-align: left;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .comites-table-wrapper .table td::before,
+            .pending-requests-table-wrapper .table td::before {
+                font-size: 0.7rem;
+                margin-bottom: 0.15rem;
+                text-align: left;
+                display: block;
+                width: 100%;
+            }
+
+            .comites-toolbar {
+                gap: 0.5rem;
+            }
+
+            .comites-toolbar .input-group input {
+                font-size: 0.8rem;
+                padding: 0.35rem 0.5rem;
+            }
+
+            .comites-toolbar .input-group button {
+                padding: 0.35rem 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body class="fondo-una d-flex flex-column min-vh-100">
@@ -528,7 +739,7 @@ $conn->close();
 <main class="flex-fill">
     <div class="container my-5">
         <div class="dashboard-header text-center mb-4">
-            <h1>Aprobacion de Comites Asesores</h1>
+            <h1>Aprobación de Comites Asesores</h1>
             <p class="lead">Bienvenido, <?= htmlspecialchars((string)$current_user_name) ?>. Aqui solo se aprueban o rechazan comites propuestos por solicitudes.</p>
         </div>
 
@@ -544,20 +755,21 @@ $conn->close();
                 <?php if (empty($pendingCommitteeRequests)): ?>
                     <div class="alert alert-info mb-0">No hay solicitudes de comite pendientes por aprobar o rechazar.</div>
                 <?php else: ?>
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle mb-0">
-                            <thead>
-                            <tr>
-                                <th>Estudiante</th>
-                                <th>Tutor</th>
-                                <th>Asesor 1</th>
-                                <th>Asesor 2</th>
-                                <th>Estado validacion</th>
-                                <th>Rechazo</th>
-                                <th>Acciones</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                    <div class="pending-requests-table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead>
+                                <tr>
+                                    <th>Estudiante</th>
+                                    <th>Tutor</th>
+                                    <th>Asesor 1</th>
+                                    <th>Asesor 2</th>
+                                    <th>Estado validacion</th>
+                                    <th>Rechazo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                                </thead>
+                                <tbody>
                             <?php foreach ($pendingCommitteeRequests as $group): ?>
                                 <?php
                                 $tutorRows = $group['roles']['Tutor'] ?? [];
@@ -614,7 +826,8 @@ $conn->close();
                                 </tr>
                             <?php endforeach; ?>
                             </tbody>
-                        </table>
+                            </table>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div>
@@ -644,29 +857,31 @@ $conn->close();
                 <?php if (empty($comites)): ?>
                     <div class="alert alert-info mb-0">No hay comites registrados.</div>
                 <?php else: ?>
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle mb-0">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Tutor</th>
-                                <th>Asesor 1</th>
-                                <th>Asesor 2</th>
-                                <th>Proyectos Asignados</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php foreach ($comites as $c): ?>
+                    <div class="comites-table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead>
                                 <tr>
-                                    <td><?= (int)$c['Id'] ?></td>
-                                    <td><?= htmlspecialchars((string)$c['tutor_nombre']) ?> (<?= htmlspecialchars((string)$c['tutor']) ?>)</td>
-                                    <td><?= htmlspecialchars((string)$c['asesor1_nombre']) ?> (<?= htmlspecialchars((string)$c['asesor_1']) ?>)</td>
-                                    <td><?= htmlspecialchars((string)$c['asesor2_nombre']) ?> (<?= htmlspecialchars((string)$c['asesor_2']) ?>)</td>
-                                    <td><span class="badge bg-secondary"><?= (int)$c['proyectos_asociados'] ?></span></td>
+                                    <th>ID</th>
+                                    <th>Tutor</th>
+                                    <th>Asesor 1</th>
+                                    <th>Asesor 2</th>
+                                    <th>Proyectos Asignados</th>
                                 </tr>
-                            <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($comites as $c): ?>
+                                    <tr>
+                                        <td><?= (int)$c['Id'] ?></td>
+                                        <td><?= htmlspecialchars((string)$c['tutor_nombre']) ?> (<?= htmlspecialchars((string)$c['tutor']) ?>)</td>
+                                        <td><?= htmlspecialchars((string)$c['asesor1_nombre']) ?> (<?= htmlspecialchars((string)$c['asesor_1']) ?>)</td>
+                                        <td><?= htmlspecialchars((string)$c['asesor2_nombre']) ?> (<?= htmlspecialchars((string)$c['asesor_2']) ?>)</td>
+                                        <td><span class="badge bg-secondary"><?= (int)$c['proyectos_asociados'] ?></span></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <?php if ($comites_total_pages > 1): ?>

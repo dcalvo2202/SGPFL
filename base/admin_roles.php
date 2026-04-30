@@ -194,6 +194,16 @@ if (!is_array($roles)) {
 <!DOCTYPE html>
 <html lang="es">
 <?php include('head.php'); ?>
+<link rel="stylesheet" href="inc/css/admin_panels_responsive.css">
+<style>
+    /* Estilos específicos de admin_roles */
+    @media (max-width: 576px) {
+        .roles-table-wrapper .table td:nth-child(1)::before { content: "ID"; }
+        .roles-table-wrapper .table td:nth-child(2)::before { content: "Nombre"; }
+        .roles-table-wrapper .table td:nth-child(3)::before { content: "Descripción"; }
+        .roles-table-wrapper .table td:nth-child(4)::before { content: "Acciones"; }
+    }
+</style>
 <body class="fondo-una d-flex flex-column min-vh-100">
 
     <?php include 'header.php'; ?>
@@ -286,8 +296,9 @@ if (!is_array($roles)) {
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="mb-3">Listado de roles</h5>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover align-middle">
+                    <div class="roles-table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
                             <thead class="table-light">
                                 <tr>
                                     <th>#</th>
@@ -330,6 +341,7 @@ if (!is_array($roles)) {
                                 <?php endif; ?>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -420,3 +432,4 @@ if (!is_array($roles)) {
     </script>
 </body>
 </html>
+

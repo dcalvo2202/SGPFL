@@ -175,6 +175,7 @@ if (!is_array($modulos)) {
 <!DOCTYPE html>
 <html lang="es">
 <?php include('head.php'); ?>
+<link rel="stylesheet" href="inc/css/admin_panels_responsive.css">
 <body class="fondo-una d-flex flex-column min-vh-100">
 
     <?php include 'header.php'; ?>
@@ -267,8 +268,9 @@ if (!is_array($modulos)) {
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="mb-3">Listado de módulos</h5>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover align-middle">
+                    <div class="modulos-table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
                             <thead class="table-light">
                                 <tr>
                                     <th>#</th>
@@ -313,6 +315,7 @@ if (!is_array($modulos)) {
                                 <?php endif; ?>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>

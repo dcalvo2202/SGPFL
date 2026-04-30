@@ -156,6 +156,17 @@ if (!is_array($parametros)) {
 <!DOCTYPE html>
 <html lang="es">
 <?php include('head.php'); ?>
+<link rel="stylesheet" href="inc/css/admin_panels_responsive.css">
+<style>
+    /* Estilos específicos de admin_parametros */
+    @media (max-width: 576px) {
+        .parametros-table-wrapper .table td:nth-child(1)::before { content: "ID"; }
+        .parametros-table-wrapper .table td:nth-child(2)::before { content: "Parámetro"; }
+        .parametros-table-wrapper .table td:nth-child(3)::before { content: "Valor"; }
+        .parametros-table-wrapper .table td:nth-child(4)::before { content: "Descripción"; }
+        .parametros-table-wrapper .table td:nth-child(5)::before { content: "Acciones"; }
+    }
+</style>
 <body class="fondo-una d-flex flex-column min-vh-100">
 
     <?php include 'header.php'; ?>
@@ -220,11 +231,12 @@ if (!is_array($parametros)) {
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="mb-3">Listado de parámetros</h5>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover align-middle">
+                    <div class="parametros-table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
                             <thead class="table-light">
                                 <tr>
-                                    <th>#</th>
+                                    <th>ID</th>
                                     <th>Parámetro</th>
                                     <th>Valor</th>
                                     <th>Descripción</th>
@@ -244,26 +256,29 @@ if (!is_array($parametros)) {
                                             <td><?= htmlspecialchars((string)$item['valor']) ?></td>
                                             <td><?= htmlspecialchars((string)$item['descripcion']) ?></td>
                                             <td>
-                                                <form method="post" style="display:inline; margin-right: 6px;">
-                                                    <input type="hidden" name="action" value="edit">
-                                                    <input type="hidden" name="id_pv" value="<?= (int)$item['id_pv'] ?>">
-                                                    <button type="submit" class="btn btn-primary btn-sm">
-                                                        Modificar
-                                                    </button>
-                                                </form>
-                                                <form method="post" style="display:inline;" class="js-delete-param-form" data-parametro="<?= htmlspecialchars((string)$item['parametro']) ?>">
-                                                    <input type="hidden" name="action" value="delete">
-                                                    <input type="hidden" name="id_pv" value="<?= (int)$item['id_pv'] ?>">
-                                                    <button type="submit" class="btn btn-danger btn-sm" <?= $editing_id > 0 ? 'disabled title="No disponible mientras editas un parámetro"' : '' ?>>
-                                                        Eliminar
-                                                    </button>
-                                                </form>
+                                                <div class="d-flex align-items-center gap-2 flex-nowrap">
+                                                    <form method="post" style="display:inline; margin-right: 6px;">
+                                                        <input type="hidden" name="action" value="edit">
+                                                        <input type="hidden" name="id_pv" value="<?= (int)$item['id_pv'] ?>">
+                                                        <button type="submit" class="btn btn-primary btn-sm">
+                                                            Modificar
+                                                        </button>
+                                                    </form>
+                                                    <form method="post" style="display:inline;" class="js-delete-param-form" data-parametro="<?= htmlspecialchars((string)$item['parametro']) ?>">
+                                                        <input type="hidden" name="action" value="delete">
+                                                        <input type="hidden" name="id_pv" value="<?= (int)$item['id_pv'] ?>">
+                                                        <button type="submit" class="btn btn-danger btn-sm" <?= $editing_id > 0 ? 'disabled title="No disponible mientras editas un parámetro"' : '' ?>>
+                                                            Eliminar
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>

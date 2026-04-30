@@ -373,7 +373,11 @@ function formatearFechaCorta($fecha, $esValorAnterior = false) {
                 </div>
                 <?php endif; ?>
             </div>
-
+            <div class="text-center mt-4">
+                <a href="dashboard.php" class="btn btn-secondary px-4">
+                <i class="bi bi-arrow-left-circle"></i> Volver al Panel Principal
+            </a>
+        </div>
         </div>
     </main>
 

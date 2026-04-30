@@ -317,6 +317,18 @@ if (!is_array($usuarios)) {
 <!DOCTYPE html>
 <html lang="es">
 <?php include('head.php'); ?>
+<link rel="stylesheet" href="inc/css/admin_panels_responsive.css">
+<style>
+    /* Estilos específicos de admin_usuarios */
+    @media (max-width: 576px) {
+        .usuarios-table-wrapper .table td:nth-child(1)::before { content: "ID"; }
+        .usuarios-table-wrapper .table td:nth-child(2)::before { content: "Nombre"; }
+        .usuarios-table-wrapper .table td:nth-child(3)::before { content: "Correo"; }
+        .usuarios-table-wrapper .table td:nth-child(4)::before { content: "Teléfono"; }
+        .usuarios-table-wrapper .table td:nth-child(5)::before { content: "Rol"; }
+        .usuarios-table-wrapper .table td:nth-child(6)::before { content: "Acciones"; }
+    }
+</style>
 <body class="fondo-una d-flex flex-column min-vh-100">
 
     <?php include 'header.php'; ?>
@@ -452,8 +464,9 @@ if (!is_array($usuarios)) {
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="mb-3">Listado de usuarios</h5>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover align-middle">
+                    <div class="usuarios-table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
                             <thead class="table-light">
                                 <tr>
                                     <th>ID</th>
@@ -504,6 +517,7 @@ if (!is_array($usuarios)) {
                                 <?php endif; ?>
                             </tbody>
                         </table>
+                        </div>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
