@@ -477,7 +477,7 @@ if (isset($message) && !empty($message)) {
                 <div class="col-md-8 col-lg-6">
                     <div class="card shadow-sm border-0">
                         <div class="card-header bg-rojo-una text-white">
-                            <h5 class="mb-0">
+                            <h5 class="card-title mb-0">
                                 <i class="bi bi-calendar-check"></i> Sincronización con Google Calendar
                             </h5>
                         </div>
