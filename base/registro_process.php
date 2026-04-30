@@ -141,6 +141,25 @@ function detect_mime(string $tmp_name): string {
     return $finfo->file($tmp_name) ?: '';
 }
 
+function is_valid_docx_file(string $tmp_name): bool {
+    if (!class_exists('ZipArchive')) {
+        return false;
+    }
+
+    $zip = new ZipArchive();
+
+    if ($zip->open($tmp_name) !== true) {
+        return false;
+    }
+
+    $has_content_types = $zip->locateName('[Content_Types].xml') !== false;
+    $has_document_xml = $zip->locateName('word/document.xml') !== false;
+
+    $zip->close();
+
+    return $has_content_types && $has_document_xml;
+}
+
 function ini_size_to_bytes(string $value): int {
     $value = trim($value);
     if ($value === '') return 0;
@@ -197,39 +216,70 @@ function upload_error_to_message(int $code, string $label): string {
     }
 }
 
-function validate_uploaded_file(array $file, array $allowed_mimes, array $allowed_exts, int $max_mb, string $label): array {
-    if (($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
-        $code = $file['error'] ?? UPLOAD_ERR_NO_FILE;
-        throw new Exception(upload_error_to_message((int)$code, $label));
+function validate_uploaded_file(
+    array $file,
+    array $allowed_mimes,
+    array $allowed_exts,
+    int $max_mb,
+    string $label
+): array {
+    $error = (int)($file['error'] ?? UPLOAD_ERR_NO_FILE);
+
+    if ($error !== UPLOAD_ERR_OK) {
+        throw new Exception(upload_error_to_message($error, $label));
     }
 
     $name = (string)($file['name'] ?? '');
-    $size = (int)($file['size'] ?? 0);
     $tmp = (string)($file['tmp_name'] ?? '');
+    $size = (int)($file['size'] ?? 0);
+
+    if ($name === '') {
+        throw new Exception("$label no tiene nombre de archivo");
+    }
 
     if ($tmp === '' || !is_uploaded_file($tmp)) {
-        throw new Exception("Archivo temporal inválido para $label");
+        throw new Exception("$label no fue recibido correctamente");
+    }
+
+    if (!is_readable($tmp)) {
+        throw new Exception("No se pudo leer el archivo de $label");
+    }
+
+    if ($size <= 0) {
+        throw new Exception("$label está vacío o no es válido");
+    }
+
+    $max_bytes = $max_mb * 1024 * 1024;
+    if ($size > $max_bytes) {
+        throw new Exception("$label excede el tamaño máximo de {$max_mb} MB");
     }
 
     $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+
     if (!in_array($ext, $allowed_exts, true)) {
         throw new Exception("$label debe tener extensión: " . implode(', ', $allowed_exts));
     }
 
-    $max_bytes = $max_mb * 1024 * 1024;
-    if ($size <= 0) {
-        throw new Exception("$label está vacío");
-    }
-    if ($size > $max_bytes) {
-        throw new Exception("$label excede el tamaño máximo de {$max_mb}MB");
+    $mime = detect_mime($tmp);
+
+    // Algunos DOCX pueden ser detectados como application/zip u octet-stream.
+    // En ese caso se valida su estructura interna para evitar aceptar ZIPs falsos.
+    $is_docx = $ext === 'docx' && in_array('docx', $allowed_exts, true);
+
+    if ($is_docx && in_array($mime, ['application/zip', 'application/octet-stream'], true)) {
+        if (!is_valid_docx_file($tmp)) {
+            throw new Exception("$label no es un DOCX válido");
+        }
+
+        $mime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
     }
 
-    $mime = detect_mime($tmp);
     if (!in_array($mime, $allowed_mimes, true)) {
         throw new Exception("$label no es un archivo válido. Tipo detectado: $mime");
     }
 
     $content = file_get_contents($tmp);
+
     if ($content === false || strlen($content) === 0) {
         throw new Exception("No se pudo leer el contenido de $label");
     }
@@ -326,16 +376,19 @@ try {
 
     $cv = validate_uploaded_file(
         $_FILES['cv_document'] ?? [],
-        ['application/pdf'],
-        ['pdf'],
+        [
+            'application/pdf',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        ],
+        ['pdf', 'docx'],
         5,
         'el Currículum'
     );
 
     $id_copy = validate_uploaded_file(
         $_FILES['id_copy_document'] ?? [],
-        ['image/jpeg', 'image/png'],
-        ['jpg', 'jpeg', 'png'],
+        ['application/pdf', 'image/jpeg', 'image/png'],
+        ['pdf', 'jpg', 'jpeg', 'png'],
         2,
         'la fotocopia de cédula'
     );

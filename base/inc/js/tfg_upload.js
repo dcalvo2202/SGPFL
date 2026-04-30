@@ -461,8 +461,8 @@ class TfgUploadManager {
             return;
         }
         
-        const maxTotalSize = 8 * 1024 * 1024; // 8MB total
-        const maxFileSize = 8 * 1024 * 1024; // 8MB por archivo
+        const maxTotalSize = 10 * 1024 * 1024; // 10MB total
+        const maxFileSize = 10 * 1024 * 1024; // 10MB por archivo
         const allowedTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
         
         let totalSize = 0;
@@ -473,7 +473,7 @@ class TfgUploadManager {
             totalSize += file.size;
             
             if (file.size > maxFileSize) {
-                this.showFieldError('inp-document', `El archivo "${file.name}" supera el tamaño máximo de 8 MB`);
+                this.showFieldError('inp-document', `El archivo "${file.name}" supera el tamaño máximo de 10 MB`);
                 event.target.value = '';
                 return;
             }
@@ -487,7 +487,7 @@ class TfgUploadManager {
         
         // Validar tamaño total
         if (totalSize > maxTotalSize) {
-            this.showFieldError('inp-document', 'El tamaño total de los archivos excede 8 MB');
+            this.showFieldError('inp-document', 'El tamaño total de los archivos excede 10 MB');
             event.target.value = '';
             return;
         }

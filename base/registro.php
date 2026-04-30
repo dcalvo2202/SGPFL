@@ -388,8 +388,8 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
                             <i class="bi bi-filetype-pdf"></i> 
                             Currículum actualizado (PDF) *
                         </label>
-                        <input type="file" class="form-control-tfg" id="inp-cv" name="cv_document" accept=".pdf" required>
-                        <small class="text-muted">Tamaño máximo: 5 MB | Formato permitido: PDF</small>
+                        <input type="file" class="form-control-tfg" id="inp-cv" name="cv_document" accept=".pdf,.docx" required>
+                        <small class="text-muted">Tamaño máximo: 5 MB | Formatos permitidos: PDF, DOCX</small>
                     </div>
 
                     <div class="form-group-tfg">
@@ -397,8 +397,8 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
                             <i class="bi bi-person-badge"></i> Fotocopia de cédula (JPG/PNG) *
                             
                         </label>
-                        <input type="file" class="form-control-tfg" id="inp-id-copy" name="id_copy_document" accept=".jpg,.jpeg,.png" required>
-                        <small class="text-muted">Tamaño máximo: 2 MB | Formatos permitidos: JPG, PNG</small>
+                        <input type="file" class="form-control-tfg" id="inp-id-copy" name="id_copy_document" accept=".pdf,.jpg,.jpeg,.png" required>
+                        <small class="text-muted">Tamaño máximo: 2 MB | Formatos permitidos: PDF, JPG, PNG</small>
                     </div>
 
                     <div class="form-group-tfg">
@@ -493,29 +493,54 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
         // Validación de tamaño máximo de archivos
         function bindFileSizeValidation() {
             const fileValidationRules = {
-                'inp-cv': { maxMB: 5, label: 'Currículum' },
-                'inp-id-copy': { maxMB: 2, label: 'Fotocopia de cédula' },
-                'inp-cover-letter': { maxMB: 5, label: 'Carta de solicitud' }
+                'inp-cv': {
+                    maxMB: 5,
+                    label: 'Currículum',
+                    allowedExts: ['pdf', 'docx']
+                },
+                'inp-id-copy': {
+                    maxMB: 2,
+                    label: 'Fotocopia de cédula',
+                    allowedExts: ['pdf', 'jpg', 'jpeg', 'png']
+                },
+                'inp-cover-letter': {
+                    maxMB: 5,
+                    label: 'Carta de solicitud',
+                    allowedExts: ['pdf']
+                }
             };
 
             Object.keys(fileValidationRules).forEach(function (inputId) {
                 const input = document.getElementById(inputId);
                 if (!input) return;
 
-                const { maxMB, label } = fileValidationRules[inputId];
+                const { maxMB, label, allowedExts } = fileValidationRules[inputId];
                 const maxBytes = maxMB * 1024 * 1024;
 
                 input.addEventListener('change', function () {
                     const file = input.files && input.files[0] ? input.files[0] : null;
-                    
+
                     if (!file) {
                         input.setCustomValidity('');
+                        return;
+                    }
+
+                    const extension = file.name.includes('.')
+                        ? file.name.split('.').pop().toLowerCase()
+                        : '';
+
+                    if (!allowedExts.includes(extension)) {
+                        input.setCustomValidity(
+                            `${label} debe tener formato: ${allowedExts.join(', ').toUpperCase()}`
+                        );
+                        input.reportValidity?.();
                         return;
                     }
 
                     if (file.size > maxBytes) {
                         const fileSize = formatBytes(file.size);
                         const maxSize = formatBytes(maxBytes);
+
                         input.setCustomValidity(
                             `${label} excede el tamaño máximo. ` +
                             `Archivo: ${fileSize}, Máximo permitido: ${maxSize}`
@@ -555,11 +580,11 @@ $advisor_slots_available = (!$advisor1_taken || !$advisor2_taken);
                     valueMissing: 'Debe seleccionar el subrol para asesor externo o interno.',
                 },
                 'inp-cv': {
-                    valueMissing: 'Debe adjuntar el currículum en formato PDF.',
+                    valueMissing: 'Debe adjuntar el currículum en formato PDF o DOCX.',
                     fileSize: 'El currículum excede el tamaño máximo permitido (5 MB).',
                 },
                 'inp-id-copy': {
-                    valueMissing: 'Debe adjuntar la fotocopia de cédula (JPG o PNG).',
+                    valueMissing: 'Debe adjuntar la fotocopia de cédula en formato PDF, JPG o PNG.',
                     fileSize: 'La fotocopia de cédula excede el tamaño máximo permitido (2 MB).',
                 },
                 'inp-cover-letter': {

@@ -98,6 +98,31 @@ class ProrrogaLogic {
         }
     }
 
+    private function detectarMimeReal($tmp_name) {
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        return $finfo->file($tmp_name) ?: '';
+    }
+
+    private function mensajeErrorSubida($error_code) {
+        switch ((int)$error_code) {
+            case UPLOAD_ERR_INI_SIZE:
+            case UPLOAD_ERR_FORM_SIZE:
+                return 'El archivo excede el tamaño máximo permitido por el servidor.';
+            case UPLOAD_ERR_PARTIAL:
+                return 'El archivo se subió parcialmente. Intente nuevamente.';
+            case UPLOAD_ERR_NO_FILE:
+                return 'No se seleccionó ningún archivo.';
+            case UPLOAD_ERR_NO_TMP_DIR:
+                return 'No existe carpeta temporal para procesar la subida.';
+            case UPLOAD_ERR_CANT_WRITE:
+                return 'No se pudo escribir el archivo en el servidor.';
+            case UPLOAD_ERR_EXTENSION:
+                return 'Una extensión de PHP bloqueó la subida del archivo.';
+            default:
+                return 'Error desconocido al subir el archivo.';
+        }
+    }
+
     /**
      * Guardar archivos de soporte de prórroga
      * @param array $archivos $_FILES array
@@ -105,6 +130,7 @@ class ProrrogaLogic {
      * @param string $user_id
      * @return array ['success' => bool, 'message' => string, 'paths' => array]
      */
+    
     private function guardarArchivos($archivos, $proposal_id, $user_id) {
         $base_path = realpath(__DIR__ . '/../../../');
         $upload_dir = $base_path . '/uploads/prorrogas/' . $proposal_id . '/';
@@ -124,25 +150,49 @@ class ProrrogaLogic {
         $total_files = count($archivos['name']);
         
         for ($i = 0; $i < $total_files; $i++) {
-            if ($archivos['error'][$i] !== UPLOAD_ERR_OK) {
-                continue; // Saltar archivos con error
+            $nombre_original = $archivos['name'][$i] ?? '';
+
+            if ($nombre_original === '') {
+                continue;
             }
 
-            $nombre_original = $archivos['name'][$i];
-            $tmp_name = $archivos['tmp_name'][$i];
-            $size = $archivos['size'][$i];
-            $type = $archivos['type'][$i];
+            $error_code = (int)($archivos['error'][$i] ?? UPLOAD_ERR_NO_FILE);
 
-            // Validar tipo de archivo (solo PDF)
-            if ($type !== 'application/pdf') {
+            if ($error_code !== UPLOAD_ERR_OK) {
                 return [
                     'success' => false,
-                    'message' => 'Solo se permiten archivos PDF. El archivo "' . $nombre_original . '" no es válido.',
+                    'message' => $this->mensajeErrorSubida($error_code),
                     'paths' => []
                 ];
             }
 
-            // Validar tamaño (20MB máximo)
+            $tmp_name = $archivos['tmp_name'][$i] ?? '';
+            $size = (int)($archivos['size'][$i] ?? 0);
+
+            if ($tmp_name === '' || !is_uploaded_file($tmp_name)) {
+                return [
+                    'success' => false,
+                    'message' => 'El archivo "' . $nombre_original . '" no fue recibido correctamente.',
+                    'paths' => []
+                ];
+            }
+
+            if (!is_readable($tmp_name)) {
+                return [
+                    'success' => false,
+                    'message' => 'No se pudo leer el archivo "' . $nombre_original . '".',
+                    'paths' => []
+                ];
+            }
+
+            if ($size <= 0) {
+                return [
+                    'success' => false,
+                    'message' => 'El archivo "' . $nombre_original . '" está vacío o no es válido.',
+                    'paths' => []
+                ];
+            }
+
             if ($size > 20 * 1024 * 1024) {
                 return [
                     'success' => false,
@@ -151,8 +201,28 @@ class ProrrogaLogic {
                 ];
             }
 
+            $extension = strtolower(pathinfo($nombre_original, PATHINFO_EXTENSION));
+
+            if ($extension !== 'pdf') {
+                return [
+                    'success' => false,
+                    'message' => 'El archivo "' . $nombre_original . '" debe tener extensión PDF.',
+                    'paths' => []
+                ];
+            }
+
+            $mime_type = $this->detectarMimeReal($tmp_name);
+
+            if ($mime_type !== 'application/pdf') {
+                return [
+                    'success' => false,
+                    'message' => 'El archivo "' . $nombre_original . '" no es un PDF válido. Tipo detectado: ' . $mime_type,
+                    'paths' => []
+                ];
+            }
+
             // Generar nombre único
-            $extension = pathinfo($nombre_original, PATHINFO_EXTENSION);
+            $extension = 'pdf';
             $nombre_seguro = preg_replace('/[^a-zA-Z0-9_-]/', '_', pathinfo($nombre_original, PATHINFO_FILENAME));
             $nombre_final = $nombre_seguro . '_' . date('Ymd_His') . '_' . uniqid() . '.' . $extension;
             $ruta_destino = $upload_dir . $nombre_final;

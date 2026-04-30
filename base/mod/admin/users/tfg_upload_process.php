@@ -139,7 +139,8 @@ try {
                     'name' => $_FILES['documents']['name'][$i],
                     'type' => $_FILES['documents']['type'][$i],
                     'size' => $_FILES['documents']['size'][$i],
-                    'tmp_name' => $_FILES['documents']['tmp_name'][$i]
+                    'tmp_name' => $_FILES['documents']['tmp_name'][$i],
+                    'error' => $_FILES['documents']['error'][$i]
                 ];
                 
                 $processed_file = processProposalFile($file_info, $upload_dir, $user_id, $i);
@@ -156,9 +157,9 @@ try {
             }
         }
         
-        // Validar tamaño total (máximo 8MB)
-        if ($total_file_size > 8 * 1024 * 1024) {
-            respond_json(false, 'El tamaño total de los archivos excede 8MB');
+        // Validar tamaño total (máximo 10MB)
+        if ($total_file_size > 10 * 1024 * 1024) {
+            respond_json(false, 'El tamaño total de los archivos excede 10MB');
         }
     }
     // Compatibilidad con formato antiguo (un solo archivo)
@@ -173,6 +174,11 @@ try {
         $combined_document_data = $processed_file['content'];
     }
 
+    // Validar que realmente se haya subido al menos un documento válido
+    if (count($uploaded_files) === 0) {
+        respond_json(false, 'Debe subir al menos un documento de propuesta válido en formato PDF o DOCX');
+    }
+    
     // Conectar a la base de datos - RECARGAR variables para evitar conflictos
     // Guardar variables de usuario antes de recargar configuración BD
     $saved_user_id = $user_id;

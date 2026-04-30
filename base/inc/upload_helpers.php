@@ -166,27 +166,55 @@ function getUploadErrorMessage($error_code) {
  * @return array Array con info del archivo procesado
  */
 function processProposalFile($file_info, $upload_dir, $user_id, $index = 0) {
-    // Validar tipo y tamaño
-    validateFileType($file_info['type'], $file_info['name'], false);
-    validateFileSize($file_info['size'], 10, $file_info['name']);
-    
+    $file_name = $file_info['name'] ?? 'archivo';
+
+    // Validar error de subida de PHP
+    if (!isset($file_info['error']) || $file_info['error'] !== UPLOAD_ERR_OK) {
+        $error_code = $file_info['error'] ?? UPLOAD_ERR_NO_FILE;
+        respond_json(false, getUploadErrorMessage($error_code));
+    }
+
+    // Validar archivo temporal
+    if (!isset($file_info['tmp_name']) || !is_readable($file_info['tmp_name'])) {
+        respond_json(false, "No se pudo leer el archivo temporal '$file_name'");
+    }
+
+    // Validar archivo vacío
+    if (!isset($file_info['size']) || (int)$file_info['size'] <= 0) {
+        respond_json(false, "El archivo '$file_name' está vacío o no es válido");
+    }
+
+    // Validar extensión permitida para propuestas
+    validateFileExtension($file_name, ['pdf', 'docx']);
+
+    // Validar MIME real, no el enviado por el navegador
+    $mime_type = getActualMimeType($file_info['tmp_name']);
+    validateFileType($mime_type, $file_name, false);
+
+    // Validar tamaño máximo por archivo: 10 MB
+    validateFileSize((int)$file_info['size'], 10, $file_name);
+
     // Generar nombre único
-    $unique_filename = generateUniqueFilename($user_id, $file_info['name'], $index);
+    $unique_filename = generateUniqueFilename($user_id, $file_name, $index);
     $file_path = $upload_dir . $unique_filename;
-    
+
     // Mover archivo
     if (!move_uploaded_file($file_info['tmp_name'], $file_path)) {
-        respond_json(false, "Error al guardar el archivo '{$file_info['name']}'");
+        respond_json(false, "Error al guardar el archivo '$file_name'");
     }
-    
+
     // Leer contenido
     $file_content = file_get_contents($file_path);
-    
+
+    if ($file_content === false || strlen($file_content) === 0) {
+        respond_json(false, "No se pudo leer el contenido del archivo '$file_name'");
+    }
+
     return [
-        'name' => $file_info['name'],
+        'name' => $file_name,
         'unique_name' => $unique_filename,
-        'type' => $file_info['type'],
-        'size' => $file_info['size'],
+        'type' => $mime_type,
+        'size' => (int)$file_info['size'],
         'path' => 'uploads/tfg_proposals/' . $unique_filename,
         'content' => $file_content
     ];
@@ -200,25 +228,43 @@ function processProposalFile($file_info, $upload_dir, $user_id, $index = 0) {
  * @return array Información del archivo validado con MIME real
  */
 function validateFinalDocumentFile($file_info, $max_size_mb = 20, $min_size_kb = 100) {
+    $file_name = $file_info['name'] ?? 'archivo';
+
+    // Validar error de subida de PHP
+    if (!isset($file_info['error']) || $file_info['error'] !== UPLOAD_ERR_OK) {
+        $error_code = $file_info['error'] ?? UPLOAD_ERR_NO_FILE;
+        respond_json(false, getUploadErrorMessage($error_code));
+    }
+
+    // Validar archivo temporal antes de usar finfo
+    if (!isset($file_info['tmp_name']) || !is_readable($file_info['tmp_name'])) {
+        respond_json(false, "No se pudo leer el archivo temporal '$file_name'");
+    }
+
+    // Validar archivo vacío o tamaño inválido
+    if (!isset($file_info['size']) || (int)$file_info['size'] <= 0) {
+        respond_json(false, "El archivo '$file_name' está vacío o no es válido");
+    }
+
     // Obtener MIME real
     $mime_type = getActualMimeType($file_info['tmp_name']);
-    
-    // Validar tipo (solo PDF)
-    validateFileType($mime_type, $file_info['name'], true);
-    
-    // Validar extensión
-    validateFileExtension($file_info['name'], ['pdf']);
-    
+
+    // Validar tipo real: solo PDF
+    validateFileType($mime_type, $file_name, true);
+
+    // Validar extensión: solo .pdf
+    validateFileExtension($file_name, ['pdf']);
+
     // Validar tamaño máximo
-    validateFileSize($file_info['size'], $max_size_mb, $file_info['name']);
-    
+    validateFileSize((int)$file_info['size'], $max_size_mb, $file_name);
+
     // Validar tamaño mínimo
-    validateMinFileSize($file_info['size'], $min_size_kb, $file_info['name']);
-    
+    validateMinFileSize((int)$file_info['size'], $min_size_kb, $file_name);
+
     return [
-        'name' => $file_info['name'],
+        'name' => $file_name,
         'type' => $mime_type,
-        'size' => $file_info['size'],
+        'size' => (int)$file_info['size'],
         'tmp_name' => $file_info['tmp_name'],
         'error' => UPLOAD_ERR_OK
     ];

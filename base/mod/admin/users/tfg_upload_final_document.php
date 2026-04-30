@@ -609,7 +609,16 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         method: 'POST',
                         body: formData
                     })
-                    .then(response => response.json())
+                    .then(async response => {
+                        const text = await response.text();
+
+                        try {
+                            return JSON.parse(text);
+                        } catch (e) {
+                            console.error('Respuesta no JSON del servidor:', text);
+                            throw new Error('El servidor no devolvió JSON válido. Revisa la consola del navegador.');
+                        }
+                    })
                     .then(data => {
                         Swal.close();
                         
@@ -653,7 +662,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         Swal.fire({
                             icon: 'error',
                             title: 'Error',
-                            text: 'Ocurrió un error al procesar la solicitud',
+                            text: error.message || 'Ocurrió un error al procesar la solicitud',
                             confirmButtonColor: '#CD1719'
                         });
                         console.error('Error:', error);

@@ -64,76 +64,39 @@ $uploaded_files = [];
 $file = null;
 $mime_type = '';
 
+// Validación defensiva cuando se excede post_max_size
+if (
+    $_SERVER['REQUEST_METHOD'] === 'POST'
+    && empty($_POST)
+    && empty($_FILES)
+    && isset($_SERVER['CONTENT_LENGTH'])
+    && (int) $_SERVER['CONTENT_LENGTH'] > 0
+) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'message' => 'La solicitud excede el límite permitido por el servidor. post_max_size=' . ini_get('post_max_size') . ', upload_max_filesize=' . ini_get('upload_max_filesize')
+    ]);
+    exit;
+}
+
 // Nuevo formato: múltiples archivos con documents[]
 if (isset($_FILES['documents']) && is_array($_FILES['documents']['name'])) {
-    $files_count = count($_FILES['documents']['name']);
-    $max_size = 10 * 1024 * 1024; // 10 MB por archivo
-    $allowed_mime = ['application/pdf'];
-    
-    for ($i = 0; $i < $files_count; $i++) {
-        if ($_FILES['documents']['error'][$i] === UPLOAD_ERR_OK) {
-            $tmp = $_FILES['documents']['tmp_name'][$i];
-            $fname = $_FILES['documents']['name'][$i];
-            $fsize = $_FILES['documents']['size'][$i];
-            
-            if ($fsize > $max_size) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'message' => "El archivo \"$fname\" excede el tamaño máximo de 10 MB."]);
-                exit;
-            }
-            
-            $finfo = finfo_open(FILEINFO_MIME_TYPE);
-            $fmime = finfo_file($finfo, $tmp);
-            finfo_close($finfo);
-            
-            if (!in_array($fmime, $allowed_mime)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'message' => "El archivo \"$fname\" no es un PDF válido."]);
-                exit;
-            }
-            
-            $uploaded_files[] = [
-                'name' => $fname,
-                'type' => $fmime,
-                'size' => $fsize,
-                'tmp_name' => $tmp,
-                'error' => UPLOAD_ERR_OK
-            ];
-        } elseif ($_FILES['documents']['error'][$i] !== UPLOAD_ERR_NO_FILE) {
-            http_response_code(400);
-            echo json_encode(['success' => false, 'message' => 'Error al subir uno de los archivos.']);
-            exit;
-        }
-    }
+    $uploaded_files = processMultipleFiles($_FILES['documents'], function ($file_info) {
+        return validateFinalDocumentFile($file_info, 20, 100);
+    });
 }
-// Compatibilidad: formato antiguo con un solo archivo (name="document")
-elseif (isset($_FILES['document']) && $_FILES['document']['error'] === UPLOAD_ERR_OK) {
-    $max_size = 10 * 1024 * 1024;
-    if ($_FILES['document']['size'] > $max_size) {
-        http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 10 MB.']);
-        exit;
-    }
-    $finfo = finfo_open(FILEINFO_MIME_TYPE);
-    $fmime = finfo_file($finfo, $_FILES['document']['tmp_name']);
-    finfo_close($finfo);
-    if (!in_array($fmime, ['application/pdf'])) {
-        http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'Solo se permiten archivos PDF.']);
-        exit;
-    }
-    $uploaded_files[] = [
-        'name' => $_FILES['document']['name'],
-        'type' => $fmime,
-        'size' => $_FILES['document']['size'],
-        'tmp_name' => $_FILES['document']['tmp_name'],
-        'error' => UPLOAD_ERR_OK
-    ];
+// Compatibilidad: formato antiguo con un solo archivo name="document"
+elseif (isset($_FILES['document'])) {
+    $uploaded_files[] = validateFinalDocumentFile($_FILES['document'], 20, 100);
 }
 
 if (empty($uploaded_files)) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Error al subir el archivo. Por favor intente nuevamente.']);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Debe subir al menos un archivo PDF válido con las correcciones.'
+    ]);
     exit;
 }
 
@@ -268,8 +231,12 @@ try {
             $conn,
             $uploaded_files,
             $current_user_id,
-            'Correccion TFG Anexo'
+            'Correccion TFG Anexo',
+            $document_id,
+            'final_document',
+            $next_version
         );
+
         error_log("HU-020: Archivos adicionales de corrección guardados: $additional_saved");
     }
     
