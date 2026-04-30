@@ -238,26 +238,35 @@ class GoogleCalendarService
             $this->getValidAccessToken($userId);
 
             $googleEvent = new Event();
-            $googleEvent->setSummary("Evento Proyecto : " . $projectData['project_name']);
+            $googleEvent->setSummary("Prórroga aprobada: " . $projectData['project_name']);
             
-            $startDate = new DateTime($projectData['request_date']);
-            $endDate = (new DateTime($projectData['request_date']))->add(new DateInterval('PT1H'));
+            // Se prioriza la fecha/hora real de finalización prorrogada del proyecto.
+            $eventDateRaw = (string)($projectData['calendar_event_date'] ?? $projectData['new_deadline'] ?? $projectData['request_date']);
+            $startDate = new DateTime($eventDateRaw);
+            // Evento de todo el día: Google Calendar usa fecha fin exclusiva.
+            $endDateExclusive = (clone $startDate)->add(new DateInterval('P1D'));
             
             $startDt = new EventDateTime();
-            $startDt->setDateTime($startDate->format(DateTime::RFC3339));
-            $startDt->setTimeZone('America/Costa_Rica');
+            $startDt->setDate($startDate->format('Y-m-d'));
             $googleEvent->setStart($startDt);
 
             $endDt = new EventDateTime();
-            $endDt->setDateTime($endDate->format(DateTime::RFC3339));
-            $endDt->setTimeZone('America/Costa_Rica');
+            $endDt->setDate($endDateExclusive->format('Y-m-d'));
             $googleEvent->setEnd($endDt);
 
+            $extensionNumber = (int)($projectData['extension_number'] ?? 0);
+            $extensionLabel = (string)($projectData['extension_duration_label'] ?? (($extensionNumber === 1) ? '1 año' : '6 meses'));
+            $baseDeadline = (string)($projectData['base_deadline'] ?? 'No disponible');
+            $newDeadline = (string)($projectData['new_deadline'] ?? $startDate->format('Y-m-d H:i:s'));
+
             $description = sprintf(
-                "Proyecto: %s\nEstudiantes: %s\nEstado: %s\nFecha de solicitud: %s",
+                "Proyecto: %s\nEstudiantes: %s\nEstado: %s\nTipo de prórroga: %s\nFecha base del proyecto: %s\nNueva fecha real de finalización: %s\nFecha de solicitud: %s",
                 $projectData['project_name'],
                 $projectData['student_names'],
                 $projectData['status'],
+                $extensionLabel,
+                $baseDeadline,
+                $newDeadline,
                 $projectData['request_date']
             );
             
@@ -513,7 +522,7 @@ class GoogleCalendarService
             (id_user, event_type, event_id, google_event_id, sync_status, last_sync_at, error_message)
             VALUES (?, ?, ?, ?, ?, NOW(), ?)
             ON DUPLICATE KEY UPDATE
-            google_event_id = VALUES(google_event_id),
+            google_event_id = COALESCE(VALUES(google_event_id), google_event_id),
             sync_status = VALUES(sync_status),
             last_sync_at = NOW(),
             error_message = VALUES(error_message)

@@ -513,6 +513,7 @@ CREATE TABLE `tfg_extension_requests` (
   `status` enum('pendiente','aprobada','rechazada') DEFAULT 'pendiente',
   `request_date` datetime DEFAULT current_timestamp(),
   `response_date` datetime DEFAULT NULL,
+  `fecha_actualizada` datetime DEFAULT NULL COMMENT 'Nueva fecha real del proyecto al aprobar la prórroga',
   `responded_by` varchar(50) DEFAULT NULL,
   `response_comment` text DEFAULT NULL,
   `documento_path` text DEFAULT NULL COMMENT 'Rutas de los documentos de soporte (JSON array)',

@@ -3,7 +3,27 @@ require_once __DIR__ . "/../../../inc/db/db.php";
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
 class ProrrogaLogic {
+        /**
+         * Retorna metadatos de duración de prórroga.
+         * @param int $extension_number
+         * @return array
+         */
+        private function getExtensionDurationMeta($extension_number) {
+            if ((int)$extension_number === 1) {
+                return [
+                    'interval_spec' => 'P1Y',
+                    'duration_label' => '1 año',
+                ];
+            }
+
+            return [
+                'interval_spec' => 'P6M',
+                'duration_label' => '6 meses',
+            ];
+        }
+
     private $conn;
+    private $hasFechaActualizadaColumn = false;
 
     public function __construct() {
         global $db_host, $usuario, $clave, $db;
@@ -12,6 +32,32 @@ class ProrrogaLogic {
             throw new Exception("Error de conexión: " . $this->conn->connect_error);
         }
         $this->conn->set_charset("utf8");
+        $this->ensureFechaActualizadaColumn();
+    }
+
+    /**
+     * Crea/valida la columna fecha_actualizada para registrar la fecha final real al aprobar una prórroga.
+     */
+    private function ensureFechaActualizadaColumn() {
+        try {
+            $check = $this->conn->query("SHOW COLUMNS FROM tfg_extension_requests LIKE 'fecha_actualizada'");
+            if ($check && $check->num_rows > 0) {
+                $this->hasFechaActualizadaColumn = true;
+                return;
+            }
+
+            $this->conn->query(
+                "ALTER TABLE tfg_extension_requests
+                 ADD COLUMN IF NOT EXISTS fecha_actualizada DATETIME DEFAULT NULL
+                 COMMENT 'Nueva fecha real del proyecto al aprobar la prórroga'"
+            );
+
+            $recheck = $this->conn->query("SHOW COLUMNS FROM tfg_extension_requests LIKE 'fecha_actualizada'");
+            $this->hasFechaActualizadaColumn = (bool)($recheck && $recheck->num_rows > 0);
+        } catch (Throwable $e) {
+            $this->hasFechaActualizadaColumn = false;
+            error_log('ProrrogaLogic::ensureFechaActualizadaColumn ' . $e->getMessage());
+        }
     }
 
     /**
@@ -349,8 +395,8 @@ class ProrrogaLogic {
 
             // Si se aprobó, actualizar tfg_project_timeline y disparar sincronización.
             if ($status === 'aprobada') {
-                $this->actualizarTimeline($request_id);
-                $syncResult = $this->syncApprovedExtensionRequest($request_id, $requestData);
+                $extensionContext = $this->actualizarTimeline($request_id);
+                $syncResult = $this->syncApprovedExtensionRequest($request_id, $requestData, $extensionContext);
 
                 if (($syncResult['status'] ?? '') === 'synced') {
                     $message .= ' Evento de Google Calendar sincronizado.';
@@ -374,8 +420,12 @@ class ProrrogaLogic {
      * @param int $request_id
      */
     private function actualizarTimeline($request_id) {
-        // Obtener datos de la solicitud
-        $sql = "SELECT proposal_id, extension_number FROM tfg_extension_requests WHERE id = ?";
+        // Obtener datos de la solicitud y la fecha real actual del proyecto aprobado.
+        $sql = "SELECT er.proposal_id, er.extension_number, pa.id_aprobado, pa.fecha_finalizacion
+                FROM tfg_extension_requests er
+                LEFT JOIN proyecto_aprobado pa ON pa.proposal_id = er.proposal_id
+                WHERE er.id = ?
+                LIMIT 1";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("i", $request_id);
         $stmt->execute();
@@ -383,10 +433,23 @@ class ProrrogaLogic {
         $solicitud = $result->fetch_assoc();
         $stmt->close();
 
-        if (!$solicitud) return;
+        if (!$solicitud) return [];
 
-        // Calcular días a agregar: 1ra prórroga = 365 días, 2da = 180 días
-        $dias_agregar = ($solicitud['extension_number'] == 1) ? 365 : 180;
+        $durationMeta = $this->getExtensionDurationMeta((int)$solicitud['extension_number']);
+
+        // Fecha real base del proyecto aprobado (con hora); si no existe se usa ahora.
+        $baseDeadline = null;
+        if (!empty($solicitud['fecha_finalizacion'])) {
+            $baseDeadline = new DateTime((string)$solicitud['fecha_finalizacion']);
+        } else {
+            $baseDeadline = new DateTime('now');
+        }
+
+        $newDeadline = (clone $baseDeadline)->add(new DateInterval($durationMeta['interval_spec']));
+        $daysToAdd = (int)$baseDeadline->diff($newDeadline)->format('%a');
+        if ($daysToAdd <= 0) {
+            $daysToAdd = ((int)$solicitud['extension_number'] === 1) ? 365 : 180;
+        }
 
         // Actualizar status en tfg_project_timeline
         $sql_update = "UPDATE tfg_project_timeline 
@@ -394,18 +457,41 @@ class ProrrogaLogic {
                            days_remaining = IFNULL(days_remaining, 0) + ?
                        WHERE proposal_id = ?";
         $stmt = $this->conn->prepare($sql_update);
-        $stmt->bind_param("ii", $dias_agregar, $solicitud['proposal_id']);
+        $stmt->bind_param("ii", $daysToAdd, $solicitud['proposal_id']);
         $stmt->execute();
         $stmt->close();
 
-    // Actualizar estado del proyecto aprobado
+        // Actualizar estado y nueva fecha real de finalización del proyecto aprobado.
         $sql_estado = "UPDATE proyecto_aprobado
-                    SET estado = 'Prorrogado'
+                    SET estado = 'Prorrogado',
+                        fecha_finalizacion = ?
                     WHERE proposal_id = ?";
         $stmt = $this->conn->prepare($sql_estado);
-        $stmt->bind_param("i", $solicitud['proposal_id']);
+        $newDeadlineSql = $newDeadline->format('Y-m-d H:i:s');
+        $stmt->bind_param("si", $newDeadlineSql, $solicitud['proposal_id']);
         $stmt->execute();
         $stmt->close();
+
+        // Guardar fecha actualizada en la solicitud aprobada para trazabilidad.
+        if ($this->hasFechaActualizadaColumn) {
+            $sqlRequestDate = "UPDATE tfg_extension_requests
+                               SET fecha_actualizada = ?
+                               WHERE id = ?";
+            $stmt = $this->conn->prepare($sqlRequestDate);
+            if ($stmt) {
+                $stmt->bind_param("si", $newDeadlineSql, $request_id);
+                $stmt->execute();
+                $stmt->close();
+            }
+        }
+
+        return [
+            'extension_number' => (int)$solicitud['extension_number'],
+            'extension_duration_label' => (string)$durationMeta['duration_label'],
+            'base_deadline' => $baseDeadline->format('Y-m-d H:i:s'),
+            'new_deadline' => $newDeadlineSql,
+            'calendar_event_date' => $newDeadlineSql,
+        ];
     }
 
     /**
@@ -414,7 +500,7 @@ class ProrrogaLogic {
      * @return array|null
      */
     private function getPendingRequestData($request_id) {
-        $sql = "SELECT id, proposal_id, user_id, request_date, status
+        $sql = "SELECT id, proposal_id, user_id, extension_number, request_date, status
                 FROM tfg_extension_requests
                 WHERE id = ? AND status = 'pendiente'
                 LIMIT 1";
@@ -506,7 +592,7 @@ class ProrrogaLogic {
      * @param int $request_id
      * @param array $requestData
      */
-    private function syncApprovedExtensionRequest($request_id, array $requestData) {
+    private function syncApprovedExtensionRequest($request_id, array $requestData, array $extensionContext = []) {
         try {
             $proposalId = (int) ($requestData['proposal_id'] ?? 0);
             if ($proposalId <= 0) {
@@ -529,6 +615,13 @@ class ProrrogaLogic {
             $projectData = $this->buildExtensionProjectData($proposalId);
             $projectData['status'] = 'aprobada';
             $projectData['request_date'] = $requestData['request_date'] ?? date('Y-m-d H:i:s');
+            $projectData['extension_number'] = (int)($requestData['extension_number'] ?? 0);
+            $projectData['extension_duration_label'] = $extensionContext['extension_duration_label']
+                ?? ($projectData['extension_number'] === 1 ? '1 año' : '6 meses');
+            $projectData['base_deadline'] = $extensionContext['base_deadline'] ?? null;
+            $projectData['new_deadline'] = $extensionContext['new_deadline'] ?? null;
+            $projectData['calendar_event_date'] = $extensionContext['calendar_event_date']
+                ?? ($extensionContext['new_deadline'] ?? $projectData['request_date']);
 
             // Sincronizar para cada usuario que tenga Google Calendar habilitado
             $syncedCount = 0;

@@ -322,6 +322,16 @@ CSS;
               </div>
             </div>
           </div>
+          <?php if ($solicitud['status'] === 'aprobada' && !empty($solicitud['fecha_actualizada'])): ?>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="info-row">
+                <div class="info-label"><i class="fa fa-calendar-check-o"></i> Fecha actualizada del proyecto</div>
+                <div class="info-value"><?php echo date('d/m/Y H:i', strtotime($solicitud['fecha_actualizada'])); ?></div>
+              </div>
+            </div>
+          </div>
+          <?php endif; ?>
           <?php if (!empty($solicitud['response_comment'])): ?>
           <div class="info-label mt-3">Comentario</div>
           <div class="motivo-box" style="border-left-color: <?php echo ($solicitud['status'] === 'aprobada') ? '#28a745' : '#dc3545'; ?>;">
