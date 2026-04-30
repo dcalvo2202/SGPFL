@@ -412,7 +412,12 @@ try {
     require_once __DIR__ . '/vendor/autoload.php';
     require_once __DIR__ . '/inc/db/bdcommon.inc';
 
-    $gc_conn = new mysqli($db_host, $usuario, $clave, $db);
+    $gc_db_host = isset($db_host) ? $db_host : (getenv('DB_HOST') ?: 'localhost');
+    $gc_db_user = isset($usuario) ? $usuario : (getenv('DB_USER') ?: 'root');
+    $gc_db_pass = isset($clave) ? $clave : (getenv('DB_PASS') ?: '');
+    $gc_db_name = isset($db) ? $db : (getenv('DB_NAME') ?: 'base_db');
+
+    $gc_conn = new mysqli($gc_db_host, $gc_db_user, $gc_db_pass, $gc_db_name);
     if (!$gc_conn->connect_error) {
         $gc_conn->set_charset('utf8');
 

@@ -32,7 +32,14 @@ class GoogleCalendarService
      */
     private function initializeClient()
     {
-        require_once __DIR__ . '/../config.inc';
+        global $google_calendar_config;
+
+        // config.inc can be required_once'd at global scope before this runs;
+        // using 'global' ensures we access that already-loaded variable.
+        // If not loaded yet (e.g. standalone use), load it now.
+        if (!isset($google_calendar_config) || !is_array($google_calendar_config)) {
+            require_once __DIR__ . '/../config.inc';
+        }
 
         if (!isset($google_calendar_config) || !is_array($google_calendar_config)) {
             throw new Exception('No se encontró la configuración de Google Calendar en config.inc');
@@ -148,7 +155,7 @@ class GoogleCalendarService
             $this->saveTokens($userId, $accessToken);
             
             return true;
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
             error_log('GoogleCalendarService::handleAuthCallback Error: ' . $e->getMessage());
             return false;
         }
@@ -172,6 +179,7 @@ class GoogleCalendarService
             access_token = VALUES(access_token),
             refresh_token = COALESCE(VALUES(refresh_token), refresh_token),
             token_expires_at = VALUES(token_expires_at),
+            sync_enabled = 1,
             updated_at = NOW()
         ";
 
@@ -230,7 +238,7 @@ class GoogleCalendarService
             $this->getValidAccessToken($userId);
 
             $googleEvent = new Event();
-            $googleEvent->setSummary("Solicitud de Prórroga: " . $projectData['project_name']);
+            $googleEvent->setSummary("Evento Proyecto : " . $projectData['project_name']);
             
             $startDate = new DateTime($projectData['request_date']);
             $endDate = (new DateTime($projectData['request_date']))->add(new DateInterval('PT1H'));
@@ -273,7 +281,7 @@ class GoogleCalendarService
             $this->logSync($userId, 'prorroga', $eventId, $syncedEventId, 'synced');
             
             return true;
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
             error_log('GoogleCalendarService::syncExtensionRequest Error: ' . $e->getMessage());
             $this->logSync($userId, 'prorroga', $eventId, null, 'failed', $e->getMessage());
             return false;
@@ -326,7 +334,7 @@ class GoogleCalendarService
 
             $this->logSync($userId, 'acta', $eventId, $syncedEventId, 'synced');
             return true;
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
             error_log('GoogleCalendarService::syncProjectMinutes Error: ' . $e->getMessage());
             $this->logSync($userId, 'acta', $eventId, null, 'failed', $e->getMessage());
             return false;
@@ -390,7 +398,7 @@ class GoogleCalendarService
 
             $this->logSync($userId, 'deadline', $eventId, $syncedEventId, 'synced');
             return true;
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
             error_log('GoogleCalendarService::syncDeadline Error: ' . $e->getMessage());
             $this->logSync($userId, 'deadline', $eventId, null, 'failed', $e->getMessage());
             return false;
@@ -440,7 +448,7 @@ class GoogleCalendarService
 
             $this->logSync($userId, 'timeline', $eventId, $syncedEventId, 'synced');
             return true;
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
             error_log('GoogleCalendarService::syncProjectTimeline Error: ' . $e->getMessage());
             $this->logSync($userId, 'timeline', $eventId, null, 'failed', $e->getMessage());
             return false;
@@ -468,7 +476,7 @@ class GoogleCalendarService
             }
 
             return true;
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
             error_log('GoogleCalendarService::deleteEvent Error: ' . $e->getMessage());
             return false;
         }

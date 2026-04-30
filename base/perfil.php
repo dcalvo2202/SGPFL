@@ -17,6 +17,12 @@ $base_url = $cds_domain . $cds_locate;
 include_once(__DIR__ . "/inc/db/bdcommon.inc");
 include_once(__DIR__ . "/inc/db/db.php");
 
+// Variables de conexión definidas en bdcommon.inc; alias locales para el analizador estático.
+$db_host = isset($db_host) ? $db_host : 'localhost';
+$usuario = isset($usuario) ? $usuario : 'root';
+$clave   = isset($clave)   ? $clave   : '';
+$db      = isset($db)      ? $db      : 'base_db';
+
 // Variables para mensajes
 $message = null;
 $message_type = null;
@@ -25,17 +31,12 @@ $role_info = null;
 $is_external_advisor = false;
 $google_calendar_connected = false;
 
-// Mensajes flash desde callbacks (Google auth/disconnect)
-$_flash_success = $mySessionController->getVar('success');
-$_flash_error   = $mySessionController->getVar('error');
-if (!empty($_flash_success)) {
-    $message = $_flash_success;
-    $message_type = "success";
-    $mySessionController->save('success', '');
-} elseif (!empty($_flash_error)) {
-    $message = $_flash_error;
-    $message_type = "danger";
-    $mySessionController->save('error', '');
+// Mensajes flash desde callbacks de Google Calendar (pasados por URL, no por sesión).
+if (!empty($_GET['gc_flash']) && !empty($_GET['gc_msg'])) {
+    $gc_raw_msg  = strip_tags((string) $_GET['gc_msg']);
+    $gc_status   = (isset($_GET['gc_status']) && $_GET['gc_status'] === 'error') ? 'danger' : 'success';
+    $message      = $gc_raw_msg;
+    $message_type = $gc_status;
 }
 
 // Procesar cambio de contraseña

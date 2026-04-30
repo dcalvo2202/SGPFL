@@ -81,7 +81,7 @@ class mySession
      * PDO connection
      *
      * @access private
-     * @var resource connesione
+     * @var \PDO connesione
      */
     private $connessione;
 
@@ -297,7 +297,7 @@ class mySession
      * The SQL Statement used for retriving the number of SID's
      *
      * @uses $SQLStatement_CountSid->bindParam(':sid', $sid, PDO::PARAM_STR, $this->sid_len);
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_CountSid;
 
@@ -308,7 +308,7 @@ class mySession
      *       $SQLStatement_InsertSession->bindParam(':expires', $expires, PDO::PARAM_INT);
      *       $SQLStatement_InsertSession->bindParam(':forcedExpires', $forcedExpires, PDO::PARAM_INT);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_InsertSession;
 
@@ -318,7 +318,7 @@ class mySession
      *
      * @uses $SQLStatement_DeleteSessionVars->bindParam(':sid', $sid, PDO::PARAM_STR, $this->sid_len);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_DeleteSession;
 
@@ -327,7 +327,7 @@ class mySession
      *
      * @uses $SQLStatement_DeleteSessionVars->bindParam(':time', $time, PDO::PARAM_INT);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_DeleteExpiredSession;
 
@@ -337,7 +337,7 @@ class mySession
      * @uses $SQLStatement_UpdateSessionExpires->bindParam(':sid', $sid, PDO::PARAM_STR, $this->sid_len);
      *       $SQLStatement_UpdateSessionExpires->bindParam(':expires', $expires, PDO::PARAM_INT);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_UpdateSessionExpires;
 
@@ -346,7 +346,7 @@ class mySession
      *
      * @uses $SQLStatement_GetSessionInfos->bindParam(':sid', $sid, PDO::PARAM_STR, $this->sid_len);     
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_GetSessionInfos;
 
@@ -355,7 +355,7 @@ class mySession
      *
      * @uses $SQLStatement_GetSessionVars->bindParam(':sid', $sid, PDO::PARAM_STR, $this->sid_len);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_GetSessionVars;
 
@@ -364,7 +364,7 @@ class mySession
      *
      * @uses $SQLStatement_GetSessionVars->bindParam(':sid', $sid, PDO::PARAM_STR, $this->sid_len);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_GetEncryptedSessionVars;
 
@@ -375,7 +375,7 @@ class mySession
      * @uses $SQLStatement_DeleteSessionVars->bindParam(':sid', $sid, PDO::PARAM_STR, $this->sid_len);
      *       $SQLStatement_DeleteSessionVars->bindParam(':nome', $nome, PDO::PARAM_STR);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_DeleteSessionVars;
 
@@ -385,7 +385,7 @@ class mySession
      * @uses $SQLStatement_DeleteSessionVars->bindParam(':sid', $sid, PDO::PARAM_STR, $this->sid_len);
      *       $SQLStatement_DeleteSessionVars->bindParam(':nome', $nome, PDO::PARAM_STR);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_DeleteEncryptedSessionVars;
 
@@ -396,7 +396,7 @@ class mySession
      *       $SQLStatement_InsertSessionVars->bindParam(':nome', $nome, PDO::PARAM_STR);
      *       $SQLStatement_InsertSessionVars->bindParam(':valore', $value, PDO::PARAM_STR);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_InsertSessionVars;
 
@@ -407,7 +407,7 @@ class mySession
      *       $SQLStatement_InsertEncryptedSessionVars->bindParam(':nome', $nome, PDO::PARAM_STR);
      *       $SQLStatement_InsertEncryptedSessionVars->bindParam(':valore', $value, PDO::PARAM_STR);
      *
-     * @var PDO Statement
+     * @var \PDOStatement
      */
     private $SQLStatement_InsertEncryptedSessionVars;
 
@@ -1101,7 +1101,8 @@ class mySession
      */
     function gc($maxlifetime)
     {
-        $this->SQLStatement_DeleteExpiredSession->bindParam('time', time() - $this->session_max_duration, PDO::PARAM_INT);
+        $gc_time = time() - $this->session_max_duration;
+        $this->SQLStatement_DeleteExpiredSession->bindParam('time', $gc_time, PDO::PARAM_INT);
         if ($this->SQLStatement_DeleteExpiredSession->execute()===FALSE) {
             trigger_error("Somenthing goes wrong with the garbace collector", E_USER_ERROR);
         } else {
