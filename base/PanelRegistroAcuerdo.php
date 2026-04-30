@@ -45,6 +45,7 @@ $minutes = [];
 $attendees = [];
 $selected_project = null;
 $selected_minute = null;
+$all_agreements = [];
 
 try {
     $dbcfg = (function (string $path): array {
@@ -241,7 +242,7 @@ try {
                 SELECT
                     pm.id,
                     pm.project_id,
-                    pm.session_date,
+                    pm.session_date AS fecha_referencia,
                     pm.file_name,
                     pm.mime_type,
                     pm.file_size,
@@ -250,7 +251,10 @@ try {
                     pm.uploaded_by,
                     su.nombre AS uploaded_by_name,
                     SUM(CASE WHEN pma.attended = 1 THEN 1 ELSE 0 END) AS attended_count,
-                    COUNT(pma.id) AS total_participants
+                    COUNT(pma.id) AS total_participants,
+                    'MINUTA' AS tipo_acuerdo,
+                    NULL AS codigo_acuerdo,
+                    NULL AS fecha_defensa
                 FROM project_minutes pm
                 LEFT JOIN sis_user su
                     ON su.id = pm.uploaded_by
@@ -268,7 +272,31 @@ try {
                     pm.updated_at,
                     pm.uploaded_by,
                     su.nombre
-                ORDER BY pm.session_date DESC, pm.created_at DESC, pm.id DESC
+
+                UNION ALL
+
+                SELECT
+                    adp.id,
+                    adp.proyecto_id AS project_id,
+                    adp.fecha_defensa AS fecha_referencia,
+                    adp.archivo_nombre AS file_name,
+                    adp.mime_type,
+                    adp.file_size,
+                    adp.creado_en AS created_at,
+                    adp.actualizado_en AS updated_at,
+                    adp.subido_por AS uploaded_by,
+                    su2.nombre AS uploaded_by_name,
+                    0 AS attended_count,
+                    0 AS total_participants,
+                    'DEFENSA_PUBLICA' AS tipo_acuerdo,
+                    adp.codigo_acuerdo,
+                    adp.fecha_defensa
+                FROM acuerdo_defensa_publica adp
+                LEFT JOIN sis_user su2
+                    ON su2.id = adp.subido_por
+                WHERE adp.proyecto_id = ?
+
+                ORDER BY fecha_referencia DESC, created_at DESC, id DESC
             ";
 
             $stmt_minutes = $connection->prepare($sql_minutes);
@@ -276,21 +304,21 @@ try {
                 throw new RuntimeException('No se pudo preparar la consulta de acuerdos del proyecto.');
             }
 
-            $stmt_minutes->bind_param('i', $selected_project_id);
+            $stmt_minutes->bind_param('ii', $selected_project_id, $selected_project_id);
             $stmt_minutes->execute();
             $result_minutes = $stmt_minutes->get_result();
 
             while ($row = $result_minutes->fetch_assoc()) {
-                $minutes[] = $row;
+                $all_agreements[] = $row;
             }
 
             $stmt_minutes->close();
 
-            if ($selected_minute_id <= 0 && !empty($minutes)) {
-                $selected_minute_id = (int)$minutes[0]['id'];
+            if ($selected_minute_id <= 0 && !empty($all_agreements)) {
+                $selected_minute_id = (int)$all_agreements[0]['id'];
             }
 
-            foreach ($minutes as $minute) {
+            foreach ($all_agreements as $minute) {
                 if ((int)$minute['id'] === $selected_minute_id) {
                     $selected_minute = $minute;
                     break;
@@ -302,37 +330,39 @@ try {
             }
 
             if ($form_error === '' && $selected_minute !== null) {
-                $sql_attendees = "
-                    SELECT
-                        pma.user_id,
-                        su.nombre,
-                        su.email,
-                        pma.participant_role,
-                        pma.attended,
-                        pma.created_at
-                    FROM project_minute_attendees pma
-                    INNER JOIN sis_user su
-                        ON su.id = pma.user_id
-                    WHERE pma.minute_id = ?
-                    ORDER BY
-                        FIELD(pma.participant_role, 'TUTOR', 'ASESOR_1', 'ASESOR_2', 'ESTUDIANTE'),
-                        su.nombre ASC
-                ";
+                if ($selected_minute['tipo_acuerdo'] === 'MINUTA') {
+                    $sql_attendees = "
+                        SELECT
+                            pma.user_id,
+                            su.nombre,
+                            su.email,
+                            pma.participant_role,
+                            pma.attended,
+                            pma.created_at
+                        FROM project_minute_attendees pma
+                        INNER JOIN sis_user su
+                            ON su.id = pma.user_id
+                        WHERE pma.minute_id = ?
+                        ORDER BY
+                            FIELD(pma.participant_role, 'TUTOR', 'ASESOR_1', 'ASESOR_2', 'ESTUDIANTE'),
+                            su.nombre ASC
+                    ";
 
-                $stmt_attendees = $connection->prepare($sql_attendees);
-                if ($stmt_attendees === false) {
-                    throw new RuntimeException('No se pudo preparar la consulta de asistentes del acuerdo.');
+                    $stmt_attendees = $connection->prepare($sql_attendees);
+                    if ($stmt_attendees === false) {
+                        throw new RuntimeException('No se pudo preparar la consulta de asistentes del acuerdo.');
+                    }
+
+                    $stmt_attendees->bind_param('i', $selected_minute_id);
+                    $stmt_attendees->execute();
+                    $result_attendees = $stmt_attendees->get_result();
+
+                    while ($row = $result_attendees->fetch_assoc()) {
+                        $attendees[] = $row;
+                    }
+
+                    $stmt_attendees->close();
                 }
-
-                $stmt_attendees->bind_param('i', $selected_minute_id);
-                $stmt_attendees->execute();
-                $result_attendees = $stmt_attendees->get_result();
-
-                while ($row = $result_attendees->fetch_assoc()) {
-                    $attendees[] = $row;
-                }
-
-                $stmt_attendees->close();
             }
         }
     }
@@ -537,7 +567,7 @@ try {
                     <div class="tab-content pt-3" id="acuerdosTabContent">
                         <?php if ($active_tab === 'acuerdos'): ?>
                         <div id="acuerdos-panel" role="tabpanel" aria-labelledby="acuerdos-tab">
-                            <?php if (empty($minutes)): ?>
+                            <?php if (empty($all_agreements)): ?>
                                 <div class="minute-empty-state">
                                     <i class="bi bi-file-earmark-text"></i>
                                     <h5>Sin acuerdos registrados</h5>
@@ -548,41 +578,66 @@ try {
                                     <table class="table table-hover align-middle mb-0">
                                         <thead>
                                             <tr>
+                                                <th>Tipo</th>
                                                 <th>ID</th>
-                                                <th>Fecha de sesión</th>
+                                                <th>Fecha referencia</th>
                                                 <th>Archivo</th>
                                                 <th>Tamaño</th>
                                                 <th>Subido por</th>
-                                                <th>Asistieron</th>
-                                                <th>Total asistentes</th>
+                                                <th>Información adicional</th>
                                                 <th>Registrado en</th>
                                                 <th style="width: 170px;">Detalle</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php foreach ($minutes as $minute): ?>
+                                        <?php foreach ($all_agreements as $minute): ?>
                                             <tr>
-                                                <td><?php echo h((string)$minute['id']); ?></td>
-                                                <td><?php echo h((string)$minute['session_date']); ?></td>
                                                 <td>
-                                                    <a
-                                                        href="mod/admin/users/minute_download.php?minute_id=<?php echo h((string)$minute['id']); ?>"
-                                                        title="Descargar <?php echo h((string)$minute['file_name']); ?>"
-                                                    >
-                                                        <i class="bi bi-file-earmark-arrow-down me-1"></i><?php echo h((string)$minute['file_name']); ?>
-                                                    </a>
+                                                    <?php if ($minute['tipo_acuerdo'] === 'MINUTA'): ?>
+                                                        <span class="badge bg-primary">
+                                                            <i class="bi bi-journal-text me-1"></i>Minuta
+                                                        </span>
+                                                    <?php else: ?>
+                                                        <span class="badge bg-success">
+                                                            <i class="bi bi-mortarboard me-1"></i>Defensa
+                                                        </span>
+                                                    <?php endif; ?>
+                                                </td>
+                                                <td><?php echo h((string)$minute['id']); ?></td>
+                                                <td><?php echo h((string)$minute['fecha_referencia']); ?></td>
+                                                <td>
+                                                    <?php if ($minute['tipo_acuerdo'] === 'MINUTA'): ?>
+                                                        <a
+                                                            href="mod/admin/users/minute_download.php?minute_id=<?php echo h((string)$minute['id']); ?>"
+                                                            title="Descargar <?php echo h((string)$minute['file_name']); ?>"
+                                                        >
+                                                            <i class="bi bi-file-earmark-arrow-down me-1"></i><?php echo h((string)$minute['file_name']); ?>
+                                                        </a>
+                                                    <?php else: ?>
+                                                        <a
+                                                            href="mod/admin/users/defense_agreement_download.php?defense_id=<?php echo h((string)$minute['id']); ?>"
+                                                            title="Descargar <?php echo h((string)$minute['file_name']); ?>"
+                                                        >
+                                                            <i class="bi bi-file-earmark-arrow-down me-1"></i><?php echo h((string)$minute['file_name']); ?>
+                                                        </a>
+                                                    <?php endif; ?>
                                                 </td>
                                                 <td><?php echo h(formatBytes((int)$minute['file_size'])); ?></td>
                                                 <td><?php echo h((string)$minute['uploaded_by_name']); ?></td>
-                                                <td><?php echo h((string)$minute['attended_count']); ?></td>
-                                                <td><?php echo h((string)$minute['total_participants']); ?></td>
+                                                <td>
+                                                    <?php if ($minute['tipo_acuerdo'] === 'MINUTA'): ?>
+                                                        Asistentes: <?php echo h((string)$minute['attended_count']); ?>/<?php echo h((string)$minute['total_participants']); ?>
+                                                    <?php else: ?>
+                                                        Código: <?php echo h((string)$minute['codigo_acuerdo']); ?>
+                                                    <?php endif; ?>
+                                                </td>
                                                 <td><?php echo h((string)$minute['created_at']); ?></td>
                                                 <td>
                                                     <a
                                                         class="btn btn-outline-primary btn-sm"
                                                         href="PanelRegistroAcuerdo.php?project_id=<?php echo h((string)$selected_project_id); ?>&minute_id=<?php echo h((string)$minute['id']); ?>&tab=asistentes"
                                                     >
-                                                        Ver asistentes
+                                                        Ver detalles
                                                     </a>
                                                 </td>
                                             </tr>
@@ -595,10 +650,10 @@ try {
 
                         <?php else: ?>
                         <div id="asistentes-panel" role="tabpanel" aria-labelledby="asistentes-tab">
-                            <?php if (empty($minutes)): ?>
+                            <?php if (empty($all_agreements)): ?>
                                 <div class="minute-empty-state">
                                     <i class="bi bi-people"></i>
-                                    <h5>No hay acuerdos para consultar asistentes</h5>
+                                    <h5>No hay acuerdos para consultar detalles</h5>
                                     <p class="mb-0">Seleccione un proyecto con registros.</p>
                                 </div>
                             <?php else: ?>
@@ -609,13 +664,17 @@ try {
                                     <div class="col-lg-9">
                                         <label for="minute_id" class="form-label fw-semibold">Acuerdo / Minuta</label>
                                         <select name="minute_id" id="minute_id" class="form-select" required>
-                                            <?php foreach ($minutes as $minute): ?>
+                                            <?php foreach ($all_agreements as $minute): ?>
                                                 <option
                                                     value="<?php echo h((string)$minute['id']); ?>"
                                                     <?php echo $selected_minute_id === (int)$minute['id'] ? 'selected' : ''; ?>
                                                 >
                                                     #<?php echo h((string)$minute['id']); ?> -
-                                                    Fecha: <?php echo h((string)$minute['session_date']); ?> -
+                                                    <?php if ($minute['tipo_acuerdo'] === 'MINUTA'): ?>
+                                                        [MINUTA] Fecha: <?php echo h((string)$minute['fecha_referencia']); ?> -
+                                                    <?php else: ?>
+                                                        [DEFENSA] <?php echo h((string)$minute['codigo_acuerdo']); ?> -
+                                                    <?php endif; ?>
                                                     <?php echo h((string)$minute['file_name']); ?>
                                                 </option>
                                             <?php endforeach; ?>
@@ -634,13 +693,25 @@ try {
                                 <?php if ($selected_minute !== null): ?>
                                     <div class="alert alert-light border shadow-sm">
                                         <strong>Acuerdo seleccionado:</strong>
-                                        #<?php echo h((string)$selected_minute['id']); ?>,
-                                        sesión <?php echo h((string)$selected_minute['session_date']); ?>,
-                                        archivo <?php echo h((string)$selected_minute['file_name']); ?>.
+                                        #<?php echo h((string)$selected_minute['id']); ?>
+                                        <?php if ($selected_minute['tipo_acuerdo'] === 'MINUTA'): ?>
+                                            - Minuta de sesión <?php echo h((string)$selected_minute['fecha_referencia']); ?>,
+                                            archivo <?php echo h((string)$selected_minute['file_name']); ?>.
+                                        <?php else: ?>
+                                            - Acuerdo de Defensa Pública (Código: <?php echo h((string)$selected_minute['codigo_acuerdo']); ?>),
+                                            fecha de defensa <?php echo h((string)$selected_minute['fecha_defensa']); ?>,
+                                            archivo <?php echo h((string)$selected_minute['file_name']); ?>.
+                                        <?php endif; ?>
                                     </div>
                                 <?php endif; ?>
 
-                                <?php if (empty($attendees)): ?>
+                                <?php if ($selected_minute !== null && $selected_minute['tipo_acuerdo'] === 'DEFENSA_PUBLICA'): ?>
+                                    <div class="minute-empty-state">
+                                        <i class="bi bi-mortarboard"></i>
+                                        <h5>Acuerdo de Defensa Pública</h5>
+                                        <p class="mb-0">Este tipo de acuerdo no tiene registro de asistentes. Vea la información en la pestaña de acuerdos.</p>
+                                    </div>
+                                <?php elseif (empty($attendees)): ?>
                                     <div class="minute-empty-state">
                                         <i class="bi bi-person-x"></i>
                                         <h5>No hay asistentes registrados</h5>
