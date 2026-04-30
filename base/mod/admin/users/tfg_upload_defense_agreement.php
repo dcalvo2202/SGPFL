@@ -13,7 +13,7 @@ $cds_domain        = $mySessionController->getVar("cds_domain");
 $cds_locate        = $mySessionController->getVar("cds_locate");
 $base_url          = $cds_domain . $cds_locate;
 
-if ($current_user_rol !== 3) {
+if ($current_user_rol !== 3 && $current_user_rol !== 2) {
     header('Location: ' . $base_url . 'dashboard.php');
     exit;
 }
@@ -146,7 +146,66 @@ document.getElementById('frmAcuerdo').addEventListener('submit', async function 
     const msgBox = document.getElementById('msgBox');
     msgBox.innerHTML = '';
 
+    // Validaciones del lado del cliente
+    const codigoAcuerdo = document.querySelector('input[name="codigo_acuerdo"]').value.trim();
+    const fechaAprobacion = document.querySelector('input[name="fecha_aprobacion_documento_final"]').value.trim();
+    const fechaDefensa = document.querySelector('input[name="fecha_defensa"]').value.trim();
+    const correoDestino = document.querySelector('input[name="correo_destino"]').value.trim();
+    const archivo = document.querySelector('input[name="documento"]');
+
+    let errores = [];
+
+    if (!codigoAcuerdo) {
+        errores.push('El código del acuerdo es obligatorio.');
+    }
+
+    if (!fechaAprobacion) {
+        errores.push('La fecha de aprobación del documento final es obligatoria.');
+    }
+
+    if (!fechaDefensa) {
+        errores.push('La fecha de defensa es obligatoria.');
+    }
+
+    if (!correoDestino) {
+        errores.push('El correo destino es obligatorio.');
+    } else if (!correoDestino.includes('@')) {
+        errores.push('El correo destino no es válido.');
+    }
+
+    if (!archivo.files || archivo.files.length === 0) {
+        errores.push('Debe adjuntar un archivo PDF.');
+    } else {
+        const file = archivo.files[0];
+        const maxSizeMB = 10;
+        const maxSizeBytes = maxSizeMB * 1024 * 1024;
+
+        if (file.type !== 'application/pdf') {
+            errores.push('Solo se permiten archivos PDF.');
+        }
+
+        if (file.size > maxSizeBytes) {
+            errores.push(`El archivo excede el tamaño máximo de ${maxSizeMB} MB. Tamaño actual: ${(file.size / 1024 / 1024).toFixed(2)} MB.`);
+        }
+    }
+
+    if (errores.length > 0) {
+        msgBox.innerHTML = `
+          <div class="alert alert-danger">
+            <strong>Errores en el formulario:</strong>
+            <ul class="mb-0 mt-2">
+              ${errores.map(error => `<li>${error}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+    }
+
+    // Si las validaciones del cliente pasan, enviar al servidor
     const formData = new FormData(this);
+
+    msgBox.innerHTML = '<div class="alert alert-info"><i class="bi bi-hourglass-split"></i> Procesando solicitud...</div>';
 
     const saveResponse = await fetch('tfg_upload_defense_agreement_process.php', {
         method: 'POST',
@@ -161,24 +220,32 @@ document.getElementById('frmAcuerdo').addEventListener('submit', async function 
     } catch (e) {
         msgBox.innerHTML = `
           <div class="alert alert-danger">
-            El servidor no devolvió JSON válido al guardar el acuerdo.
-            <pre style="white-space: pre-wrap;">${saveText}</pre>
+            <strong>Error en la respuesta del servidor:</strong>
+            <p>El servidor no devolvió JSON válido al guardar el acuerdo.</p>
+            <pre style="white-space: pre-wrap; font-size: 0.875rem;">${saveText}</pre>
           </div>
         `;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
     }
 
     msgBox.innerHTML = `
       <div class="alert alert-${saveData.success ? 'success' : 'danger'}">
-        ${saveData.message}
+        <strong>${saveData.success ? '✓ Éxito' : '✗ Error'}:</strong> ${saveData.message}
       </div>
     `;
 
-    if (!saveData.success) return;
+    if (!saveData.success) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+    }
 
+    // Si se guardó correctamente, enviar correo
     const mailBody = new URLSearchParams({
         proyecto_id: formData.get('proyecto_id')
     });
+
+    msgBox.innerHTML += '<div class="alert alert-info mt-3"><i class="bi bi-hourglass-split"></i> Enviando correo...</div>';
 
     const mailResponse = await fetch('send_defense_agreement_mail.php', {
         method: 'POST',
@@ -194,18 +261,28 @@ document.getElementById('frmAcuerdo').addEventListener('submit', async function 
     } catch (e) {
         msgBox.innerHTML += `
           <div class="alert alert-warning mt-3">
-            El acuerdo se guardó, pero el servidor no devolvió JSON válido al intentar enviar el correo.
-            <pre style="white-space: pre-wrap;">${mailText}</pre>
+            <strong>Advertencia:</strong> El acuerdo se guardó correctamente, pero hubo un problema al enviar el correo.
+            <p class="mb-0">Detalle: El servidor no devolvió una respuesta JSON válida.</p>
+            <pre style="white-space: pre-wrap; font-size: 0.875rem;">${mailText}</pre>
           </div>
         `;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
     }
 
-    msgBox.innerHTML += `
-      <div class="alert alert-${mailData.success ? 'success' : 'warning'} mt-3">
-        ${mailData.message}
-      </div>
-    `;
+    if (mailData.success) {
+        msgBox.innerHTML += `
+          <div class="alert alert-success mt-3">
+            <strong>✓ Correo enviado:</strong> ${mailData.message}
+          </div>
+        `;
+    } else {
+        msgBox.innerHTML += `
+          <div class="alert alert-warning mt-3">
+            <strong>⚠ Problema al enviar correo:</strong> ${mailData.message}
+          </div>
+        `;
+    }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });

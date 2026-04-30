@@ -6,10 +6,10 @@ include_once __DIR__ . '/../../login/check.php';
 include_once __DIR__ . '/../../../inc/db/db.php';
 include_once __DIR__ . '/../../../inc/alert_functions.php';
 
-$current_user_id  = $mySessionController->getVar("usuario");
+$current_user_id  = (int)$mySessionController->getVar("usuario");
 $current_user_rol = (int)$mySessionController->getVar("rol");
 
-if (!$current_user_id || $current_user_rol !== 3) {
+if (!$current_user_id || ($current_user_rol !== 3 && $current_user_rol !== 2)) {
     http_response_code(403);
     echo json_encode(['success' => false, 'message' => 'Acceso denegado.']);
     exit;
@@ -30,33 +30,39 @@ $codigo_acuerdo   = trim($_POST['codigo_acuerdo'] ?? '');
 $correo_destino   = trim($_POST['correo_destino'] ?? '');
 
 if ($proyecto_id <= 0 || $proposal_id <= 0) {
+    http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Proyecto o propuesta inválidos.']);
     exit;
 }
 
 if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_aprobacion) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha_defensa)) {
-    echo json_encode(['success' => false, 'message' => 'Fechas inválidas.']);
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Fechas inválidas. El formato debe ser YYYY-MM-DD.']);
     exit;
 }
 
 if ($codigo_acuerdo === '') {
+    http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'El código del acuerdo es obligatorio.']);
     exit;
 }
 
 if ($correo_destino === '') {
+    http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'El correo destino es obligatorio.']);
     exit;
 }
 
 if (!isset($_FILES['documento']) || $_FILES['documento']['error'] !== UPLOAD_ERR_OK) {
+    http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Debe adjuntar el PDF del acuerdo.']);
     exit;
 }
 
 $max_size = 10 * 1024 * 1024;
 if ($_FILES['documento']['size'] > $max_size) {
-    echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 10 MB.']);
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'El archivo excede el tamaño máximo de 10 MB. Tamaño del archivo: ' . round($_FILES['documento']['size'] / 1024 / 1024, 2) . ' MB.']);
     exit;
 }
 
@@ -65,7 +71,8 @@ $mime_type = finfo_file($finfo, $_FILES['documento']['tmp_name']);
 finfo_close($finfo);
 
 if ($mime_type !== 'application/pdf') {
-    echo json_encode(['success' => false, 'message' => 'Solo se permiten archivos PDF.']);
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Solo se permiten archivos PDF. Tipo detectado: ' . $mime_type]);
     exit;
 }
 
