@@ -196,7 +196,7 @@ class GoogleCalendarService
      */
     private function getValidAccessToken($userId)
     {
-        $query = "SELECT access_token, refresh_token, token_expires_at FROM google_calendar_tokens WHERE id_user = ?";
+        $query = "SELECT access_token, refresh_token, token_expires_at FROM google_calendar_tokens WHERE id_user = ? AND sync_enabled = 1";
         $stmt = $this->dbConnection->prepare($query);
         $stmt->bind_param('s', $userId);
         $stmt->execute();
