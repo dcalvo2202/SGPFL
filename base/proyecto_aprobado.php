@@ -99,7 +99,7 @@ $page_title = 'Registrar proyecto aprobado';
 $inlineStyles = <<<'CSS'
 /* Estilos unificados (UNA) */
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
-.dashboard-header h1{font-size:2.5rem;font-weight:700;color:#034991;margin-bottom:.5rem;}
+.dashboard-header h1{font-weight:700;color:var(--azul-una);margin-bottom:.5rem;}
 .dashboard-header .lead{color:#6c757d;}
 .form-card{background:#fff;border-radius:12px;box-shadow:0 4px 6px rgba(0,0,0,.08);}
 .form-card .card-header{background:#f8f9fa;font-weight:600;color:#034991;}
@@ -110,6 +110,14 @@ label{font-weight:600;color:#092567;}
 #previewBox img{width:40px;height:40px;}
 .small-hint{color:#6c757d;font-size:1.3rem;}
 .form-select{font-size:1.5rem;}
+.scrollable-y{max-height:240px;overflow:auto;border:1px solid #ccc;padding:8px;border-radius:6px;}
+.text-error{color:#b00;}
+.text-success-accent{font-size:1.3rem;color:#09a567;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:420px;}
+.bg-validated-light{background:#f5f7fa;}
+.text-muted{font-size:.9rem;}
+.checkbox-label{display:block;font-size:13px;}
+.no-members{color:#555;}
+.table-col-id{width:180px;}
 CSS;
 ?>
 <!doctype html>
@@ -121,7 +129,7 @@ CSS;
     <div class="container my-5">
 
       <div class="dashboard-header text-center mb-5">
-        <h1 style="font-size: 2.5rem; font-weight: 700;">Registrar proyecto aprobado</h1>
+        <h1 class="fw-bold">Registrar proyecto aprobado</h1>
         <p class="lead">Complete los datos para registrar un proyecto aprobado y asociarlo a su comité.</p>
       </div>
 
@@ -170,7 +178,7 @@ CSS;
 
             <div id="estudiantesSection" class="mb-3" style="display:none;">
               <label for="estudiante">Estudiantes:</label>
-              <div id="chkBoxWrap" style="max-height:240px;overflow:auto;border:1px solid #ccc;padding:8px;border-radius:6px;">
+              <div id="chkBoxWrap" class="scrollable-y">
                 <!-- Se inyectan los checkboxes aquí -->
               </div>
               <div id="estCount" class="small-hint mt-1">0 seleccionados</div>
@@ -190,7 +198,7 @@ CSS;
                   </tbody>
                 </table>
               </div>
-              <div id="panelEstudianteCount" class="text-muted" style="font-size:.9rem;"></div>
+              <div id="panelEstudianteCount" class="text-muted"></div>
             </div>
 
             <!-- Comité -->
@@ -224,9 +232,9 @@ CSS;
               <div class="d-flex align-items-center gap-3 flex-wrap mt-1">
                 <label for="documento" class="btn-tfg mb-0"><i class="bi bi-upload"></i> Subir Acuerdo</label>
                 <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
-                <div id="previewBox" class="d-flex align-items-center gap-2" style="display:none;min-width:0;">
+<div id="previewBox" class="d-flex align-items-center gap-2" style="display:none;min-width:0;">
                   <img id="previewIcon" alt="Archivo seleccionado" hidden>
-                  <span id="previewName" style="font-size:1.3rem;color:#092567;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:420px;"></span>
+                  <span id="previewName" class="text-success-accent"></span>
                 </div>
               </div>
             </div>
@@ -240,12 +248,12 @@ CSS;
 
             <div class="mb-3">
               <label for="fecha_finalizacion_view" class="mt-2">Fecha finalización:</label>
-              <input
+<input
                 type="date"
                 id="fecha_finalizacion_view"
-                class="form-control"
+                class="form-control bg-validated-light"
                 value="<?php echo htmlspecialchars($fecha_finalizacion_ini); ?>"
-                style="pointer-events:none;background:#f5f7fa;"
+                style="pointer-events: none;"
                 readonly
                 onfocus="this.blur()"
                 aria-readonly="true"
@@ -335,12 +343,12 @@ CSS;
       if (!el) return;
 
       if (!arr.length){
-        el.innerHTML = '<small style="color:#555;">Sin miembros registrados para esta propuesta.</small>';
+        el.innerHTML = '<small class="no-members">Sin miembros registrados para esta propuesta.</small>';
       } else {
         let html = '';
         for (let i=0; i<arr.length; i++){
           const m = arr[i] || {};
-          html += `<label style="display:block;font-size:13px;">
+          html += `<label class="checkbox-label">
             <input type="checkbox" name="estudiantes[]" value="${escapeHtml(m.id||'')}" checked>
             ${escapeHtml(m.nombre||'')}
           </label>`;
@@ -423,14 +431,14 @@ CSS;
         if (!resp.ok) {
           const msg = (data && data.error) ? (' ' + data.error) : '';
           if (section) section.style.display = '';
-          wrap.innerHTML = '<small style="color:#b00;">No se pudo cargar estudiantes (HTTP '+resp.status+').'+escapeHtml(msg)+'</small>';
+          wrap.innerHTML = '<small class="text-error">No se pudo cargar estudiantes (HTTP '+resp.status+').'+escapeHtml(msg)+'</small>';
           if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error.</td></tr>'; panelCount.textContent=''; }
           console.error('Respuesta inválida:', {status: resp.status, raw});
           return;
         }
       } catch (e) {
         if (section) section.style.display = '';
-        wrap.innerHTML = '<small style="color:#b00;">Error de red.</small>';
+        wrap.innerHTML = '<small class="text-error">Error de red.</small>';
         if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error.</td></tr>'; panelCount.textContent=''; }
         console.error('Fetch error:', e);
         return;
@@ -453,7 +461,7 @@ CSS;
         console.info('Miembros:', members);
       } catch (e) {
         if (section) section.style.display = '';
-        wrap.innerHTML = '<small style="color:#b00;">Error en render: ' + escapeHtml(e && e.message) + '</small>';
+        wrap.innerHTML = '<small class="text-error">Error en render: ' + escapeHtml(e && e.message) + '</small>';
         if (panel){ panel.style.display=''; panelBody.innerHTML='<tr><td colspan="2" class="text-danger">Error.</td></tr>'; panelCount.textContent=''; }
         console.error('Render error:', e, raw);
       }

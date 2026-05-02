@@ -81,7 +81,7 @@ $avisos_generales = $panel->getAvisos();
     <main class="flex-fill">
         <div class="container my-5">
             <div class="dashboard-header text-center mb-5">
-                <h1 style="font-size: 2.5rem; font-weight: 700;">Panel de la Comisión de Trabajos Finales de Graduación</h1>
+                <h1 class="page-title">Panel de la Comisión de Trabajos Finales de Graduación</h1>
                 <p class="lead">Bienvenido, <?= htmlspecialchars($current_user_name) ?>. Gestione las propuestas y documentos finales de TFG.</p>
             </div>
             <!-- Sección de Gestión de Evaluación y Seguimiento TFG -->
@@ -93,7 +93,7 @@ $avisos_generales = $panel->getAvisos();
                 <div class="row justify-content-center">
                     <!-- Revisar Documentos Finales -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'" style="border-left: 4px solid #0d6efd;">
+                        <div class="quick-action-card border-accent-blue" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'">
                             <div class="card-icon">
                                 <i class="bi bi-file-earmark-check-fill"></i>
                             </div>
@@ -103,7 +103,7 @@ $avisos_generales = $panel->getAvisos();
                     </div>
                     <!-- Aprobar Proyectos -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'" style="border-left: 4px solid #198754;">
+                        <div class="quick-action-card border-accent-green" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'">
                             <div class="card-icon">
                                 <i class="bi bi-check-circle-fill"></i>
                             </div>
@@ -113,7 +113,7 @@ $avisos_generales = $panel->getAvisos();
                     </div>
                     <!-- Proyectos Registrados -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'" style="border-left: 4px solid #ffc107;">
+                        <div class="quick-action-card border-accent-yellow" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'">
                             <div class="card-icon">
                                 <i class="bi bi-list-task"></i>
                             </div>
@@ -122,8 +122,8 @@ $avisos_generales = $panel->getAvisos();
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revisar_asesor_externo.php'" style="border-left: 4px solid #17a2b8;">
-                            <div class="card-icon" style="color: #17a2b8;">
+                        <div class="quick-action-card border-accent-cyan" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revisar_asesor_externo.php'">
+                            <div class="card-icon icon-cyan">
                                 <i class="bi bi-person-badge-fill"></i>
                             </div>
                             <h5>Solicitudes Comité Asesor</h5>
@@ -131,8 +131,8 @@ $avisos_generales = $panel->getAvisos();
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_comites_asesores.php'" style="border-left: 4px solid #6f42c1;">
-                            <div class="card-icon" style="color: #6f42c1;">
+                        <div class="quick-action-card border-accent-purple" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_comites_asesores.php'">
+                            <div class="card-icon icon-purple">
                                 <i class="bi bi-diagram-3-fill"></i>
                             </div>
                             <h5>Gestión de Comités</h5>
@@ -141,8 +141,8 @@ $avisos_generales = $panel->getAvisos();
                     </div>
                     <!-- HU-027: Archivo Histórico -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_archivo_historico.php'" style="border-left: 4px solid #6c757d;">
-                            <div class="card-icon" style="color: #6c757d;">
+                        <div class="quick-action-card border-accent-gray" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_archivo_historico.php'">
+                            <div class="card-icon icon-muted">
                                 <i class="bi bi-archive-fill"></i>
                             </div>
                             <h5>Archivo Histórico</h5>
@@ -151,8 +151,8 @@ $avisos_generales = $panel->getAvisos();
                     </div>
                     <!-- Revisión de Prórrogas -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_aprobarProrroga.php'" style="border-left: 4px solid #17a2b8;">
-                            <div class="card-icon" style="color: #17a2b8;">
+                        <div class="quick-action-card border-accent-cyan" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_aprobarProrroga.php'">
+                            <div class="card-icon icon-cyan">
                                 <i class="bi bi-file-earmark-check-fill"></i>
                             </div>
                             <h5>Revisión de Prórrogas</h5>
@@ -160,8 +160,8 @@ $avisos_generales = $panel->getAvisos();
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>PanelRegistroAcuerdo.php'" style="border-left: 4px solid #c8151a;">
-                            <div class="card-icon" style="color: #c8151a;">
+                        <div class="quick-action-card border-accent-red" onclick="location.href='<?= htmlspecialchars($base_url) ?>PanelRegistroAcuerdo.php'">
+                            <div class="card-icon icon-red">
                                 <i class="bi bi-journal-check"></i>
                             </div>
                             <h5>Consulta de Acuerdos</h5>
@@ -192,8 +192,8 @@ $avisos_generales = $panel->getAvisos();
                     <?php if (!empty($advisor_linked_students)): ?>
                         <div class="col-md-6 col-lg-4 d-flex">
                             <!-- Acceso directo al historial compartido del/los estudiante(s) vinculados -->
-                            <div class="quick-action-card w-100 d-flex flex-column justify-content-center" onclick="location.href='<?= htmlspecialchars($base_url) ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
-                                <div class="card-icon" style="color: #6c757d;">
+                            <div class="quick-action-card w-100 d-flex flex-column justify-content-center border-accent-gray" onclick="location.href='<?= htmlspecialchars($base_url) ?>historial_documentos.php'">
+                                <div class="card-icon icon-muted">
                                     <i class="bi bi-clock-history"></i>
                                 </div>
                                 <h5>Historial de documentos</h5>
@@ -204,8 +204,8 @@ $avisos_generales = $panel->getAvisos();
 
                     <?php if ($has_committee_projects): ?>
                         <div class="col-md-6 col-lg-4 d-flex">
-                            <div class="quick-action-card w-100 d-flex flex-column justify-content-center" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_committee_minutes.php'" style="border-left: 4px solid #c8151a;">
-                                <div class="card-icon" style="color: #c8151a;">
+                            <div class="quick-action-card w-100 d-flex flex-column justify-content-center border-accent-red" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_committee_minutes.php'">
+                                <div class="card-icon icon-red">
                                     <i class="bi bi-file-earmark-text-fill"></i>
                                 </div>
                                 <h5>Registrar Minutas</h5>

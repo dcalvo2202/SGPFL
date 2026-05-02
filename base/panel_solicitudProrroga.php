@@ -133,7 +133,7 @@ $page_title = 'Solicitud de Prórroga';
 $inlineStyles = <<<'CSS'
 /* Estilos unificados (UNA) */
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
-.dashboard-header h1{font-size:2.5rem;font-weight:700;color:#034991;margin-bottom:.5rem;}
+.dashboard-header h1{font-weight:700;color:var(--azul-una);margin-bottom:.5rem;}
 .dashboard-header .lead{color:#6c757d;}
 CSS;
 ?>
@@ -145,12 +145,12 @@ CSS;
   <main class="flex-fill">
     <div class="container my-5">
       <div class="card form-card shadow-sm mx-auto" style="max-width: 800px;">
-        <div class="card-header text-center" style="background:#f8f9fa;font-weight:600;color:#034991;">
+        <div class="card-header text-center card-header-3centered">
           Solicitud de Prórroga Proyecto
         </div>
-        <div class="card-body" style="padding:24px;">
+        <div class="card-body card-body-24">
           <?php if (!empty($titulo_proyecto)): ?>
-          <h4 class="text-center mb-4" style="color:#034991; font-weight:600;">
+          <h4 class="text-center mb-4 text-azul-una fw-600">
             <?php echo $titulo_proyecto; ?>
           </h4>
           <?php endif; ?>
@@ -174,7 +174,7 @@ CSS;
           <?php endif; ?>
           
           <!-- Estado de Prórrogas -->
-          <div class="alert alert-info mb-4" style="border-left:4px solid #034991;">
+          <div class="alert alert-border-4info mb-4">
             <strong>Estado de Prórrogas:</strong>
             <ul class="mb-0 mt-2">
               <li>Prórrogas aprobadas: <strong><?php echo $prorrogas_aprobadas; ?>/2</strong></li>
@@ -185,14 +185,14 @@ CSS;
           
           <?php if (!$puede_solicitar): ?>
           <!-- Mensaje de bloqueo -->
-          <div class="alert alert-warning text-center" style="border-left:4px solid #ffc107;">
+          <div class="alert alert-border-5warning text-center">
             <i class="fa fa-exclamation-triangle"></i>
             <strong><?php echo htmlspecialchars($mensaje_estado); ?></strong>
           </div>
           <?php else: ?>
           
           <!-- Información de prórroga a solicitar -->
-          <div class="alert alert-success mb-4" style="border-left:4px solid #28a745;">
+          <div class="alert alert-border-success mb-4">
             <strong>Solicitando:</strong> <?php echo $info_prorroga['numero']; ?> Prórroga 
             (<?php echo $info_prorroga['duracion']; ?>)
           </div>
@@ -203,20 +203,19 @@ CSS;
             
             <!-- Panel de Motivo -->
             <div class="form-group mb-4">
-              <label for="motivo" style="font-weight:600; color:#034991; margin-bottom:8px; display:block;">
+              <label for="motivo" class="form-6label-3accent">
                 Motivo (menos de 200 palabras)
               </label>
               <textarea 
                 id="motivo" 
                 name="motivo" 
-                class="form-control" 
+                class="form-control form-8textarea" 
                 rows="5" 
                 maxlength="200" 
                 placeholder="Escriba el motivo de su solicitud de prórroga..."
-                style="resize:vertical; border:1px solid #ced4da; border-radius:4px;"
                 required
               ></textarea>
-              <small class="text-muted" style="display:block; margin-top:5px;">
+              <small class="mt-3sm text-muted">
                 <span id="charCount">0</span>/200 caracteres
               </small>
             </div>
@@ -229,7 +228,7 @@ CSS;
             
             <!-- Panel de Documento de Soporte -->
             <div class="form-group mb-4">
-              <label style="font-weight:600; color:#034991; margin-bottom:8px; display:block;">
+              <label class="form-6label-3accent">
                 <i class="fa fa-file-pdf-o"></i> Documentos en formato PDF (opcional)
               </label>
               <input type="file" 
@@ -272,7 +271,7 @@ CSS;
                       white-space: nowrap;
                   ">Puede seleccionar varios archivos PDF</span>
               </div>
-              <small class="text-muted" style="display:block; margin-top:5px;">
+              <small class="mt-3sm text-muted">
                 <i class="fa fa-info-circle"></i> Tamaño máximo: <strong>20 MB por archivo</strong>. Solo archivos PDF. Puede seleccionar múltiples archivos.
               </small>
               <div id="filesList" class="mt-2"></div>
@@ -280,7 +279,7 @@ CSS;
             
             <!-- Botón Aceptar -->
             <div class="text-center mt-4">
-              <button type="submit" class="btn" style="background-color:#28a745; color:#fff; padding:10px 40px; font-weight:600; border:none; border-radius:4px;">
+              <button type="submit" class="btn btn-success">
                 Enviar Solicitud
               </button>
             </div>
@@ -517,19 +516,19 @@ CSS;
       <!-- Historial de Solicitudes -->
       <?php if (!empty($historial_solicitudes)): ?>
       <div class="card form-card shadow-sm mx-auto mt-4" style="max-width: 800px;">
-        <div class="card-header text-center" style="background:#f8f9fa;font-weight:600;color:#034991;">
+        <div class="card-header text-center card-header-3centered">
           <i class="fa fa-history"></i> Historial de Solicitudes
         </div>
-        <div class="card-body" style="padding:24px;">
+        <div class="card-body card-body-24">
           <div class="table-responsive">
-            <table class="table table-bordered table-hover" style="font-size:14px;">
-              <thead style="background-color:#034991; color:#fff;">
+            <table class="table table-bordered table-hover">
+              <thead class="bg-azul-una text-white">
                 <tr>
-                  <th class="text-center" style="width:80px;">Prórroga</th>
-                  <th class="text-center" style="width:120px;">Fecha Solicitud</th>
-                  <th class="text-center" style="width:100px;">Estado</th>
+                  <th class="text-center width-md">Prórroga</th>
+                  <th class="text-center width-9wide">Fecha Solicitud</th>
+                  <th class="text-center width-10sm">Estado</th>
                   <th>Motivo</th>
-                  <th style="width:150px;">Comentarios</th>
+                  <th class="width-narrow">Comentarios</th>
                 </tr>
               </thead>
               <tbody>
@@ -543,9 +542,9 @@ CSS;
                   </td>
                   <td class="text-center">
                     <?php if ($solicitud['status'] == 'aprobada'): ?>
-                      <span class="badge badge-success" style="padding:5px 10px; color:#000;">Aprobada</span>
+                      <span class="badge badge-success-custom">Aprobada</span>
                     <?php else: ?>
-                      <span class="badge badge-danger" style="padding:5px 10px; color:#000;">Rechazada</span>
+                      <span class="badge badge-danger-custom">Rechazada</span>
                     <?php endif; ?>
                   </td>
                   <td>
@@ -566,7 +565,7 @@ CSS;
             </table>
           </div>
           <?php if ($historial_solicitudes[0]['status'] == 'aprobada' && !empty($historial_solicitudes[0]['response_date'])): ?>
-          <div class="alert alert-info mt-3 mb-0" style="font-size:13px;">
+          <div class="alert alert-info mt-3 mb-0">
             <i class="fa fa-info-circle"></i>
             <strong>Última prórroga aprobada:</strong> 
             <?php echo date('d/m/Y', strtotime($historial_solicitudes[0]['response_date'])); ?>

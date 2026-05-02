@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // VERIFICAR AUTENTICACIÓN Y PERMISOS
 include("mod/login/check.php");
 
@@ -308,7 +308,7 @@ if ($submission_cards_json === false) {
         <div class="container my-5">
 
             <div class="dashboard-header text-center mb-4">
-                <h1 style="font-size: 2.5rem; font-weight: 700;">Revisión de Documentos Finales de TFG</h1>
+                <h1 class="page-title">Revisión de Documentos Finales de TFG</h1>
                 <p class="lead mb-0">Consulte todos los PDFs de cada entrega final y resuelva la revisión completa en bloque.</p>
             </div>
 
@@ -348,7 +348,7 @@ if ($submission_cards_json === false) {
                                     <th>Fecha de envío</th>
                                     <th>Estado del proyecto</th>
                                     <th>Documentos</th>
-                                    <th class="text-center" style="width: 180px;">Acción</th>
+                                    <th class="text-center" class="width-180">Acción</th>
                                 </tr>
                             </thead>
                             <tbody>

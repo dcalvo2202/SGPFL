@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // VERIFICAR AUTENTICACIÓN Y PERMISOS
 include("mod/login/check.php");
 
@@ -95,7 +95,7 @@ try {
         <div class="container my-5">
             
             <div class="dashboard-header text-center mb-5">
-                <h1 style="font-size: 2.5rem; font-weight: 700;">Panel del Gestor Académico</h1>
+                <h1 class="page-title">Panel del Gestor Académico</h1>
                 <p class="lead">Bienvenido, <?= htmlspecialchars($current_user_name) ?>. Desde aquí puede gestionar las propuestas de TFG.</p>
             </div>
 
@@ -125,7 +125,7 @@ try {
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4">
                         <!-- Tarjeta que redirige al panel de revisión de propuestas -->
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revision_tfg.php'" style="border-left: 4px solid #dc3545;">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revision_tfg.php'" class="border-3accent-red">
                             <div class="card-icon">
                                 <i class="bi bi-clipboard2-check-fill"></i>
                             </div>
@@ -135,7 +135,7 @@ try {
                     </div>
                     <!-- Aprobar Proyectos -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'" style="border-left: 4px solid #198754;">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>proyecto_aprobado.php'" class="border-3accent-green">
                             <div class="card-icon">
                                 <i class="bi bi-check-circle-fill"></i>
                             </div>
@@ -145,7 +145,7 @@ try {
                     </div> 
                     <!-- Revisar Documentos Finales -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'" style="border-left: 4px solid #0d6efd;">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_ctfg_review_final_documents.php'" class="border-3accent-blue">
                             <div class="card-icon">
                                 <i class="bi bi-file-earmark-check-fill"></i>
                             </div>
@@ -155,7 +155,7 @@ try {
                     </div>
                     <!-- Proyectos Registrados -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'" style="border-left: 4px solid #ffc107;">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>ProyectosRegistrados.php'" class="border-3accent-yellow">
                             <div class="card-icon">
                                 <i class="bi bi-list-task"></i>
                             </div>
@@ -165,8 +165,8 @@ try {
                     </div>
                     <!-- HU-027: Archivo Histórico -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_archivo_historico.php'" style="border-left: 4px solid #6c757d;">
-                            <div class="card-icon" style="color: #6c757d;">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_archivo_historico.php'" class="border-3accent-gray">
+                            <div class="card-icon" class="icon-gray">
                                 <i class="bi bi-archive-fill"></i>
                             </div>
                             <h5>Archivo Histórico</h5>
@@ -175,8 +175,8 @@ try {
                     </div>
                     <!-- HU-012/HU-041: Revisar Solicitudes de Comité -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revisar_asesor_externo.php'" style="border-left: 4px solid #17a2b8;">
-                            <div class="card-icon" style="color: #17a2b8;">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_revisar_asesor_externo.php'" class="border-3accent-cyan">
+                            <div class="card-icon" class="icon-cyan">
                                 <i class="bi bi-person-badge-fill"></i>
                             </div>
                             <h5>Solicitudes Comité Asesor</h5>
@@ -187,8 +187,8 @@ try {
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_comites_asesores.php'" style="border-left: 4px solid #6f42c1;">
-                            <div class="card-icon" style="color: #6f42c1;">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_comites_asesores.php'" class="border-3accent-purple">
+                            <div class="card-icon" class="icon-purple">
                                 <i class="bi bi-diagram-3-fill"></i>
                             </div>
                             <h5>Gestión de Comités</h5>
@@ -196,8 +196,8 @@ try {
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>PanelRegistroAcuerdo.php'" style="border-left: 4px solid #c8151a;">
-                            <div class="card-icon" style="color: #c8151a;">
+                        <div class="quick-action-card border-accent-una" onclick="location.href='<?= htmlspecialchars($base_url) ?>PanelRegistroAcuerdo.php'">
+                            <div class="card-icon text-una">
                                 <i class="bi bi-journal-text"></i>
                             </div>
                             <h5>Consulta de Acuerdos</h5>
@@ -250,8 +250,8 @@ try {
                     
                     <!-- Revisión de Prórrogas -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_aprobarProrroga.php'" style="border-left: 4px solid #17a2b8;">
-                            <div class="card-icon" style="color: #17a2b8;">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_aprobarProrroga.php'" class="border-3accent-cyan">
+                            <div class="card-icon" class="icon-cyan">
                                 <i class="bi bi-file-earmark-check-fill"></i>
                             </div>
                             <h5>Revisión de Prórrogas</h5>

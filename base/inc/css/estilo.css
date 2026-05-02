@@ -12,9 +12,10 @@
     --negro-una: #000000;
     
     /* Tipografías oficiales UNA */
-    --font-titulos: 'Goudy Old Style', serif;
-    --font-parrafos: 'Frutiger', 'Arial', sans-serif;
-    --font-opcional: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+--font-titulos: 'Goudy Old Style', serif;
+     --font-parrafos: 'Frutiger', 'Arial', sans-serif;
+     --font-opcional: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+     --font-una: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
     /* Tamaños responsive oficiales */
     --h1-size: 3rem;
@@ -64,6 +65,22 @@ p {
     max-width: 80ch; /* Máximo 80 caracteres por línea */
     margin-bottom: var(--spacing-md);
 }
+
+/* === TIPOGRAFÍA ESTÁNDAR === */
+h1, .text-h1 { font-size: var(--h1-size); font-weight: 700; }
+h2, .text-h2 { font-size: var(--h2-size); font-weight: 700; }
+p, .text-body { font-size: var(--p-size); }
+
+.label-una { font-size: 1.25rem; }
+.btn { font-size: 1.4rem; padding: 0.6rem 1.25rem; }
+.badge { font-size: 1.1rem; padding: 0.35em 0.65em; }
+.table { font-size: 1.25rem; }
+.table th, .table td { padding: 0.85rem; }
+.form-control, .form-select { font-size: 1.4rem; padding: 0.6rem 1rem; }
+
+.icon-lg { font-size: 2.5rem; }
+.icon-md { font-size: 1.5rem; }
+.icon-sm { font-size: 1rem; }
 
 /* === COMPONENTES UNA === */
 
@@ -658,7 +675,11 @@ input[type="password"]::-ms-reveal {
     
     h1 { font-size: 2.25rem; }
     h2 { font-size: 2rem; }
-    
+
+    p, .text-body, .label-una, .btn, .table, .form-control, .badge {
+        font-size: 1.1rem;
+    }
+
     .card-una,
     .form-una {
         padding: var(--spacing-md);
@@ -673,9 +694,11 @@ input[type="password"]::-ms-reveal {
     .stat-card h3 {
         font-size: 2rem;
     }
-}
 
-/* Header responsive para tablet y móvil */
+    p, .text-body, .label-una, .btn, .table, .form-control, .badge {
+        font-size: 1.1rem;
+    }
+}
 @media (max-width: 991px) {
     .navbar-una .container-fluid {
         flex-direction: column !important;
@@ -849,4 +872,246 @@ input[type="password"]::-ms-reveal {
 .bg-azul-una { background-color: var(--azul-una); }
 .bg-gris-una { background-color: var(--gris-una); }
 
+/* Tabla con celda fija (para columnas de accion/boton) */
+.table-cell-fixed { width: 140px; }
+.table-cell-narrow { width: 110px; }
+
+/* Card de documento (contenedor de tabla en tarjetas) */
+.document-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 0;
+}
+
+/* Empty state generico */
+.empty-state {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: #6c757d;
+    font-family: var(--font-parrafos);
+}
+.empty-state i {
+    font-size: 2.5rem;
+    color: #adb5bd;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+.empty-state h5 {
+    color: var(--azul-una);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.empty-state p {
+    margin-bottom: 0;
+}
+
 /* === FIN ESTILOS UNA === */
+
+.border-3accent-teal { border-3left: 4px solid #20c997 !important; }
+.border-3accent-violet { border-3left: 4px solid #6610f2 !important; }
+
+/* Página / Panel titles */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Scrollable containers */
+.scrollable-y {
+    max-height: 240px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+/* Card border accents */
+.border-accent-blue { border-left: 4px solid #0d6efd !important; }
+.border-accent-green { border-left: 4px solid #198754 !important; }
+.border-accent-purple { border-left: 4px solid #6f42c1 !important; }
+.border-accent-orange { border-left: 4px solid #fd7e14 !important; }
+.border-accent-cyan { border-left: 4px solid #17a2b8 !important; }
+.border-accent-red { border-left: 4px solid #dc3545 !important; }
+.border-accent-yellow { border-left: 4px solid #ffc107 !important; }
+.border-accent-gray { border-left: 4px solid #6c757d !important; }
+.border-accent-darkred { border-left: 4px solid #c8151a !important; }
+.border-accent-una { border-left: 4px solid #CD1719 !important; }
+.text-una { color: #CD1719 !important; }
+.icon-una { color: #CD1719 !important; }
+
+/* Form inputs */
+.input-box {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.form-textarea-custom {
+    resize: vertical;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+/* Alert border variants */
+.alert-border-info {
+    border-left: 4px solid #034991 !important;
+}
+.alert-border-warning {
+    border-left: 4px solid #ffc107 !important;
+}
+.alert-border-success {
+    border-left: 4px solid #28a745 !important;
+}
+.alert-border-danger {
+    border-left: 4px solid #dc3545 !important;
+}
+
+/* Text colors */
+.text-accent-blue { color: #0a51ba; }
+.text-accent-hover:hover { color: #0a58ca; text-decoration: underline; }
+.text-muted-custom { color: #6c757d; }
+.text-dark-accent { color: #2c3e50; }
+.text-success-accent { color: #09a25b; }
+.text-error { color: #b00; }
+.text-error-light { color: #555; }
+.bg-muted { background-color: #f8f9fa; }
+.bg-muted-light { background-color: #f5f7fa; pointer-events: none; }
+.bg-subtle { background-color: #e9ecef; }
+.bg-header { background-color: #f8f9fa; font-weight: 600; color: #034991; }
+.bg-table-header { background-color: #034991; color: #fff; }
+
+/* Badge custom padding */
+.badge-custom {
+    padding: 5px 10px;
+}
+.badge-success-custom {
+    background-color: #28a745 !important;
+    color: #000 !important;
+    padding: 5px 10px;
+}
+.badge-danger-custom {
+    background-color: #dc3545 !important;
+    color: #000 !important;
+    padding: 5px 10px;
+}
+.badge-info-custom {
+    background-color: #17a2b8 !important;
+    color: #fff !important;
+    padding: 5px 10px;
+}
+.badge-warning-custom {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+    padding: 5px 10px;
+}
+
+/* Card variants */
+.card-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.card-body-padded {
+    padding: 24px;
+}
+.card-header-centered {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #034991;
+}
+
+/* Form label */
+.form-label-accent {
+    font-weight: 600;
+    color: #034991;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Quick action card icon colors */
+.icon-blue { color: #0d6efd; }
+.icon-green { color: #198754; }
+.icon-purple { color: #6f42c1; }
+.icon-orange { color: #fd7e14; }
+.icon-cyan { color: #17a2b8; }
+.icon-red { color: #dc3545; }
+.icon-yellow { color: #ffc107; }
+.icon-gray { color: #6c757d; }
+.icon-darkred { color: #c8151a; }
+
+/* Status badges */
+.badge-prorroga-1 {
+    background-color: #17a2b8;
+    color: #fff;
+}
+.badge-prorroga-2 {
+    background-color: #ffc107;
+    color: #2d1a29;
+}
+
+/* Table custom widths */
+.width-xl { width: 110px; }
+.width-md { width: 80px; }
+.width-sm { width: 45px; }
+.width-wide { width: 140px; }
+.width-narrow { width: 80px; }
+.width-180 { width: 180px; }
+.width-170 { width: 170px; }
+.width-150 { width: 150px; }
+.width-120 { width: 120px; }
+
+/* Text overflow */
+.text-truncate-custom {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 420px;
+}
+
+/* Center block */
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Preview box */
+.preview-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+/* Search results */
+.search-results-container {
+    display: none;
+}
+.selected-student-container {
+    display: none;
+}
+
+/* Spacing utilities */
+.gap-2 { gap: 0.5rem; }
+
+/* Responsive panel header */
+@media (max-width: 991px) {
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+/* Required field indicator */
+.required-indicator {
+    color: #dc3545;
+}
+
+/* Button spacing utilities */
+.btn-spacing-right {
+    margin-right: 10px;
+}
+
+.form-inline-spacing {
+    margin-right: 6px;
+}

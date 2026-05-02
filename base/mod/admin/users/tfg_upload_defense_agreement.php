@@ -48,7 +48,7 @@ $page_title = 'Adjuntar acuerdo de defensa';
 
 $inlineStyles = <<<'CSS'
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-.dashboard-header h1 { font-size: 2.5rem; font-weight: 700; color: #034991; margin-bottom: .5rem; }
+.dashboard-header h1 { font-weight: 700; color: #034991; margin-bottom: .5rem; }
 .dashboard-header .lead { color: #6c757d; }
 .form-card { background:#fff; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,.08); }
 .form-card .card-header { background:#f8f9fa; font-weight:600; color:#034991; }

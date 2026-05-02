@@ -193,14 +193,14 @@ foreach ($plantillas as $p) {
 
         <!-- Cabecera del panel -->
         <div style="background: linear-gradient(135deg, var(--azul-una), var(--rojo-una)); padding: 1.1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-            <h2 id="panelAgregarTitulo" style="color: #fff; font-size: 1.25rem; margin: 0; font-weight: 700;">
+            <h2 id="panelAgregarTitulo" class="text-white fw-bold m-0">
                 <i class="bi bi-file-earmark-plus-fill me-2"></i>Agregar Nueva Plantilla
             </h2>
             <!-- Botón cerrar: Nielsen #3 — el usuario siempre puede salir -->
             <button id="btnCerrarPanel"
                     type="button"
                     aria-label="Cerrar formulario"
-                    style="background: rgba(255,255,255,0.2); border: none; border-radius: 8px; color: #fff; width: 36px; height: 36px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
+                    style="background: rgba(255,255,255,0.2); border: none; border-radius: 8px; color: #fff; width: 36px; height: 36px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
                 <i class="bi bi-x-lg"></i>
             </button>
         </div>
@@ -353,7 +353,7 @@ foreach ($plantillas as $p) {
             <?php if (empty($plantillas)): ?>
                 <!-- Estado vacío: Nielsen #1 — visibilidad del estado del sistema -->
                 <div class="empty-state">
-                    <i class="bi bi-folder2-open" style="font-size: 3rem; color: var(--azul-una);"></i>
+                    <i class="bi bi-folder2-open icon-lg"></i>
                     <h3 class="mt-3">No hay plantillas disponibles</h3>
                     <p>
                         <?= $puede_gestionar
@@ -367,7 +367,7 @@ foreach ($plantillas as $p) {
                         <h2 class="section-title">
                             <i class="bi bi-folder-fill me-2" style="color: var(--azul-una);"></i>
                             <?= htmlspecialchars($tipo) ?>
-                            <span class="badge <?= getColorPorTipo($tipo) ?> ms-2" style="font-size: 0.9rem;">
+                            <span class="badge <?= getColorPorTipo($tipo) ?> ms-2">
                                 <?= count($items) ?>
                             </span>
                         </h2>
@@ -385,10 +385,9 @@ foreach ($plantillas as $p) {
                                                 $color_icono = $plantilla['mime_type'] === 'application/pdf' ? '#dc3545' : '#0d6efd';
                                                 $es_pdf = $plantilla['mime_type'] === 'application/pdf';
                                             ?>
-                                            <i class="bi <?= $icono ?>"
-                                               style="font-size:2.5rem; color:<?= htmlspecialchars($color_icono) ?>; flex-shrink:0;"></i>
+<i class="bi <?= $icono ?> icon-lg" style="color:<?= htmlspecialchars($color_icono) ?>; flex-shrink:0;"></i>
                                             <div>
-                                                <h5 class="mb-1" style="color:var(--azul-una); font-size:1rem;">
+                                                <h5 class="mb-1 text-azul-una">
                                                     <?= htmlspecialchars($plantilla['nombre']) ?>
                                                 </h5>
                                                 <span class="badge <?= $es_pdf ? 'bg-danger' : 'bg-primary' ?>" style="font-size:0.7rem;">
@@ -402,7 +401,7 @@ foreach ($plantillas as $p) {
 
                                         <!-- Descripción -->
                                         <?php if (!empty($plantilla['descripcion'])): ?>
-                                            <p class="text-muted mb-3" style="font-size:0.9rem; flex-grow:1;">
+                                            <p class="text-muted mb-3">
                                                 <?= htmlspecialchars($plantilla['descripcion']) ?>
                                             </p>
                                         <?php else: ?>
@@ -410,15 +409,14 @@ foreach ($plantillas as $p) {
                                         <?php endif; ?>
 
                                         <!-- Metadatos -->
-                                        <div class="d-flex justify-content-between align-items-center mb-3"
-                                             style="font-size:0.8rem; color:var(--gris-una);">
+                                        <div class="d-flex justify-content-between align-items-center mb-3 text-muted">
                                             <span><i class="bi bi-hdd me-1"></i><?= formatearTamano((int)$plantilla['file_size']) ?></span>
                                             <span><i class="bi bi-calendar3 me-1"></i><?= date('d/m/Y', strtotime($plantilla['created_at'])) ?></span>
                                         </div>
 
                                         <!-- Quién subió (solo Gestor/Admin) -->
                                         <?php if ($puede_gestionar && !empty($plantilla['subido_por_nombre'])): ?>
-                                            <p style="font-size:0.78rem; color:var(--gris-una);" class="mb-3">
+                                            <p class="mb-3 text-muted">
                                                 <i class="bi bi-person-fill me-1"></i>
                                                 <?= htmlspecialchars($plantilla['subido_por_nombre']) ?>
                                             </p>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include("mod/login/check.php");
 include('lang/lang.es');
 
@@ -107,11 +107,11 @@ CSS;
   <?php include 'header.php'; ?>
   <main class="flex-fill">
     <div class="container my-5">
-      <div class="card shadow-sm" style="max-width: 900px; margin: 0 auto;">
-        <div class="card-header text-center" style="background:#f8f9fa;font-weight:600;color:#034991;">
+      <div class="card shadow-sm" class="card-900">
+        <div class="card-header text-center" class="card-header-3centered">
           <i class="fa fa-clock-o"></i> Solicitudes de Prórroga Pendientes
         </div>
-        <div class="card-body" style="padding:24px;">
+        <div class="card-body card-body-24" class="card-body-24">
           
           <?php if (empty($solicitudes)): ?>
           <!-- Estado vacío -->

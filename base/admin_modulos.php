@@ -224,7 +224,7 @@ if (!is_array($modulos)) {
                                 <input type="text" name="find_key" class="form-control" value="<?= htmlspecialchars($find_key) ?>" placeholder="Digite un nombre para filtrar">
                             </div>
                             <div class="col-md-4 text-end">
-                                <button type="submit" class="btn btn-info" style="margin-right: 10px;">
+                                <button type="submit" class="btn btn-info btn-spacing-right">
                                     <i class="fa fa-search"></i> Buscar
                                 </button>
                                 <a href="admin_modulos.php" class="btn btn-secondary">Limpiar</a>
@@ -244,7 +244,7 @@ if (!is_array($modulos)) {
                         <input type="hidden" name="find_key" value="<?= htmlspecialchars($find_key) ?>">
 
                         <div class="col-md-4">
-                            <label class="form-label">Nombre <span style="color: red;">*</span></label>
+                            <label class="form-label">Nombre <span class="required-indicator">*</span></label>
                             <input type="text" name="mod_name" class="form-control" required value="<?= htmlspecialchars($form_mod_name) ?>">
                         </div>
                         <div class="col-md-8">
@@ -252,11 +252,11 @@ if (!is_array($modulos)) {
                             <input type="text" name="mod_desc" class="form-control" value="<?= htmlspecialchars($form_mod_desc) ?>">
                         </div>
                         <div class="col-12 text-end">
-                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;">
+                            <button type="submit" class="btn btn-primary btn-spacing-right">
                                 <i class="fa fa-save"></i> <?= $editing_id > 0 ? 'Actualizar' : 'Guardar' ?>
                             </button>
                             <?php if ($editing_id > 0): ?>
-                                <a href="admin_modulos.php?<?= http_build_query(['show_search' => $show_search, 'find_key' => $find_key]) ?>" class="btn btn-secondary" style="margin-right: 10px;">
+                                <a href="admin_modulos.php?<?= http_build_query(['show_search' => $show_search, 'find_key' => $find_key]) ?>" class="btn btn-secondary btn-spacing-right">
                                     Cancelar
                                 </a>
                             <?php endif; ?>

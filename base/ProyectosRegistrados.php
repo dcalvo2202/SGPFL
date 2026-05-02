@@ -26,8 +26,9 @@ $inlineStyles = <<<'CSS'
 /* Estilos unificados (UNA) */
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 main { padding: 24px 0; }
-.dashboard-header h1 { font-size: 2.5rem; font-weight: 700; color: #034991; margin-bottom: .5rem; }
+.dashboard-header h1 { font-weight: 700; color: var(--azul-una); margin-bottom: .5rem; }
 .dashboard-header .lead { color: #6c757d; }
+.page-title { font-weight: 700; color: var(--azul-una); margin-bottom: .5rem; }
 
 /* Card/table estilo panel_ctfg_review_final_documents */
 .document-table { background:#fff; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,.1); overflow:hidden; }
@@ -363,7 +364,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
     <div class="container my-5">
 
       <div class="dashboard-header text-center mb-5">
-        <h1 style="font-size: 2.5rem; font-weight: 700;">Proyectos registrados</h1>
+        <h1 class="page-title">Proyectos registrados</h1>
         <p class="lead">Consulte y filtre proyectos Aprobados, Prorrogados, Vencidos o Cancelados.</p>
         <?php if (isset($_GET['ok_cancel'])): ?>
           <div class="alert alert-success py-2 mb-3">Proyecto cancelado correctamente.</div>
@@ -476,7 +477,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
                       <?php endif; ?>
 
                       <?php if (!$isCancelado): ?>
-                        <form method="post" action="cancelar_proyecto_aprobado.php" style="display:inline;" onsubmit="return confirm('¿Cancelar este proyecto?');">
+                        <form method="post" action="cancelar_proyecto_aprobado.php" class="d-inline" onsubmit="return confirm('¿Cancelar este proyecto?');">
                           <input type="hidden" name="proyecto_id" value="<?php echo (int)$p['id_aprobado']; ?>">
                           <input type="hidden" name="motivo" value="Prueba funcional de cancelación">
                           <input type="hidden" name="observaciones" value="Prueba temporal sin modal">

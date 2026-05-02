@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // VERIFICAR AUTENTICACIÓN USANDO EL SISTEMA ESTÁNDAR
 include("mod/login/check.php");
 include('lang/lang.es');
@@ -137,7 +137,7 @@ try {
                 
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>mod/admin/users/tfg_upload.php'" style="border-left: 4px solid #dc3545;">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>mod/admin/users/tfg_upload.php'" class="border-3accent-red">
                             <div class="card-icon">
                                 <i class="bi bi-file-earmark-plus-fill"></i>
                             </div>
@@ -147,7 +147,7 @@ try {
                     </div>
 
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>mod/admin/users/tfg_upload_final_document.php'" style="border-left: 4px solid #0d6efd;">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>mod/admin/users/tfg_upload_final_document.php'" class="border-3accent-blue">
                             <div class="card-icon">
                                 <i class="bi bi-file-earmark-check-fill"></i>
                             </div>
@@ -156,7 +156,7 @@ try {
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>historial_documentos.php'" class="border-3accent-gray">
                             <div class="card-icon">
                                 <i class="bi bi-clock-history"></i>
                             </div>
@@ -165,7 +165,7 @@ try {
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>panel_solicitudProrroga.php'" style="border-left: 4px solid #ffc107;">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>panel_solicitudProrroga.php'" class="border-3accent-yellow">
                             <div class="card-icon">
                                 <i class="bi bi-calendar-plus"></i>
                             </div>
@@ -175,7 +175,7 @@ try {
                     </div>
 
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>panel_plantillas.php'" style="border-left: 4px solid #6f42c1;">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>panel_plantillas.php'" class="border-3accent-purple">
                             <div class="card-icon">
                                 <i class="bi bi-file-earmark-arrow-down-fill"></i>
                             </div>
@@ -185,7 +185,7 @@ try {
                     </div>
 
                     <div class="col-md-6 col-lg-4">
-                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>registro.php'" style="border-left: 4px solid #198754;">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>registro.php'" class="border-3accent-green">
                             <div class="card-icon">
                                 <i class="bi bi-person-plus-fill"></i>
                             </div>

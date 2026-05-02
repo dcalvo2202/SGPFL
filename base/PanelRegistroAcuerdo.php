@@ -657,7 +657,7 @@ try {
                                                 <th>Subido por</th>
                                                 <th>Información adicional</th>
                                                 <th>Registrado en</th>
-                                                <th style="width: 170px;">Detalle</th>
+                                                <th class="width-170">Detalle</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -868,9 +868,8 @@ try {
 <style>
     .dashboard-header h1 {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 2.35rem;
         font-weight: 700;
-        color: #034991;
+        color: var(--azul-una);
         margin-bottom: 0.5rem;
     }
 

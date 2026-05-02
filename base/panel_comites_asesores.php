@@ -399,27 +399,40 @@ $conn->close();
         }
 
         .dashboard-header h1 {
-            font-size: 2rem !important;
             font-weight: 700;
         }
 
-        .dashboard-header .lead {
-            font-size: 1.55rem;
+.dashboard-header .lead {
+        }
+
+        .card-header {
+            display: block;
+            padding: 0.75rem 1rem;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid rgba(0,0,0,.125);
         }
 
         .card-header strong {
-            font-size: 1.35rem;
+            font-size: 1.1rem;
+            color: #212529;
+        }
+
+        .student-name {
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .student-meta {
+            color: #6c757d;
         }
 
         .table thead th {
-            font-size: 1.45rem;
             font-weight: 700;
             padding-top: 1.15rem;
             padding-bottom: 1.15rem;
         }
 
         .table tbody td {
-            font-size: 1.3rem;
             padding-top: 1.25rem;
             padding-bottom: 1.25rem;
             vertical-align: middle;
@@ -453,14 +466,12 @@ $conn->close();
         }
 
         .validation-message {
-            font-size: 1.15rem;
             line-height: 1.35;
             margin-top: 0.1rem;
         }
 
         .btn-rechazar-comite,
         .btn-aprobar {
-            font-size: 1.2rem;
             font-weight: 600;
             padding: 0.7rem 1.3rem;
             min-width: 150px;
@@ -576,16 +587,13 @@ $conn->close();
         }
 
         @media (max-width: 576px) {
-            /* Convertir tablas a cards en móvil */
-            .comites-table-wrapper .table,
-            .pending-requests-table-wrapper .table {
-                font-size: 0.85rem;
+            .card-header strong {
+                font-size: 1rem;
             }
 
+            /* Responsive table mobile */
             .comites-table-wrapper .table thead,
-            .pending-requests-table-wrapper .table thead {
-                display: none;
-            }
+            .pending-requests-table-wrapper .table thead { display: none; }
 
             .comites-table-wrapper .table tbody tr,
             .pending-requests-table-wrapper .table tbody tr {
@@ -597,7 +605,6 @@ $conn->close();
                 padding: 0.75rem;
                 margin-bottom: 0.75rem;
                 background-color: #fff;
-                align-items: flex-start;
             }
 
             .comites-table-wrapper .table td,
@@ -607,7 +614,6 @@ $conn->close();
                 padding: 0.25rem 0 !important;
                 border: none !important;
                 text-align: left;
-                align-items: flex-start;
                 width: 100%;
             }
 
@@ -619,19 +625,17 @@ $conn->close();
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
                 margin-bottom: 0.25rem;
-                text-align: left;
                 display: block;
-                width: 100%;
             }
 
-            /* Agregar labels a cada celda - Tabla comites */
+            /* Labels - Tabla comites */
             .comites-table-wrapper .table td:nth-child(1)::before { content: "ID"; }
             .comites-table-wrapper .table td:nth-child(2)::before { content: "Tutor"; }
             .comites-table-wrapper .table td:nth-child(3)::before { content: "Asesor 1"; }
             .comites-table-wrapper .table td:nth-child(4)::before { content: "Asesor 2"; }
             .comites-table-wrapper .table td:nth-child(5)::before { content: "Proyectos"; }
 
-            /* Agregar labels a cada celda - Tabla solicitudes */
+            /* Labels - Tabla solicitudes */
             .pending-requests-table-wrapper .table td:nth-child(1)::before { content: "Estudiante"; }
             .pending-requests-table-wrapper .table td:nth-child(2)::before { content: "Tutor"; }
             .pending-requests-table-wrapper .table td:nth-child(3)::before { content: "Asesor 1"; }
@@ -639,99 +643,8 @@ $conn->close();
             .pending-requests-table-wrapper .table td:nth-child(5)::before { content: "Estado"; }
             .pending-requests-table-wrapper .table td:nth-child(6)::before { content: "Rechazo"; }
             .pending-requests-table-wrapper .table td:nth-child(7)::before { content: "Acciones"; }
-
-            .comites-toolbar .input-group input {
-                font-size: 0.9rem;
-                padding: 0.45rem 0.65rem;
-            }
-
-            .comites-toolbar .input-group button {
-                padding: 0.45rem 0.65rem;
-                font-size: 0.9rem;
-            }
         }
-
-        @media (max-width: 420px) {
-            .comites-table-wrapper .table,
-            .pending-requests-table-wrapper .table {
-                font-size: 0.8rem;
-            }
-
-            .comites-table-wrapper .table tbody tr,
-            .pending-requests-table-wrapper .table tbody tr {
-                padding: 0.5rem;
-                margin-bottom: 0.5rem;
-                align-items: flex-start;
-            }
-
-            .comites-table-wrapper .table td,
-            .pending-requests-table-wrapper .table td {
-                text-align: left;
-                align-items: flex-start;
-                width: 100%;
-            }
-
-            .comites-table-wrapper .table td::before,
-            .pending-requests-table-wrapper .table td::before {
-                font-size: 0.75rem;
-                text-align: left;
-                display: block;
-                width: 100%;
-            }
-
-            .comites-toolbar .input-group input {
-                font-size: 0.85rem;
-                padding: 0.4rem 0.55rem;
-            }
-
-            .comites-toolbar .input-group button {
-                padding: 0.4rem 0.55rem;
-                font-size: 0.85rem;
-            }
-
-            .comites-summary {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .comites-table-wrapper .table,
-            .pending-requests-table-wrapper .table {
-                font-size: 0.75rem;
-            }
-
-            .comites-table-wrapper .table td,
-            .pending-requests-table-wrapper .table td {
-                padding: 0.2rem 0 !important;
-                text-align: left;
-                align-items: flex-start;
-                width: 100%;
-            }
-
-            .comites-table-wrapper .table td::before,
-            .pending-requests-table-wrapper .table td::before {
-                font-size: 0.7rem;
-                margin-bottom: 0.15rem;
-                text-align: left;
-                display: block;
-                width: 100%;
-            }
-
-            .comites-toolbar {
-                gap: 0.5rem;
-            }
-
-            .comites-toolbar .input-group input {
-                font-size: 0.8rem;
-                padding: 0.35rem 0.5rem;
-            }
-
-            .comites-toolbar .input-group button {
-                padding: 0.35rem 0.5rem;
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+</style>
 </head>
 <body class="fondo-una d-flex flex-column min-vh-100">
 <?php include 'header.php'; ?>

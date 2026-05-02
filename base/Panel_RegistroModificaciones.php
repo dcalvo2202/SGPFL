@@ -136,7 +136,7 @@ function formatearFechaCorta($fecha, $esValorAnterior = false) {
             <!-- ==================== DASHBOARD ESTADÍSTICAS ==================== -->
             <div class="row g-3 mb-4 justify-content-center">
                 <div class="col-md-3 col-6">
-                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#0d6efd !important;">
+                    <div class="card shadow-sm h-100 border-start border-4 border-accent-blue">
                         <div class="card-body text-center">
                             <h6 class="text-muted mb-1"><i class="fa fa-database"></i> Total Cambios</h6>
                             <h3 class="mb-0 text-primary"><?= (int)$estadisticas['total_cambios'] ?></h3>
@@ -144,7 +144,7 @@ function formatearFechaCorta($fecha, $esValorAnterior = false) {
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
-                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#198754 !important;">
+                    <div class="card shadow-sm h-100 border-start border-4 border-accent-green">
                         <div class="card-body text-center">
                             <h6 class="text-muted mb-1"><i class="fa fa-project-diagram"></i> Proyectos</h6>
                             <h3 class="mb-0 text-success"><?= (int)$estadisticas['cambios_proyectos'] ?></h3>
@@ -152,18 +152,18 @@ function formatearFechaCorta($fecha, $esValorAnterior = false) {
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
-                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#6f42c1 !important;">
+                    <div class="card shadow-sm h-100 border-start border-4 border-accent-purple">
                         <div class="card-body text-center">
                             <h6 class="text-muted mb-1"><i class="fa fa-clock"></i> Prórrogas</h6>
-                            <h3 class="mb-0" style="color:#6f42c1;"><?= (int)$estadisticas['cambios_prorrogas'] ?></h3>
+                            <h3 class="mb-0 text-purple"><?= (int)$estadisticas['cambios_prorrogas'] ?></h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
-                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#fd7e14 !important;">
+                    <div class="card shadow-sm h-100 border-start border-4 border-accent-orange">
                         <div class="card-body text-center">
                             <h6 class="text-muted mb-1"><i class="fa fa-calendar-day"></i> Hoy</h6>
-                            <h3 class="mb-0" style="color:#fd7e14;"><?= (int)$estadisticas['cambios_hoy'] ?></h3>
+                            <h3 class="mb-0 text-orange"><?= (int)$estadisticas['cambios_hoy'] ?></h3>
                         </div>
                     </div>
                 </div>
@@ -253,13 +253,13 @@ function formatearFechaCorta($fecha, $esValorAnterior = false) {
                                 <table class="table table-hover table-striped mb-0">
                                 <thead class="table-dark">
                                     <tr>
-                                        <th style="width:140px;">Fecha cambio</th>
+                                        <th class="width-140">Fecha cambio</th>
                                         <th>Usuario</th>
                                         <th>Tabla</th>
                                         <th>ID Reg.</th>
                                         <th>Valor anterior</th>
                                         <th>Valor nuevo</th>
-                                        <th style="width:80px;">Acciones</th>
+                                        <th class="width-80">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>

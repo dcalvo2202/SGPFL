@@ -135,7 +135,7 @@ if (!is_array($logs)) {
 
             <div class="row g-3 mb-4">
                 <div class="col-md-3">
-                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#0d6efd !important;">
+                    <div class="card shadow-sm h-100 border-start border-4 border-accent-blue">
                         <div class="card-body">
                             <h6 class="text-muted mb-1">Total registros</h6>
                             <h4 class="mb-0"><?= (int)$total_logs ?></h4>
@@ -143,7 +143,7 @@ if (!is_array($logs)) {
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#198754 !important;">
+                    <div class="card shadow-sm h-100 border-start border-4 border-accent-green">
                         <div class="card-body">
                             <h6 class="text-muted mb-1">Éxitos</h6>
                             <h4 class="mb-0"><?= (int)$success_count ?></h4>
@@ -151,7 +151,7 @@ if (!is_array($logs)) {
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#dc3545 !important;">
+                    <div class="card shadow-sm h-100 border-start border-4 border-accent-red">
                         <div class="card-body">
                             <h6 class="text-muted mb-1">Fallidos</h6>
                             <h4 class="mb-0"><?= (int)$fail_count ?></h4>
@@ -159,7 +159,7 @@ if (!is_array($logs)) {
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card shadow-sm h-100 border-start border-4" style="border-color:#ffc107 !important;">
+                    <div class="card shadow-sm h-100 border-start border-4 border-accent-yellow">
                         <div class="card-body">
                             <h6 class="text-muted mb-1">Alertas</h6>
                             <h4 class="mb-0"><?= (int)$alert_count ?></h4>

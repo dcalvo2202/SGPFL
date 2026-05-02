@@ -34,6 +34,41 @@ $calificaciones          = $panel->getCalificaciones();
 <!DOCTYPE html>
 <html lang="es">
 <?php include('head.php'); ?>
+<style>
+    @media (max-width: 576px) {
+        .gestor-table-wrapper .table thead { display: none; }
+        .gestor-table-wrapper .table tbody tr {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            background-color: #fff;
+        }
+        .gestor-table-wrapper .table td {
+            display: flex;
+            flex-direction: column;
+            padding: 0.25rem 0 !important;
+            border: none !important;
+            text-align: left;
+            width: 100%;
+        }
+        .gestor-table-wrapper .table td::before {
+            font-weight: 600;
+            color: #034991;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+        .gestor-table-wrapper .table td:nth-child(1)::before { content: "Estudiante"; }
+        .gestor-table-wrapper .table td:nth-child(2)::before { content: "Proyecto"; }
+        .gestor-table-wrapper .table td:nth-child(3)::before { content: "Calificación"; }
+        .gestor-table-wrapper .table td:nth-child(4)::before { content: "Acciones"; }
+    }
+</style>
 <body class="fondo-una d-flex flex-column min-vh-100">
     <!-- =============================== HEADER =============================== -->
     <?php include 'header.php'; ?>
@@ -42,7 +77,7 @@ $calificaciones          = $panel->getCalificaciones();
     <main class="flex-fill">
         <div class="container my-5">
             <div class="dashboard-header text-center mb-5">
-                <h1 style="font-size: 2.5rem; font-weight: 700;">Panel del Gestor Académico</h1>
+                <h1 class="page-title">Panel del Gestor Académico</h1>
                 <p class="lead">Bienvenido/a, <?= htmlspecialchars($current_user_name) ?>. Supervise revisiones, reuniones y calificaciones de TFG.</p>
             </div>
 
@@ -120,8 +155,9 @@ $calificaciones          = $panel->getCalificaciones();
             <div class="card mt-5 shadow-sm border-0">
                 <div class="card-body">
                     <h4 class="fw-bold text-primary mb-4"><i class="bi bi-table me-2"></i>Resumen de Calificaciones</h4>
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle">
+                    <div class="gestor-table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
                             <thead class="table-light">
                                 <tr>
                                     <th>Estudiante</th>

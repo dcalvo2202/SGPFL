@@ -203,7 +203,7 @@ if (!is_array($parametros)) {
                         <input type="hidden" name="action" value="save">
                         <input type="hidden" name="id_pv" value="<?= (int)$editing_id ?>">
                         <div class="col-md-4">
-                            <label class="form-label">Parámetro <span style="color: red;">*</span></label>
+                            <label class="form-label">Parámetro <span class="required-indicator">*</span></label>
                             <input type="text" name="parametro" class="form-control" required value="<?= htmlspecialchars($form_parametro) ?>">
                         </div>
                         <div class="col-md-4">
@@ -215,11 +215,11 @@ if (!is_array($parametros)) {
                             <input type="text" name="descripcion" class="form-control" value="<?= htmlspecialchars($form_descripcion) ?>">
                         </div>
                         <div class="col-12 text-end">
-                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;">
+                            <button type="submit" class="btn btn-primary btn-spacing-right">
                                 <i class="fa fa-save"></i> <?= $editing_id > 0 ? 'Actualizar' : 'Guardar' ?>
                             </button>
                             <?php if ($editing_id > 0): ?>
-                                <a href="admin_parametros.php" class="btn btn-secondary" style="margin-right: 10px;">
+                                <a href="admin_parametros.php" class="btn btn-secondary btn-spacing-right">
                                     Cancelar
                                 </a>
                             <?php endif; ?>
