@@ -74,7 +74,10 @@ CSS;
     <div class="card form-card shadow-sm">
       <div class="card-header">Registro del acuerdo de defensa</div>
       <div class="card-body">
-        <form id="frmAcuerdo" enctype="multipart/form-data">
+        <form id="frmAcuerdo"
+          method="post"
+          action="tfg_upload_defense_agreement_process.php"
+          enctype="multipart/form-data">
           <input type="hidden" name="proyecto_id" value="<?= (int)$proyecto['id_aprobado'] ?>">
           <input type="hidden" name="proposal_id" value="<?= (int)$proyecto['proposal_id'] ?>">
 
