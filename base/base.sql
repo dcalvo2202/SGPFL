@@ -513,6 +513,7 @@ CREATE TABLE `tfg_extension_requests` (
   `status` enum('pendiente','aprobada','rechazada') DEFAULT 'pendiente',
   `request_date` datetime DEFAULT current_timestamp(),
   `response_date` datetime DEFAULT NULL,
+  `fecha_actualizada` datetime DEFAULT NULL COMMENT 'Nueva fecha real del proyecto al aprobar la prórroga',
   `responded_by` varchar(50) DEFAULT NULL,
   `response_comment` text DEFAULT NULL,
   `documento_path` text DEFAULT NULL COMMENT 'Rutas de los documentos de soporte (JSON array)',
@@ -2509,3 +2510,43 @@ COMMENT='HU-035: Asistentes registrados por minuta';
 INSERT IGNORE INTO `sis_permits` (`id_mod`, `id_action`, `id_roll`) VALUES
 (5, 3, 2),  -- Gestor: Agregar en Documentación y versionado
 (5, 5, 2);  -- Gestor: Eliminar en Documentación y versionado
+
+
+-- ============================================================================
+-- HU-021: Sincronizar eventos clave (plazos y defensas) con el calendario institucional del correo.
+-- guardado de tokens de acceso y refresco, log de sincronización, estado de sincronización, etc.
+-- cifrado de tokens en la base de datos para mayor seguridad
+-- ============================================================================
+
+
+CREATE TABLE `google_calendar_tokens` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` varchar(50) NOT NULL,
+  `access_token` blob NOT NULL,
+  `refresh_token` blob DEFAULT NULL,
+  `token_expires_at` datetime NOT NULL,
+  `calendar_id` varchar(255) DEFAULT NULL,
+  `sync_enabled` tinyint(1) DEFAULT 1,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_user_token` (`id_user`),
+  CONSTRAINT `google_calendar_tokens_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `sis_login` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+CREATE TABLE `google_calendar_sync_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` varchar(50) NOT NULL,
+  `event_type` varchar(50) NOT NULL COMMENT 'prorroga, acta, deadline, timeline',
+  `event_id` int(11) NOT NULL,
+  `google_event_id` varchar(255) DEFAULT NULL,
+  `sync_status` enum('pending','synced','failed') DEFAULT 'pending',
+  `last_sync_at` datetime DEFAULT NULL,
+  `error_message` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_event_mapping` (`id_user`,`event_type`,`event_id`),
+  KEY `idx_sync_status` (`sync_status`),
+  CONSTRAINT `google_calendar_sync_log_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `sis_login` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;

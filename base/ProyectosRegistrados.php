@@ -468,7 +468,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
                         <i class="bi bi-journal-text"></i> Notas
                       </a>
 
-                      <?php if ((int)$current_user_rol === 3 && !$isCancelado): ?>
+                      <?php if (((int)$current_user_rol === 3 || (int)$current_user_rol === 2) && !$isCancelado): ?>
                         <a class="btn btn-sm btn-outline-primary"
                           href="mod/admin/users/tfg_upload_defense_agreement.php?id=<?php echo (int)$p['id_aprobado']; ?>">
                           <i class="bi bi-file-earmark-arrow-up"></i> Acuerdo defensa

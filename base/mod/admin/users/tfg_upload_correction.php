@@ -171,7 +171,7 @@ $page_title = "Subir Correcciones - TFG";
                                     white-space: nowrap;
                                 ">Puede seleccionar varios archivos PDF</span>
                             </div>
-                            <small class="text-muted">Solo PDF | Tamaño máximo: 10 MB por archivo | Puede seleccionar múltiples archivos</small>
+                            <small class="text-muted">Solo PDF | Tamaño máximo: 20 MB por archivo | Puede seleccionar múltiples archivos</small>
                             <div id="filesList" class="mt-2"></div>
                         </div>
 
@@ -351,8 +351,8 @@ $page_title = "Subir Correcciones - TFG";
                     Swal.fire({ icon: 'error', title: 'Archivo vacío', text: `El archivo "${file.name}" está vacío (0 bytes).`, confirmButtonColor: '#034991' });
                     hasError = true; break;
                 }
-                if (file.size > 10 * 1024 * 1024) {
-                    Swal.fire({ icon: 'error', title: 'Archivo muy grande', text: `El archivo "${file.name}" excede 10 MB.`, confirmButtonColor: '#034991' });
+                if (file.size > 20 * 1024 * 1024) {
+                    Swal.fire({ icon: 'error', title: 'Archivo muy grande', text: `El archivo "${file.name}" excede 20 MB.`, confirmButtonColor: '#034991' });
                     hasError = true; break;
                 }
                 if (file.type !== 'application/pdf') {
@@ -410,7 +410,16 @@ $page_title = "Subir Correcciones - TFG";
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
+        .then(async response => {
+            const text = await response.text();
+
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                console.error('Respuesta no JSON del servidor:', text);
+                throw new Error('El servidor no devolvió JSON válido. Revise la consola del navegador.');
+            }
+        })
         .then(data => {
             if (data.success) {
                 Swal.fire({
@@ -446,7 +455,7 @@ $page_title = "Subir Correcciones - TFG";
             Swal.fire({
                 icon: 'error',
                 title: 'Error de conexión',
-                text: 'No se pudo enviar las correcciones. Por favor, intente nuevamente.',
+                text: error.message || 'No se pudo enviar las correcciones. Por favor, intente nuevamente.',
                 confirmButtonColor: '#034991'
             });
         });

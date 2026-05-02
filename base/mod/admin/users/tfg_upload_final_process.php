@@ -47,7 +47,6 @@ try {
     }
 
     $proposal_id = intval($_POST['proposal_id']);
-    $project_status = $_POST['project_status'];
     $notes = trim($_POST['notes'] ?? '');
 
     // Validar proposal_id
@@ -65,6 +64,9 @@ try {
     if ($upload_check['proposal_id'] !== $proposal_id) {
         respond_json(false, 'No autorizado para subir documento para esta propuesta');
     }
+
+    // Usar el estado calculado por el servidor, no el enviado desde el formulario
+    $project_status = $upload_check['project_status'];
 
     // Validar archivos PDF usando funciones helper
     $uploaded_files = [];

@@ -96,6 +96,7 @@ try {
 <!DOCTYPE html>
 <html lang="es">
 <?php include 'head.php'; ?>
+<link rel="stylesheet" href="inc/css/admin_panels_responsive.css">
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -283,9 +284,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <p class="mb-0">Este proyecto no tiene participantes válidos para registrar asistencia.</p>
                             </div>
                         <?php else: ?>
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0">
-                                    <thead>
+                            <div class="committee-minutes-participants-table-wrapper">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead>
                                         <tr>
                                             <th style="width: 110px;">Asistió</th>
                                             <th>ID Usuario</th>
@@ -316,6 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <?php endforeach; ?>
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         <?php endif; ?>
 
@@ -358,9 +361,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             </p>
                         </div>
                     <?php else: ?>
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0">
-                                <thead>
+                        <div class="committee-minutes-list-table-wrapper">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>Fecha de sesión</th>
@@ -396,6 +400,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     <?php endif; ?>
                 </div>

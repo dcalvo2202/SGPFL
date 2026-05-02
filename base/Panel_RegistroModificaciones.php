@@ -110,6 +110,7 @@ function formatearFechaCorta($fecha, $esValorAnterior = false) {
 <html lang="es">
 <!-- =============================== HEAD =============================== -->
 <?php include 'head.php'; ?>
+<link rel="stylesheet" href="inc/css/admin_panels_responsive.css">
 <body class="fondo-una d-flex flex-column min-vh-100">
 
     <!-- =============================== HEADER =============================== -->
@@ -133,7 +134,7 @@ function formatearFechaCorta($fecha, $esValorAnterior = false) {
             </div>
 
             <!-- ==================== DASHBOARD ESTADÍSTICAS ==================== -->
-            <div class="row g-3 mb-4">
+            <div class="row g-3 mb-4 justify-content-center">
                 <div class="col-md-3 col-6">
                     <div class="card shadow-sm h-100 border-start border-4" style="border-color:#0d6efd !important;">
                         <div class="card-body text-center">
@@ -247,8 +248,9 @@ function formatearFechaCorta($fecha, $esValorAnterior = false) {
                             <i class="fa fa-exclamation-triangle"></i> No se encontraron registros con los filtros seleccionados.
                         </div>
                     <?php else: ?>
-                        <div class="table-responsive">
-                            <table class="table table-hover table-striped mb-0">
+                        <div class="modificaciones-table-wrapper">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped mb-0">
                                 <thead class="table-dark">
                                     <tr>
                                         <th style="width:140px;">Fecha cambio</th>
@@ -308,6 +310,7 @@ function formatearFechaCorta($fecha, $esValorAnterior = false) {
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     <?php endif; ?>
                 </div>

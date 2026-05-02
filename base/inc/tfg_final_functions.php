@@ -268,17 +268,31 @@ function saveFinalDocument($proposal_id, $file_data, $user_id, $project_status) 
         $sql_file = "INSERT INTO tfg_files (file_name, mime_type, file_size, file_data, storage_path, uploaded_by, version, document_type) 
                     VALUES (?, ?, ?, ?, NULL, ?, ?, ?)";
         $stmt_file = $conn->prepare($sql_file);
+
+        if (!$stmt_file) {
+            $conn->rollback();
+            $conn->close();
+
+            return [
+                'success' => false,
+                'message' => 'Error al preparar la consulta de archivo: ' . $conn->error,
+                'document_id' => null
+            ];
+        }
+
+        $null_blob = null;
+
         $stmt_file->bind_param("ssibsds", 
             $file_data['name'], 
             $file_data['type'], 
             $file_data['size'], 
-            $file_content,
+            $null_blob,
             $user_id,
             $next_version,
             $document_type
         );
-        
-        // Enviar el BLOB
+
+        // Enviar el BLOB grande por separado
         $stmt_file->send_long_data(3, $file_content);
         
         if (!$stmt_file->execute()) {

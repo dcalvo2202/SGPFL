@@ -761,3 +761,4 @@ base/.phpunit.cache/test-results
 base/.phpunit.cache/test-results
 base/tests/_output/failed
 base/.phpunit.cache/test-results
+base/vendor/

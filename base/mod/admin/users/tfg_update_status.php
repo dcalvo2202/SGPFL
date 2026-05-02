@@ -10,8 +10,80 @@ $user_rol = $mySessionController->getVar("rol");
 
 // Incluir la configuración de la base de datos
 include __DIR__ . '/../../../inc/db/bdcommon.inc';
+require_once __DIR__ . '/../../../vendor/autoload.php';
 
 header('Content-Type: application/json');
+
+/**
+ * Sincroniza el hito principal del proyecto aprobado con Google Calendar.
+ * No lanza excepciones al flujo principal.
+ */
+function syncProjectTimelineApprovalWithGoogleCalendar(mysqli $conn, int $proposalId, string $projectName, string $targetDate): void
+{
+    try {
+        if (!class_exists('Service\\GoogleCalendarService')) {
+            return;
+        }
+
+        $users = [];
+        $sqlUsers = "
+            SELECT DISTINCT users.user_id
+            FROM (
+                SELECT p.user_id
+                FROM tfg_proposals p
+                WHERE p.id = ?
+
+                UNION
+
+                SELECT pm.user_id
+                FROM registered_projects rp
+                INNER JOIN project_members pm ON pm.project_id = rp.id
+                WHERE rp.tfg_proposal_id = ?
+                  AND pm.status = 'Activo'
+            ) AS users
+            WHERE users.user_id IS NOT NULL
+        ";
+
+        $stmtUsers = $conn->prepare($sqlUsers);
+        if (!$stmtUsers) {
+            return;
+        }
+
+        $stmtUsers->bind_param('ii', $proposalId, $proposalId);
+        $stmtUsers->execute();
+        $rsUsers = $stmtUsers->get_result();
+        while ($rsUsers && ($row = $rsUsers->fetch_assoc())) {
+            $userId = (string) ($row['user_id'] ?? '');
+            if ($userId !== '') {
+                $users[] = $userId;
+            }
+        }
+        $stmtUsers->close();
+
+        if (empty($users)) {
+            return;
+        }
+
+        $googleCalendarService = new Service\GoogleCalendarService($conn);
+        $timelineData = [
+            'milestone_name' => 'Fecha límite de entrega del TFG',
+            'target_date' => $targetDate,
+            'project_name' => $projectName,
+            'description' => 'Hito generado al aprobar la propuesta del proyecto.',
+            'status' => 'Vigente'
+        ];
+
+        foreach ($users as $userId) {
+            if (!$googleCalendarService->isSyncEnabled($userId)) {
+                continue;
+            }
+
+            $googleCalendarService->syncProjectTimeline($userId, $proposalId, $timelineData);
+        }
+    } catch (Throwable $e) {
+        error_log('tfg_update_status.php Google Calendar timeline sync error: ' . $e->getMessage());
+    }
+}
 
 // --- Validación de seguridad ---
 // Solo Administradores (rol 1) y Gestores Académicos (rol 2) pueden revisar
@@ -37,6 +109,7 @@ try {
     $proposal_id = (int)$_POST['id'];
     $review_status = trim((string)$_POST['status']);
     $comments = isset($_POST['comments']) ? (string)$_POST['comments'] : '';
+    $timeline_target_date = null;
 
     // Validar valores contra el ENUM de la BD (deben coincidir exactamente)
     $allowed_statuses = ['Pendiente de Revision', 'Cumple requisitos', 'No cumple requisitos', 'Aprobado', 'Rechazado'];
@@ -126,6 +199,8 @@ try {
             throw new Exception('Error creando timeline: ' . $stmt_timeline->error);
         }
         $stmt_timeline->close();
+
+        $timeline_target_date = date('Y-m-d', strtotime('+12 months'));
         
         error_log("Timeline creado automáticamente para propuesta ID: " . $proposal_id);
     }
@@ -164,6 +239,15 @@ try {
     }
 
     $conn->commit();
+
+    if ($review_status === 'Cumple requisitos' && $timeline_target_date !== null) {
+        syncProjectTimelineApprovalWithGoogleCalendar(
+            $conn,
+            $proposal_id,
+            (string) ($proposal['title'] ?? ''),
+            $timeline_target_date
+        );
+    }
     
     // =============================== HU-037: REGISTRAR ALERTAS INTERNAS ===============================
     try {

@@ -724,6 +724,271 @@ El resultado debe incluir:
 supportedLDAPVersion: 3
 ```
 
+## Integración con Google Calendar API
+
+El sistema incluye sincronización opcional de eventos con **Google Calendar** usando OAuth 2.0. Permite que cada usuario conecte su cuenta de Google para que eventos como prórrogas, actas, fechas límite y avances del proyecto aparezcan automáticamente en su calendario personal.
+
+---
+
+### 1. Arquitectura general
+
+| Componente | Descripción |
+|---|---|
+| `config.inc` | Almacena credenciales OAuth y clave de cifrado |
+| `service/GoogleCalendarService.php` | Clase principal con toda la lógica de Google Calendar |
+| `auth/google_auth.php` | Inicia el flujo OAuth 2.0, redirige al consentimiento de Google |
+| `auth/google_callback.php` | Recibe el código de autorización y guarda el token |
+| `auth/disconnect_google.php` | Desvincula la cuenta de Google del usuario |
+| `vendor/google/apiclient` | Biblioteca oficial instalada vía Composer |
+| `google_calendar_tokens` | Tabla en BD que guarda los tokens cifrados por usuario |
+| `google_calendar_sync_log` | Tabla en BD que mapea eventos locales a eventos de Google |
+
+---
+
+### 2. Configuración en Google Cloud Console
+
+#### 2.1 Crear proyecto
+
+1. Ingresar a [https://console.cloud.google.com](https://console.cloud.google.com).
+2. Crear un nuevo proyecto (ejemplo: `SGPFL Calendar Sync`).
+3. Esperar a que se complete la creación del proyecto.
+
+#### 2.2 Habilitar Google Calendar API
+
+1. En el menú lateral ir a **APIs y servicios → Biblioteca**.
+2. Buscar `Google Calendar API`.
+3. Hacer clic en **Habilitar**.
+
+#### 2.3 Configurar pantalla de consentimiento OAuth
+
+1. Ir a **APIs y servicios → Pantalla de consentimiento OAuth**.
+2. Seleccionar **Usuario externo**.
+3. Completar los campos obligatorios:
+   - **Nombre de la app:** SGPFL Calendar Sync
+   - **Correo de soporte del usuario:** `tu@dominio.edu`
+   - **Correo del desarrollador:** `tu@dominio.edu`
+4. En la sección **Permisos (Scopes)**, agregar:
+   - `https://www.googleapis.com/auth/calendar`
+   - `https://www.googleapis.com/auth/userinfo.email`
+   - `https://www.googleapis.com/auth/userinfo.profile`
+5. Si la app aún está en fase de pruebas, agregar los correos de los usuarios de prueba en la sección **Usuarios de prueba**.
+
+> **Nota:** En producción, se debe solicitar la verificación de la app para que usuarios externos puedan conectarse sin restricción.
+
+#### 2.4 Crear credenciales OAuth 2.0
+
+1. Ir a **APIs y servicios → Credenciales**.
+2. Hacer clic en **Crear credenciales → ID de cliente OAuth**.
+3. Seleccionar tipo: **Aplicación web**.
+4. Agregar los URIs de redireccionamiento autorizados:
+   ```
+   http://localhost/base/auth/google_callback.php
+   https://tudominio.com/base/auth/google_callback.php
+   ```
+5. Guardar y copiar el **Client ID** y el **Client Secret**.
+
+---
+
+### 3. Instalación de la biblioteca
+
+La biblioteca oficial de Google para PHP se instala con Composer:
+
+```bash
+composer require google/apiclient
+```
+
+Si el archivo `vendor/autoload.php` no existe, ejecutar primero:
+
+```bash
+composer install
+```
+
+---
+
+### 4. Configuración en `config.inc`
+
+Agregar el siguiente bloque al archivo `config.inc`:
+
+```php
+$google_calendar_config = [
+    'client_id'        => getenv('GOOGLE_CLIENT_ID')        ?: 'TU_CLIENT_ID.apps.googleusercontent.com',
+    'client_secret'    => getenv('GOOGLE_CLIENT_SECRET')    ?: 'TU_CLIENT_SECRET',
+    'redirect_uri'     => getenv('GOOGLE_REDIRECT_URI')     ?: 'http://localhost/base/auth/google_callback.php',
+    'scopes'           => ['https://www.googleapis.com/auth/calendar'],
+    'token_cipher'     => 'aes-256-gcm',
+    'token_cipher_key' => getenv('GOOGLE_TOKEN_CIPHER_KEY') ?: 'CAMBIAR_ESTA_CLAVE_EN_PRODUCCION',
+];
+```
+
+**Parámetros:**
+
+| Parámetro | Descripción |
+|---|---|
+| `client_id` | ID de cliente OAuth de Google Cloud Console |
+| `client_secret` | Secreto de cliente OAuth |
+| `redirect_uri` | URI exacta registrada en Google Cloud Console |
+| `scopes` | Permisos requeridos (solo calendario) |
+| `token_cipher` | Algoritmo de cifrado para guardar tokens en BD (AES-256-GCM) |
+| `token_cipher_key` | Clave de cifrado; se normaliza internamente con SHA-256 a 32 bytes |
+
+> **Seguridad:** En producción, definir las variables de entorno `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` y `GOOGLE_TOKEN_CIPHER_KEY` en el servidor en lugar de hardcodear los valores. Nunca incluir credenciales reales en el repositorio.
+
+---
+
+### 5. Estructura de base de datos
+
+Ejecutar las siguientes sentencias SQL para crear las tablas necesarias:
+
+```sql
+-- Almacena el token OAuth de cada usuario (cifrado)
+CREATE TABLE IF NOT EXISTS `google_calendar_tokens` (
+  `id`               int(11)      NOT NULL AUTO_INCREMENT,
+  `id_user`          varchar(50)  NOT NULL,
+  `access_token`     longtext     NOT NULL,
+  `refresh_token`    longtext,
+  `token_expires_at` longtext     NOT NULL,
+  `calendar_id`      varchar(255),
+  `sync_enabled`     tinyint(1)   DEFAULT 1,
+  `created_at`       datetime     DEFAULT CURRENT_TIMESTAMP,
+  `updated_at`       datetime     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_user_token` (`id_user`),
+  FOREIGN KEY (`id_user`) REFERENCES `sis_login`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Mapeo entre eventos del sistema y eventos de Google Calendar
+CREATE TABLE IF NOT EXISTS `google_calendar_sync_log` (
+  `id`              int(11)                                   NOT NULL AUTO_INCREMENT,
+  `id_user`         varchar(50)                               NOT NULL,
+  `event_type`      varchar(50)                               NOT NULL COMMENT 'prorroga, acta, deadline, timeline',
+  `event_id`        int(11)                                   NOT NULL,
+  `google_event_id` varchar(255),
+  `sync_status`     enum('pending','synced','failed')         DEFAULT 'pending',
+  `last_sync_at`    datetime,
+  `error_message`   text,
+  `created_at`      datetime                                  DEFAULT CURRENT_TIMESTAMP,
+  `updated_at`      datetime                                  DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_event_mapping` (`id_user`, `event_type`, `event_id`),
+  KEY `idx_sync_status` (`sync_status`),
+  FOREIGN KEY (`id_user`) REFERENCES `sis_login`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+---
+
+### 6. Flujo de autenticación (OAuth 2.0)
+
+```
+Usuario hace clic en "Conectar Google Calendar"
+        │
+        ▼
+auth/google_auth.php
+  → Genera URL de autorización con GoogleCalendarService::getAuthUrl()
+  → Redirige al usuario a Google
+        │
+        ▼
+Google solicita consentimiento al usuario
+        │
+        ▼
+auth/google_callback.php
+  → Recibe parámetro ?code=...
+  → Llama a GoogleCalendarService::handleAuthCallback()
+  → Intercambia code por access_token + refresh_token
+  → Cifra los tokens con AES-256-GCM
+  → Los guarda en la tabla google_calendar_tokens
+  → Redirige a perfil.php con mensaje de éxito
+```
+
+Para **desconectar** la cuenta:
+
+```
+auth/disconnect_google.php
+  → Llama a GoogleCalendarService::disconnectUser()
+  → Elimina el token de la tabla google_calendar_tokens
+  → Redirige a perfil.php con mensaje de éxito
+```
+
+---
+
+### 7. Uso de `GoogleCalendarService`
+
+La clase `service/GoogleCalendarService.php` centraliza toda la lógica. Ejemplo de uso desde cualquier módulo:
+
+```php
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/inc/db/bdcommon.inc';
+
+use Service\GoogleCalendarService;
+
+$conn = new mysqli($db_host, $usuario, $clave, $db);
+$conn->set_charset('utf8');
+
+$gcService = new GoogleCalendarService($conn);
+
+// Verificar si el usuario tiene Google Calendar conectado
+if ($gcService->isUserConnected($userId)) {
+
+    // Crear un evento en Google Calendar
+    $gcService->createEvent($userId, [
+        'summary'     => 'Revisión de avance TFG',
+        'description' => 'Sesión de seguimiento con el comité asesor',
+        'start'       => '2026-05-10T10:00:00',
+        'end'         => '2026-05-10T11:00:00',
+    ]);
+
+    // Sincronizar todos los eventos pendientes del usuario
+    $gcService->syncPendingEvents($userId);
+}
+```
+
+---
+
+### 8. Seguridad de los tokens
+
+Los tokens de acceso y actualización se cifran con **AES-256-GCM** antes de guardarse en la base de datos:
+
+- La clave de cifrado definida en `token_cipher_key` se normaliza internamente con `hash('sha256', $clave, true)` para obtener 32 bytes binarios.
+- Cada token cifrado se almacena como un JSON con tres campos: `iv` (vector de inicialización), `tag` (etiqueta GCM) y `data` (texto cifrado), todos en Base64.
+- Nunca se guarda el token en texto plano.
+
+---
+
+### 9. Variables de entorno recomendadas para producción
+
+Definir en el servidor web (Apache `SetEnv`, `.env`, o variables del sistema):
+
+```
+GOOGLE_CLIENT_ID=TU_CLIENT_ID.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=TU_CLIENT_SECRET
+GOOGLE_REDIRECT_URI=https://tudominio.com/base/auth/google_callback.php
+GOOGLE_TOKEN_CIPHER_KEY=una_clave_aleatoria_larga_y_segura
+```
+
+En XAMPP (Windows), se pueden agregar en `httpd.conf` o en el `VirtualHost`:
+
+```apache
+SetEnv GOOGLE_CLIENT_ID        "TU_CLIENT_ID.apps.googleusercontent.com"
+SetEnv GOOGLE_CLIENT_SECRET    "TU_CLIENT_SECRET"
+SetEnv GOOGLE_REDIRECT_URI     "http://localhost/base/auth/google_callback.php"
+SetEnv GOOGLE_TOKEN_CIPHER_KEY "una_clave_aleatoria_larga_y_segura"
+```
+
+---
+
+### 10. Solución de problemas comunes
+
+| Problema | Causa probable | Solución |
+|---|---|---|
+| `redirect_uri_mismatch` | URI de callback no registrada en Google Cloud | Verificar que el URI en `config.inc` coincida exactamente con el registrado en Google Cloud Console |
+| `invalid_grant` al usar el refresh_token | Token revocado o expirado | El usuario debe volver a conectar su cuenta desde `perfil.php` |
+| Error `No se encontró la configuración de Google Calendar` | `$google_calendar_config` no definido en `config.inc` | Agregar el bloque de configuración indicado en el paso 4 |
+| Eventos no se crean en Google | Usuario no conectado o token sin permisos de escritura | Verificar que el scope `calendar` esté incluido y reconectar la cuenta |
+| Error de cifrado al guardar token | `token_cipher_key` vacía o `openssl` no habilitado | Definir la clave y habilitar la extensión `openssl` en `php.ini` |
+| La pantalla de consentimiento bloquea usuarios externos | App en modo prueba sin usuarios autorizados | Agregar el correo del usuario en "Usuarios de prueba" en Google Cloud Console |
+
+---
+
 ## Anexo
 
 * En la siguiente imagen se muestra la estructura que se utiliza para manejar el LDAP en el sistema. Se utilizan grupos los cuales son el nombre de los roles que están en la base de datos.

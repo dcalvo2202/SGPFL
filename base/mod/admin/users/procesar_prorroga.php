@@ -13,7 +13,19 @@ $current_user_id = $mySessionController->getVar("usuario");
 $base_url = $mySessionController->getVar("cds_domain") . $mySessionController->getVar("cds_locate");
 
 // Verificar que sea POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if (
+    empty($_POST)
+    && empty($_FILES)
+    && isset($_SERVER['CONTENT_LENGTH'])
+    && (int) $_SERVER['CONTENT_LENGTH'] > 0
+) {
+    $mySessionController->save(
+        'prorroga_error',
+        'La solicitud excede el límite permitido por el servidor. ' .
+        'post_max_size=' . ini_get('post_max_size') .
+        ', upload_max_filesize=' . ini_get('upload_max_filesize')
+    );
+
     header("Location: ../../../panel_solicitudProrroga.php");
     exit;
 }

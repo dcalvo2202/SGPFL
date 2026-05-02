@@ -9,6 +9,7 @@ require_once __DIR__ . '/CommitteeMinuteProjectRepository.php';
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $current_user_id = (string)$mySessionController->getVar("usuario");
+$current_user_rol = (int)$mySessionController->getVar("rol");
 $base_url = (string)$mySessionController->getVar("cds_domain") . (string)$mySessionController->getVar("cds_locate");
 
 function redirect_with_download_error(string $base_url, string $message, ?int $project_id = null): never
@@ -118,20 +119,41 @@ try {
     $project_id = (int)$minute['project_id'];
 
     $project_repository = new CommitteeMinuteProjectRepository($connection);
-    $allowed_projects = $project_repository->findProjectsByCommitteeMember($current_user_id);
 
-    $allowed_project_ids = array_map(
-        static fn(array $project): int => (int)$project['id_aprobado'],
-        $allowed_projects
-    );
-
-    if (!in_array($project_id, $allowed_project_ids, true)) {
-        $connection->close();
-        redirect_with_download_error(
-            $base_url,
-            'No tiene permiso para descargar minutas de ese proyecto.',
-            $project_id
+    if ($current_user_rol === 2) {
+        // El Gestor (rol 2) puede descargar minutas de cualquier proyecto aprobado
+        $stmt_check = $connection->prepare(
+            "SELECT id_aprobado FROM proyecto_aprobado WHERE id_aprobado = ? AND aprobado = 1 LIMIT 1"
         );
+        if ($stmt_check === false) {
+            throw new RuntimeException('No se pudo verificar el acceso al proyecto.');
+        }
+        $stmt_check->bind_param('i', $project_id);
+        $stmt_check->execute();
+        $project_allowed = $stmt_check->get_result()->fetch_assoc() !== null;
+        $stmt_check->close();
+
+        if (!$project_allowed) {
+            $connection->close();
+            redirect_with_download_error($base_url, 'No tiene permiso para descargar minutas de ese proyecto.', $project_id);
+        }
+    } else {
+        // Rol 3 (comité): solo proyectos donde es tutor o asesor
+        $allowed_projects = $project_repository->findProjectsByCommitteeMember($current_user_id);
+
+        $allowed_project_ids = array_map(
+            static fn(array $project): int => (int)$project['id_aprobado'],
+            $allowed_projects
+        );
+
+        if (!in_array($project_id, $allowed_project_ids, true)) {
+            $connection->close();
+            redirect_with_download_error(
+                $base_url,
+                'No tiene permiso para descargar minutas de ese proyecto.',
+                $project_id
+            );
+        }
     }
 
     $file_name = normalize_download_file_name((string)$minute['file_name']);

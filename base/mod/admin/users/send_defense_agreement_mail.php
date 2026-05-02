@@ -18,7 +18,7 @@ $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 $user_id = $mySessionController->getVar("usuario");
 $user_rol = (int)$mySessionController->getVar("rol");
 
-if (!$user_id || $user_rol !== 3) {
+if (!$user_id || ($user_rol !== 3 && $user_rol !== 2)) {
     echo json_encode(['success' => false, 'message' => 'No autenticado o sin permisos']);
     exit;
 }

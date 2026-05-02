@@ -2,6 +2,7 @@
 session_start();
 require_once '../../../inc/db/db.php';
 require_once '../../../inc/alert_functions.php';
+require_once '../../../vendor/autoload.php';
 // Intentar obtener usuario autenticado para el historial (si el entorno lo provee)
 @include("../../login/check.php");
 
@@ -262,6 +263,16 @@ try {
     }
 
     mysqli_commit($id_con);
+
+    pa_sync_project_timeline_google(
+        $id_con,
+        $proposal_id,
+        $nombre_title,
+        substr($fecha_finalizacion, 0, 10),
+        $aprobado,
+        $unique,
+        $comite_id
+    );
     
     // Enviar alerta a todos los estudiantes del proyecto
     $sql_student = "SELECT user_id FROM tfg_proposals WHERE id = ?";
@@ -301,4 +312,104 @@ try {
     mysqli_rollback($id_con);
     $_SESSION['last_sql_error'] = $ex->getMessage();
     header('Location: ../../../proyecto_aprobado.php?err=1'); exit;
+}
+
+/**
+ * Sincroniza (o elimina) el hito principal del proyecto en Google Calendar.
+ * Incluye estudiantes del proyecto Y miembros del comité.
+ * No detiene el flujo principal si ocurre un error.
+ */
+function pa_sync_project_timeline_google(
+    mysqli $db,
+    int $proposalId,
+    string $projectName,
+    string $targetDate,
+    int $aprobado,
+    array $candidateUsers,
+    int $comiteId = 0
+): void {
+    try {
+        if (!class_exists('Service\\GoogleCalendarService')) {
+            return;
+        }
+
+        $users = [];
+        foreach ($candidateUsers as $uid) {
+            $userId = (string) $uid;
+            if ($userId !== '') {
+                $users[$userId] = true;
+            }
+        }
+
+        // Agregar dueño de propuesta
+        $stmtOwner = mysqli_prepare($db, "SELECT user_id FROM tfg_proposals WHERE id = ? LIMIT 1");
+        if ($stmtOwner) {
+            mysqli_stmt_bind_param($stmtOwner, 'i', $proposalId);
+            mysqli_stmt_execute($stmtOwner);
+            $rsOwner = mysqli_stmt_get_result($stmtOwner);
+            if ($rsOwner && ($ownerRow = mysqli_fetch_assoc($rsOwner))) {
+                $ownerId = (string) ($ownerRow['user_id'] ?? '');
+                if ($ownerId !== '') {
+                    $users[$ownerId] = true;
+                }
+            }
+            mysqli_stmt_close($stmtOwner);
+        }
+
+        // Agregar miembros del comité si existe
+        if ($comiteId > 0) {
+            $stmtComite = mysqli_prepare($db, "SELECT tutor, asesor_1, asesor_2 FROM comite WHERE Id = ? LIMIT 1");
+            if ($stmtComite) {
+                mysqli_stmt_bind_param($stmtComite, 'i', $comiteId);
+                mysqli_stmt_execute($stmtComite);
+                $rsComite = mysqli_stmt_get_result($stmtComite);
+                if ($rsComite && ($comiteRow = mysqli_fetch_assoc($rsComite))) {
+                    foreach (['tutor', 'asesor_1', 'asesor_2'] as $role) {
+                        $memberId = (string) ($comiteRow[$role] ?? '');
+                        if ($memberId !== '') {
+                            $users[$memberId] = true;
+                        }
+                    }
+                }
+                mysqli_stmt_close($stmtComite);
+            }
+        }
+
+        if (empty($users)) {
+            return;
+        }
+
+        $googleCalendarService = new Service\GoogleCalendarService($db);
+
+        $statusMap = [
+            1 => 'Vigente',
+            2 => 'Prorroga Activa',
+            3 => 'Vencido',
+            4 => 'Cancelado'
+        ];
+        $timelineStatus = $statusMap[$aprobado] ?? 'Vigente';
+
+        foreach (array_keys($users) as $userId) {
+            if (!$googleCalendarService->isSyncEnabled($userId)) {
+                continue;
+            }
+
+            if ($aprobado === 4) {
+                $googleCalendarService->deleteEvent($userId, 'timeline', $proposalId);
+                continue;
+            }
+
+            $timelineData = [
+                'milestone_name' => 'Fecha límite de entrega del TFG',
+                'target_date' => $targetDate,
+                'project_name' => $projectName,
+                'description' => 'Hito actualizado desde el registro del proyecto aprobado.',
+                'status' => $timelineStatus
+            ];
+
+            $googleCalendarService->syncProjectTimeline($userId, $proposalId, $timelineData);
+        }
+    } catch (Throwable $e) {
+        error_log('tfg_aprobado_update.php Google Calendar timeline sync error: ' . $e->getMessage());
+    }
 }

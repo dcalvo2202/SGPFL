@@ -17,12 +17,27 @@ $base_url = $cds_domain . $cds_locate;
 include_once(__DIR__ . "/inc/db/bdcommon.inc");
 include_once(__DIR__ . "/inc/db/db.php");
 
+// Variables de conexión definidas en bdcommon.inc; alias locales para el analizador estático.
+$db_host = isset($db_host) ? $db_host : 'localhost';
+$usuario = isset($usuario) ? $usuario : 'root';
+$clave   = isset($clave)   ? $clave   : '';
+$db      = isset($db)      ? $db      : 'base_db';
+
 // Variables para mensajes
 $message = null;
 $message_type = null;
 $user_info = null;
 $role_info = null;
 $is_external_advisor = false;
+$google_calendar_connected = false;
+
+// Mensajes flash desde callbacks de Google Calendar (pasados por URL, no por sesión).
+if (!empty($_GET['gc_flash']) && !empty($_GET['gc_msg'])) {
+    $gc_raw_msg  = strip_tags((string) $_GET['gc_msg']);
+    $gc_status   = (isset($_GET['gc_status']) && $_GET['gc_status'] === 'error') ? 'danger' : 'success';
+    $message      = $gc_raw_msg;
+    $message_type = $gc_status;
+}
 
 // Procesar cambio de contraseña
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'cambiar_contrasena') {
@@ -206,6 +221,24 @@ try {
     $result_advisor = $stmt_advisor->get_result();
     $is_external_advisor = ($result_advisor->num_rows > 0);
     $stmt_advisor->close();
+
+    // Verificar si el usuario tiene Google Calendar conectado
+    $query_google = "SELECT sync_enabled FROM google_calendar_tokens WHERE id_user = ? LIMIT 1";
+    $stmt_google = $conn->prepare($query_google);
+    if (!$stmt_google) {
+        throw new Exception("Error en la preparación: " . $conn->error);
+    }
+
+    $stmt_google->bind_param("s", $current_user_id);
+    $stmt_google->execute();
+    $result_google = $stmt_google->get_result();
+
+    if ($result_google->num_rows > 0) {
+        $google_data = $result_google->fetch_assoc();
+        $google_calendar_connected = ((int) ($google_data['sync_enabled'] ?? 0) === 1);
+    }
+
+    $stmt_google->close();
     
     // Obtener información del usuario de sis_user
     $query_user = "SELECT su.*, sr.roll_name, sr.roll_desc 
@@ -438,6 +471,38 @@ if (isset($message) && !empty($message)) {
                     </div>
                 </div>
             </form>
+
+            <!-- Sección Google Calendar en el perfil -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header bg-rojo-una text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="bi bi-calendar-check"></i> Sincronización con Google Calendar
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <?php if ($google_calendar_connected): ?>
+                                <div class="alert alert-success">
+                                    <i class="bi bi-check-circle"></i> Google Calendar está conectado
+                                </div>
+                                <p class="text-muted">Los eventos de tu proyecto se sincronizan automáticamente con tu calendario de Google.</p>
+
+                                <form method="POST" action="auth/disconnect_google.php" style="display: inline;">
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Desconectar Google Calendar?');">
+                                        <i class="bi bi-x-circle"></i> Desconectar Google Calendar
+                                    </button>
+                                </form>
+                            <?php else: ?>
+                                <p class="text-muted">Conecta tu Google Calendar para sincronizar automáticamente los eventos de tu proyecto.</p>
+                                <a href="auth/google_auth.php" class="btn btn-primary">
+                                    <i class="bi bi-calendar-plus"></i> Conectar Google Calendar
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Botones de Acción -->
             <div class="row justify-content-center mt-5">

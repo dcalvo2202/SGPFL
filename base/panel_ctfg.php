@@ -159,6 +159,15 @@ $avisos_generales = $panel->getAvisos();
                             <p>Revisar y aprobar solicitudes de prórroga de estudiantes.</p>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>PanelRegistroAcuerdo.php'" style="border-left: 4px solid #c8151a;">
+                            <div class="card-icon" style="color: #c8151a;">
+                                <i class="bi bi-journal-check"></i>
+                            </div>
+                            <h5>Consulta de Acuerdos</h5>
+                            <p>Consultar minutas previas y el detalle de asistentes de sus proyectos de comité.</p>
+                        </div>
+                    </div>
                     <!--div class="col-md-6 col-lg-4">
                         <div class="quick-action-card" onclick="location.href='<?= htmlspecialchars($base_url) ?>listar_actas.php'">
                             <div class="card-icon">

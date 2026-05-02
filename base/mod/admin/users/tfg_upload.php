@@ -264,7 +264,7 @@ $additional_css = ['inc/css/tfg_upload.css'];
                                accept=".pdf,.docx" 
                                multiple
                                required>
-                        <small class="text-muted">Formatos permitidos: PDF, DOCX | Tamaño máximo: 10 MB por archivo | Puede seleccionar múltiples archivos</small>
+                        <small class="text-muted">Formatos permitidos: PDF, DOCX | Tamaño máximo total: 10 MB | Puede seleccionar múltiples archivos</small>
                         <div id="files-list" class="mt-2"></div>
                     </div>
                 </div>
@@ -665,9 +665,9 @@ $additional_css = ['inc/css/tfg_upload.css'];
                         }
                     });
                     
-                    // Validar tamaño total (máximo 8 MB para todos los archivos)
-                    if (totalSize > 8 * 1024 * 1024) {
-                        alert('El tamaño total de los archivos excede 8 MB. Por favor, elimine algunos archivos.');
+                    // Validar tamaño total (máximo 10 MB para todos los archivos)
+                    if (totalSize > 10 * 1024 * 1024) {
+                        alert('El tamaño total de los archivos excede 10 MB. Por favor, elimine algunos archivos.');
                     }
                     
                     // Actualizar display y sincronizar

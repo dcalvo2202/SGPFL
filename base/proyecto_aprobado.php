@@ -220,9 +220,9 @@ CSS;
 
             <!-- Documento -->
             <div class="mb-3">
-              <label for="documento">Documento (Word, PDF):</label><br>
+              <label for="documento">Acuerdo (Word, PDF):</label><br>
               <div class="d-flex align-items-center gap-3 flex-wrap mt-1">
-                <label for="documento" class="btn-tfg mb-0"><i class="bi bi-upload"></i> Subir documento</label>
+                <label for="documento" class="btn-tfg mb-0"><i class="bi bi-upload"></i> Subir Acuerdo</label>
                 <input type="file" id="documento" name="documento" accept=".pdf,.doc,.docx,.xls,.xlsx" required hidden>
                 <div id="previewBox" class="d-flex align-items-center gap-2" style="display:none;min-width:0;">
                   <img id="previewIcon" alt="Archivo seleccionado" hidden>

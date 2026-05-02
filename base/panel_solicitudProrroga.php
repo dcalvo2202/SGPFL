@@ -236,7 +236,7 @@ CSS;
                      class="form-control" 
                      id="documento_prorroga" 
                      name="documento_prorroga[]" 
-                     accept="application/pdf"
+                     accept=".pdf,application/pdf"
                      multiple
                      style="display: none;">
               <div id="customFileInput" class="custom-file-input-wrapper" style="

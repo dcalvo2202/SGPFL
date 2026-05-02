@@ -12,9 +12,16 @@ $conn = new mysqli($db_host, $usuario, $clave, $db);
 if (!$conn->connect_error) {
     $conn->set_charset("utf8");
     $sql = "SELECT er.id as request_id, er.proposal_id, er.extension_number, er.reason, 
-                   er.request_date, tp.title as proyecto_titulo, tp.user_id as estudiante_id
+           er.request_date, tp.title as proyecto_titulo, tp.user_id as estudiante_id,
+           pa.fecha_finalizacion AS fecha_real_proyecto
             FROM tfg_extension_requests er
             JOIN tfg_proposals tp ON er.proposal_id = tp.id
+      LEFT JOIN (
+        SELECT proposal_id, MAX(id_aprobado) AS id_aprobado
+        FROM proyecto_aprobado
+        GROUP BY proposal_id
+      ) pa_idx ON pa_idx.proposal_id = er.proposal_id
+      LEFT JOIN proyecto_aprobado pa ON pa.id_aprobado = pa_idx.id_aprobado
             WHERE er.status = 'pendiente'
             ORDER BY er.request_date ASC";
     
@@ -60,6 +67,20 @@ $inlineStyles = <<<'CSS'
 }
 .prorroga-card .fecha i {
     margin-right: 5px;
+}
+.prorroga-card .comparacion {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #f8f9fa;
+  border: 1px dashed #ced4da;
+  font-size: 0.88rem;
+  color: #495057;
+  line-height: 1.4;
+}
+.prorroga-card .comparacion .tag {
+  font-weight: 600;
+  color: #034991;
 }
 .prorroga-card .badge-prorroga {
     font-size: 0.75rem;
@@ -108,6 +129,28 @@ CSS;
           </p>
           
           <?php foreach ($solicitudes as $solicitud): ?>
+          <?php
+            $esPrimeraProrroga = ((int)$solicitud['extension_number'] === 1);
+            $tipoProrrogaTexto = $esPrimeraProrroga ? '1 año' : '6 meses';
+            $intervaloProrroga = $esPrimeraProrroga ? 'P1Y' : 'P6M';
+
+            $fechaBaseTexto = 'No disponible';
+            $fechaNuevaTexto = 'No calculable';
+            $fechaRealProyecto = (string)($solicitud['fecha_real_proyecto'] ?? '');
+
+            if ($fechaRealProyecto !== '') {
+              try {
+                $fechaBaseDt = new DateTime($fechaRealProyecto);
+                $fechaNuevaDt = (clone $fechaBaseDt)->add(new DateInterval($intervaloProrroga));
+
+                $fechaBaseTexto = $fechaBaseDt->format('d/m/Y H:i');
+                $fechaNuevaTexto = $fechaNuevaDt->format('d/m/Y H:i');
+              } catch (Throwable $e) {
+                $fechaBaseTexto = 'Formato inválido';
+                $fechaNuevaTexto = 'No calculable';
+              }
+            }
+          ?>
           <a href="detalle_prorroga.php?id=<?php echo $solicitud['request_id']; ?>" class="prorroga-card">
             <div class="d-flex justify-content-between align-items-start">
               <div>
@@ -117,6 +160,10 @@ CSS;
                 <div class="fecha">
                   <i class="fa fa-calendar"></i>
                   Solicitado: <?php echo date('d/m/Y H:i', strtotime($solicitud['request_date'])); ?>
+                </div>
+                <div class="comparacion">
+                  <div><span class="tag">Fecha real proyecto:</span> <?php echo htmlspecialchars($fechaBaseTexto); ?></div>
+                  <div><span class="tag">Nueva fecha estimada (<?php echo htmlspecialchars($tipoProrrogaTexto); ?>):</span> <?php echo htmlspecialchars($fechaNuevaTexto); ?></div>
                 </div>
               </div>
               <div>
