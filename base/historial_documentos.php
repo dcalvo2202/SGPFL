@@ -712,7 +712,7 @@ try {
     <!-- =============================== CONTENIDO PRINCIPAL =============================== -->
     <main class="flex-fill">
         <div class="container my-4">
-            <h1 class="text-center mb-4" style="font-size: 2.5rem; color: #000;">Historial de documentos</h1>
+            <h1 class="text-center mb-4">Historial de documentos</h1>
             
             <?php if ($is_advisor && !empty($linked_students_list)): ?>
             <!-- Banner informativo para asesores -->

@@ -98,7 +98,7 @@ if ($stmt = mysqli_prepare($id_con, $sqlSel)) {
     <div class="container my-5">
 
       <div class="dashboard-header text-center mb-5">
-        <h1 style="font-size: 2.5rem; font-weight: 700;">
+        <h1>
           Notas del proyecto<?php echo $proyecto_nombre !== '' ? ': ' . htmlspecialchars($proyecto_nombre, ENT_QUOTES, 'UTF-8') : ''; ?>
         </h1>
         <p class="lead">Agregue nuevas notas y consulte el historial asociado al proyecto aprobado.</p>

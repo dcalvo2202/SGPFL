@@ -1,0 +1,47 @@
+/*
+ * Estilos para Registro de Minutas del Comite Asesor
+ * panel_committee_minutes.php
+ * Extraidos de <style> embebido y centralizados aqui.
+ * Mantiene consistencia con estilo. css de UNA.
+ */
+
+/* === TITULOS DE SECCION === */
+.minute-section-title {
+    color: var(--rojo-una);
+    font-size: 1.35rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    font-family: var(--font-una);
+}
+
+.minute-subtitle {
+    color: var(--azul-una);
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-family: var(--font-una);
+}
+
+/* === TABLAS DE MINUTAS === */
+.minute-table thead th {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--azul-una);
+    border-bottom: 2px solid #dee2e6;
+}
+
+.minute-table tbody td {
+    vertical-align: middle;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 576px) {
+    .minute-section-title {
+        font-size: 1.15rem;
+    }
+    .minute-subtitle {
+        font-size: 1rem;
+    }
+}

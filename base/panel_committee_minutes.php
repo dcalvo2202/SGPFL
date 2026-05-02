@@ -97,6 +97,7 @@ try {
 <html lang="es">
 <?php include 'head.php'; ?>
 <link rel="stylesheet" href="inc/css/admin_panels_responsive.css">
+<link rel="stylesheet" href="inc/css/committee-minutes.css">
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -289,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <table class="table table-hover align-middle mb-0">
                                         <thead>
                                         <tr>
-                                            <th style="width: 110px;">Asistió</th>
+                                            <th class="width-110">Asistió</th>
                                             <th>ID Usuario</th>
                                             <th>Nombre</th>
                                             <th>Correo</th>
@@ -374,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <th>Asistieron</th>
                                         <th>Total</th>
                                         <th>Registrada en</th>
-                                        <th style="width: 140px;">Acción</th>
+                                        <th class="width-140">Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -424,7 +425,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     .dashboard-header h1 {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 2.5rem;
         font-weight: 700;
         color: #034991;
         margin-bottom: 0.5rem;

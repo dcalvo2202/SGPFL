@@ -87,8 +87,8 @@ try {
                 <!-- Debe buscar con el estudiante relacionado a este asesor -->
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="quick-action-card w-100 d-flex flex-column justify-content-center" onclick="location.href='<?= $base_url ?>historial_documentos.php'" style="border-left: 4px solid #6c757d;">
-                            <div class="card-icon">
+                        <div class="quick-action-card w-100 d-flex flex-column justify-content-center border-accent-gray" onclick="location.href='<?= $base_url ?>historial_documentos.php'">
+                            <div class="card-icon icon-muted">
                                 <i class="bi bi-clock-history"></i>
                             </div>
                             <h5>Historial de documentos</h5>
@@ -98,8 +98,8 @@ try {
 
                     <?php if ($has_committee_projects): ?>
                         <div class="col-md-6 col-lg-4 d-flex">
-                            <div class="quick-action-card w-100 d-flex flex-column justify-content-center" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_committee_minutes.php'" style="border-left: 4px solid #c8151a;">
-                                <div class="card-icon" style="color: #c8151a;">
+                            <div class="quick-action-card w-100 d-flex flex-column justify-content-center border-accent-red" onclick="location.href='<?= htmlspecialchars($base_url) ?>panel_committee_minutes.php'">
+                                <div class="card-icon icon-red">
                                     <i class="bi bi-file-earmark-text-fill"></i>
                                 </div>
                                 <h5>Registrar Minutas</h5>

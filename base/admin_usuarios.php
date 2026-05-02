@@ -377,7 +377,7 @@ if (!is_array($usuarios)) {
                                 <input type="text" name="find_key" class="form-control" value="<?= htmlspecialchars($find_key) ?>" placeholder="Digite un criterio de búsqueda">
                             </div>
                             <div class="col-md-4 text-end">
-                                <button type="submit" class="btn btn-info" style="margin-right: 10px;">
+                                <button type="submit" class="btn btn-info btn-spacing-right">
                                     <i class="fa fa-search"></i> Buscar
                                 </button>
                                 <a href="admin_usuarios.php" class="btn btn-secondary">Limpiar</a>
@@ -398,27 +398,27 @@ if (!is_array($usuarios)) {
                         <input type="hidden" name="page" value="<?= (int)$page ?>">
 
                         <div class="col-md-3">
-                            <label class="form-label">ID <span style="color: red;">*</span></label>
+                            <label class="form-label">ID <span class="required-indicator">*</span></label>
                             <input type="text" name="id" class="form-control" required value="<?= htmlspecialchars($form_id) ?>" <?= $editing_id !== '' ? 'readonly' : '' ?>>
                         </div>
 
                         <div class="col-md-5">
-                            <label class="form-label">Nombre <span style="color: red;">*</span></label>
+                            <label class="form-label">Nombre <span class="required-indicator">*</span></label>
                             <input type="text" name="nombre" class="form-control" required value="<?= htmlspecialchars($form_nombre) ?>">
                         </div>
 
                         <div class="col-md-4">
-                            <label class="form-label">Correo <span style="color: red;">*</span></label>
+                            <label class="form-label">Correo <span class="required-indicator">*</span></label>
                             <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($form_email) ?>">
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label">Teléfono <span style="color: red;">*</span></label>
+                            <label class="form-label">Teléfono <span class="required-indicator">*</span></label>
                             <input type="text" name="telefono" class="form-control" value="<?= htmlspecialchars($form_telefono) ?>">
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label">Tipo teléfono <span style="color: red;">*</span></label>
+                            <label class="form-label">Tipo teléfono <span class="required-indicator">*</span></label>
                             <select name="id_tipo_tel" class="form-select">
                                 <?php foreach ($tiposTel as $tipo): ?>
                                     <?php $tipoId = (string)$tipo['id_tipo_tel']; ?>
@@ -430,7 +430,7 @@ if (!is_array($usuarios)) {
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label">Rol <span style="color: red;">*</span></label>
+                            <label class="form-label">Rol <span class="required-indicator">*</span></label>
                             <select name="id_roll" class="form-select" required>
                                 <option value="0">[Seleccionar]</option>
                                 <?php foreach ($roles as $rol): ?>
@@ -448,11 +448,11 @@ if (!is_array($usuarios)) {
                         </div>
 
                         <div class="col-12 text-end">
-                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;">
+                            <button type="submit" class="btn btn-primary btn-spacing-right">
                                 <i class="fa fa-save"></i> <?= $editing_id !== '' ? 'Actualizar' : 'Guardar' ?>
                             </button>
                             <?php if ($editing_id !== ''): ?>
-                                <a href="admin_usuarios.php?<?= http_build_query(['show_search' => $show_search, 'find_key' => $find_key]) ?>" class="btn btn-secondary" style="margin-right: 10px;">
+                                <a href="admin_usuarios.php?<?= http_build_query(['show_search' => $show_search, 'find_key' => $find_key]) ?>" class="btn btn-secondary btn-spacing-right">
                                     Cancelar
                                 </a>
                             <?php endif; ?>

@@ -98,7 +98,6 @@ function formatBytes($bytes) {
         
         .dashboard-header h1 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 2.5rem;
             font-weight: 700;
             color: #034991;
         }

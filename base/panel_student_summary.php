@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include("mod/login/check.php");
 include('lang/lang.es');
 
@@ -23,7 +23,7 @@ if ($current_user_rol != 2 && $current_user_rol != 1) {
     <div class="container my-5">
 
         <div class="dashboard-header text-center mb-5">
-            <h1 style="font-size: 2.5rem; font-weight: 700; color: #034991;">Resumen consolidado por estudiante</h1>
+            <h1 class="text-primary fw-bold">Resumen consolidado por estudiante</h1>
             <p class="lead">Desde este panel puede buscar estudiantes y descargar el resumen consolidado de su proceso de TFG en formato PDF.</p>
         </div>
 
@@ -62,14 +62,15 @@ if ($current_user_rol != 2 && $current_user_rol != 1) {
         <div id="results-section" style="display:none;">
             <div class="card document-table mb-4">
                 <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle mb-0">
+                    <div class="student-summary-table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
                             <thead class="table-light">
                                 <tr>
                                     <th>Identificación</th>
                                     <th>Nombre</th>
                                     <th>Correo</th>
-                                    <th class="text-center" style="width: 140px;">Acción</th>
+                                    <th class="text-center" class="width-140">Acción</th>
                                 </tr>
                             </thead>
                             <tbody id="results-body"></tbody>
@@ -141,9 +142,8 @@ if ($current_user_rol != 2 && $current_user_rol != 1) {
 
     .dashboard-header h1 {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 2.5rem;
         font-weight: 700;
-        color: #034991;
+        color: var(--azul-una);
         margin-bottom: 0.5rem;
     }
 
@@ -224,6 +224,39 @@ if ($current_user_rol != 2 && $current_user_rol != 1) {
             display: block;
             margin-bottom: 0.2rem;
         }
+
+        /* Responsive table mobile */
+        .student-summary-table-wrapper .table thead { display: none; }
+        .student-summary-table-wrapper .table tbody tr {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            background-color: #fff;
+        }
+        .student-summary-table-wrapper .table td {
+            display: flex;
+            flex-direction: column;
+            padding: 0.25rem 0 !important;
+            border: none !important;
+            text-align: left;
+            width: 100%;
+        }
+        .student-summary-table-wrapper .table td::before {
+            font-weight: 600;
+            color: #034991;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+        .student-summary-table-wrapper .table td:nth-child(1)::before { content: "Identificación"; }
+        .student-summary-table-wrapper .table td:nth-child(2)::before { content: "Nombre"; }
+        .student-summary-table-wrapper .table td:nth-child(3)::before { content: "Correo"; }
+        .student-summary-table-wrapper .table td:nth-child(4)::before { content: "Acción"; }
     }
 </style>
 

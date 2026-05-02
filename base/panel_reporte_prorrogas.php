@@ -192,8 +192,9 @@ for ($year = $current_year + 1; $year >= 2024; $year--) {
                             <p class="mb-0">Ajusta el filtro de año o limpia los filtros para volver a consultar.</p>
                         </div>
                     <?php else: ?>
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0">
+                        <div class="prorroga-table-wrapper">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
                                 <thead>
                                     <tr>
                                         <th>Identificador</th>
@@ -270,7 +271,6 @@ for ($year = $current_year + 1; $year >= 2024; $year--) {
 
     .dashboard-header h1 {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 2.5rem;
         font-weight: 700;
         color: #034991;
         margin-bottom: 0.5rem;
@@ -376,6 +376,42 @@ for ($year = $current_year + 1; $year >= 2024; $year--) {
         .prorroga-summary-value {
             font-size: 1.4rem;
         }
+
+        /* Responsive table mobile */
+        .prorroga-table-wrapper .table thead { display: none; }
+        .prorroga-table-wrapper .table tbody tr {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            background-color: #fff;
+        }
+        .prorroga-table-wrapper .table td {
+            display: flex;
+            flex-direction: column;
+            padding: 0.25rem 0 !important;
+            border: none !important;
+            text-align: left;
+            width: 100%;
+        }
+        .prorroga-table-wrapper .table td::before {
+            font-weight: 600;
+            color: #034991;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+        .prorroga-table-wrapper .table td:nth-child(1)::before { content: "Identificador"; }
+        .prorroga-table-wrapper .table td:nth-child(2)::before { content: "Proyecto"; }
+        .prorroga-table-wrapper .table td:nth-child(3)::before { content: "Estudiantes"; }
+        .prorroga-table-wrapper .table td:nth-child(4)::before { content: "Comité"; }
+        .prorroga-table-wrapper .table td:nth-child(5)::before { content: "Prórrogas"; }
+        .prorroga-table-wrapper .table td:nth-child(6)::before { content: "Última solicitud"; }
+        .prorroga-table-wrapper .table td:nth-child(7)::before { content: "Detalle"; }
     }
 </style>
 </body>

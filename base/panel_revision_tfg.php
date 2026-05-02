@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // VERIFICAR AUTENTICACIÓN Y PERMISOS
 include("mod/login/check.php");
 
@@ -28,7 +28,7 @@ if ($current_user_rol != 2) {
         <div class="container my-5">
 
             <div class="dashboard-header text-center mb-4">
-                <h1 style="font-size: 2.5rem; font-weight: 700;">Revisión de Propuestas de TFG</h1>
+                <h1 class="page-title">Revisión de Propuestas de TFG</h1>
                 <p class="lead mb-0">Consulte todos los archivos de cada propuesta y resuelva la revisión completa en bloque.</p>
             </div>
 
