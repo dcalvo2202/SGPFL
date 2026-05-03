@@ -301,7 +301,7 @@ if (!is_array($roles)) {
                             <table class="table table-striped table-hover align-middle">
                             <thead class="table-light">
                                 <tr>
-                                    <th>#</th>
+                                    <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Descripción</th>
                                     <th>Acciones</th>
