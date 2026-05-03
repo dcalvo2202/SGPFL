@@ -228,8 +228,11 @@ $comite_id = isset($_GET['comite']) ? (int)$_GET['comite'] : 0;
 $f_ini = trim($_GET['f_ini'] ?? '');
 $f_fin = trim($_GET['f_fin'] ?? '');
 
-// Nuevo: filtro por miembro del comité (ID o nombre)
+// filtro por miembro del comité (ID o nombre)
 $prof = trim($_GET['prof'] ?? '');
+
+// filtro por estudiante (ID o nombre)
+$estudiante = trim($_GET['estudiante'] ?? '');
 
 $validDate = fn($d) => $d !== '' && preg_match('/^\d{4}-\d{2}-\d{2}$/', $d);
 if (!$validDate($f_ini)) $f_ini = '';
@@ -267,7 +270,7 @@ list($estadoLabel, $estadoBadge) = estadoInfo($estado);
 
 // Construcción de consulta con condiciones dinámicas
 $proyectos_aprobados = [];
-$sql = "SELECT p.id_aprobado, p.nombre, p.aprobado, p.fecha_creacion, p.comite_id, p.estado,
+$sql = "SELECT DISTINCT p.id_aprobado, p.nombre, p.aprobado, p.fecha_creacion, p.comite_id, p.estado,
                COALESCE(t.nombre,'-')  AS tutor_nombre,
                COALESCE(a1.nombre,'-') AS asesor1_nombre,
                COALESCE(a2.nombre,'-') AS asesor2_nombre
@@ -275,13 +278,15 @@ $sql = "SELECT p.id_aprobado, p.nombre, p.aprobado, p.fecha_creacion, p.comite_i
         LEFT JOIN comite c ON c.Id = p.comite_id
         LEFT JOIN sis_user t  ON t.id  = c.tutor
         LEFT JOIN sis_user a1 ON a1.id = c.asesor_1
-        LEFT JOIN sis_user a2 ON a2.id = c.asesor_2";
+        LEFT JOIN sis_user a2 ON a2.id = c.asesor_2
+        LEFT JOIN proyecto_aprobado_estudiantes pae ON pae.id_aprobado = p.id_aprobado
+        LEFT JOIN sis_user est ON est.id = pae.estudiante_id";
 $conds  = [];
 $types  = "";
 $params = [];
 
 /**
- * NUEVO: Manejo de "cancelados" (HU)
+ * Manejo de "cancelados" (HU)
  * - Si filtro estado=4: mostrar cancelados (HU o el estado viejo)
  * - Si NO es estado=4: excluir cancelados de búsquedas activas
  */
@@ -337,6 +342,21 @@ if ($prof !== '') {
     }
 }
 
+// Nuevo: condición por estudiante (coincide por ID o nombre de cualquier estudiante vinculado)
+if ($estudiante !== '') {
+    if (preg_match('/^\d+$/', $estudiante)) {
+        $sid = (int)$estudiante;
+        $conds[] = "pae.estudiante_id = ?";
+        $types  .= "i";
+        $params[] = $sid;
+    } else {
+        $elike = "%{$estudiante}%";
+        $conds[] = "est.nombre LIKE ?";
+        $types  .= "s";
+        $params[] = $elike;
+    }
+}
+
 // WHERE solo si hay condiciones
 if (!empty($conds)) {
     $sql .= " WHERE " . implode(' AND ', $conds);
@@ -383,7 +403,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
 
       <!-- Filtros -->
       <form class="form-filters" method="get" action="">
-        <input type="search" class="form-control" name="q" placeholder="Buscar por nombre..."
+        <input type="search" class="form-control" name="q" placeholder="Buscar por nombre de proyecto..."
                value="<?php echo htmlspecialchars($q, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
         
         <select name="estado" class="form-select">
@@ -405,6 +425,9 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
         
         <input type="text" class="form-control" name="prof" placeholder="Miembro del comité (ID o nombre)"
                value="<?php echo htmlspecialchars($prof, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
+
+        <input type="text" class="form-control" name="estudiante" placeholder="Estudiante (ID o nombre)"
+               value="<?php echo htmlspecialchars($estudiante, ENT_QUOTES, 'UTF-8'); ?>" autocomplete="off">
         
         <input type="date" class="form-control" name="f_ini" value="<?php echo htmlspecialchars($f_ini); ?>" placeholder="Desde">
         
@@ -412,7 +435,7 @@ if ($stmt = mysqli_prepare($id_con, $sql)) {
         
         <div class="btn-group">
           <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i> Buscar</button>
-          <?php if ($q !== '' || $comite_id>0 || $f_ini!=='' || $f_fin!=='' || isset($_GET['estado']) || $prof!==''): ?>
+          <?php if ($q !== '' || $comite_id>0 || $f_ini!=='' || $f_fin!=='' || isset($_GET['estado']) || $prof!=='' || $estudiante!==''): ?>
             <a class="btn btn-outline-secondary" href="ProyectosRegistrados.php">Limpiar</a>
           <?php endif; ?>
         </div>
