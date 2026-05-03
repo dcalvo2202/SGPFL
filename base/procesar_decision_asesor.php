@@ -10,6 +10,7 @@ include_once __DIR__ . '/lib/mysession/mySession.conf.php';
 include_once __DIR__ . '/inc/db/bdcommon.inc';
 require_once __DIR__ . '/config.inc';
 require_once __DIR__ . '/inc/hu041_committee_audit.php';
+require_once __DIR__ . '/inc/hu041_committee_rules.php';
 
 $mySessionController = mySession::getIstance($_MYSESSION_CONF);
 $current_user_id = $mySessionController->getVar("usuario");
@@ -27,16 +28,10 @@ $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
 $decision = isset($_POST['decision']) ? trim($_POST['decision']) : '';
 $comentarios = isset($_POST['comentarios']) ? trim($_POST['comentarios']) : '';
 
-if ($id <= 0) {
-    echo json_encode(['success' => false, 'message' => 'ID de solicitud inválido.']);
-    exit;
-}
-if (!in_array($decision, ['Aprobado', 'Rechazado'], true)) {
-    echo json_encode(['success' => false, 'message' => 'Decisión inválida.']);
-    exit;
-}
-if ($decision === 'Rechazado' && strlen($comentarios) < 10) {
-    echo json_encode(['success' => false, 'message' => 'Debe especificar un motivo de rechazo (mínimo 10 caracteres).']);
+try {
+    hu041_validate_advisor_decision_input($id, $decision, $comentarios);
+} catch (Exception $e) {
+    echo json_encode(['success' => false, 'message' => $e->getMessage()]);
     exit;
 }
 
@@ -58,9 +53,7 @@ try {
     $stmt->close();
 
     $estado_actual = $solicitud['status'] ?? '';
-    if (!in_array($estado_actual, ['En Revision', 'En Revisión'], true)) {
-        throw new Exception('Esta solicitud ya fue procesada anteriormente (Estado actual: ' . $estado_actual . ').');
-    }
+    hu041_validate_request_pending_status($estado_actual);
 
     $conn->begin_transaction();
 
@@ -116,9 +109,7 @@ try {
         }
         $stmt_user->close();
 
-        if ($linked_student_id === '') {
-            throw new Exception('La solicitud aprobada debe estar asociada a un estudiante.');
-        }
+        hu041_validate_approval_has_linked_student($solicitud);
 
         require_once __DIR__ . '/inc/student_functions.php';
         $link_result = linkAdvisorToGroupMembers($conn, $id, $linked_student_id);

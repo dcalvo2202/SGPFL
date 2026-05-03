@@ -5,6 +5,7 @@
 include("mod/login/check.php");
 include('lang/lang.es');
 include('inc/db/db.php');
+require_once __DIR__ . '/inc/hu041_document_helpers.php';
 
 require_once __DIR__ . '/lib/mysession/mySession.conf.php';
 require_once __DIR__ . '/lib/mysession/mySession.class.php';
@@ -358,43 +359,6 @@ if ($is_student) {
 // Si no hay miembros del grupo, usar solo el target_student_id
 if (empty($group_member_ids)) {
     $group_member_ids = [$target_student_id];
-}
-
-// Función helper para construir cláusula IN con placeholders
-function buildInClause($ids) {
-    $placeholders = implode(',', array_fill(0, count($ids), '?'));
-    $types = str_repeat('s', count($ids));
-    return ['placeholders' => $placeholders, 'types' => $types];
-}
-
-function formatoLegible($mime_type) {
-    // Normalizar a minúsculas para comparaciones más fáciles
-    $mime = strtolower($mime_type);
-    
-    // Extraer la parte después del slash si existe
-    $parts = explode('/', $mime);
-    $mime = isset($parts[1]) ? $parts[1] : $mime;
-    
-    // Mapeo de tipos comunes
-    $tipos = [
-        'pdf' => 'PDF',
-        'vnd.openxmlformats-officedocument.wordprocessingml.document' => 'DOCX',
-        'vnd.openxmlformats-officedocument.spreadsheetml.sheet' => 'XLSX',
-        'vnd.openxmlformats-officedocument.presentationml.presentation' => 'PPTX',
-        'msword' => 'DOC',
-        'vnd.ms-excel' => 'XLS',
-        'vnd.ms-powerpoint' => 'PPT',
-        'plain' => 'TXT',
-        'jpeg' => 'JPEG',
-        'png' => 'PNG',
-        'gif' => 'GIF',
-        'zip' => 'ZIP',
-        'x-rar-compressed' => 'RAR',
-        'x-zip-compressed' => 'ZIP'
-    ];
-    
-    // Comprobar si existe en el mapeo, o devolver formato original en mayúsculas
-    return isset($tipos[$mime]) ? $tipos[$mime] : strtoupper($mime);
 }
 
 // =============================== OBTENER ID DE PROYECTO ===============================

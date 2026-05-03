@@ -10,6 +10,7 @@ include('includes.php');
 include('lang/lang.es');
 include_once __DIR__ . '/inc/db/bdcommon.inc';
 require_once __DIR__ . '/inc/hu041_committee_audit.php';
+require_once __DIR__ . '/inc/hu041_committee_rules.php'; // Dejar este include para evitar dependencias circulares con funciones de base de datos
 
 $current_user_id = $mySessionController->getVar("usuario");
 $current_user_name = $mySessionController->getVar("nombre");
@@ -27,91 +28,6 @@ if ($conn->connect_error) {
 }
 $conn->set_charset('utf8');
 
-function hu041_fetch_pending_committee_requests(mysqli $conn): array
-{
-        $sql = "SELECT ear.id, ear.applicant_id, ear.full_name, ear.committee_role, ear.postulation_type,
-                                     ear.linked_student_id, ear.created_at, su.nombre AS linked_student_name
-                        FROM external_advisor_profile_requests ear
-                        LEFT JOIN sis_user su ON su.id = ear.linked_student_id
-                        WHERE ear.status = 'Aprobado'
-                            AND ear.linked_comite_id IS NULL
-                            AND ear.linked_student_id IS NOT NULL
-                            AND ear.linked_student_id <> ''
-                        ORDER BY ear.linked_student_id ASC, ear.created_at ASC";
-
-    $result = $conn->query($sql);
-    $groups = [];
-
-    while ($result && ($row = $result->fetch_assoc())) {
-        $studentId = trim((string)$row['linked_student_id']);
-        if ($studentId === '') {
-            continue;
-        }
-
-        if (!isset($groups[$studentId])) {
-            $groups[$studentId] = [
-                'student_id' => $studentId,
-                'student_name' => (string)($row['linked_student_name'] ?? ''),
-                'roles' => [
-                    'Tutor' => [],
-                    'Asesor 1' => [],
-                    'Asesor 2' => [],
-                ],
-                'all' => [],
-            ];
-        }
-
-        $role = (string)($row['committee_role'] ?? '');
-        if (!isset($groups[$studentId]['roles'][$role])) {
-            $groups[$studentId]['roles'][$role] = [];
-        }
-
-        $groups[$studentId]['roles'][$role][] = $row;
-        $groups[$studentId]['all'][] = $row;
-    }
-
-    $pending = [];
-    foreach ($groups as $group) {
-        $tutores = $group['roles']['Tutor'] ?? [];
-        $asesor1 = $group['roles']['Asesor 1'] ?? [];
-        $asesor2 = $group['roles']['Asesor 2'] ?? [];
-
-        $isComplete = count($tutores) === 1 && count($asesor1) === 1 && count($asesor2) === 1;
-        $ids = [];
-        if ($isComplete) {
-            $ids = [
-                (string)$tutores[0]['applicant_id'],
-                (string)$asesor1[0]['applicant_id'],
-                (string)$asesor2[0]['applicant_id'],
-            ];
-        }
-        $isUniquePeople = $isComplete && count(array_unique($ids)) === 3;
-
-        $group['can_approve'] = $isComplete && $isUniquePeople;
-        $group['validation_message'] = '';
-
-        if (!$isComplete) {
-            $group['validation_message'] = 'Falta completar el comité: debe tener un Tutor, un Asesor 1 y un Asesor 2.';
-        } elseif (!$isUniquePeople) {
-            $group['validation_message'] = 'Una misma persona no puede ocupar más de un rol dentro del mismo comité.';
-        }
-
-        $pending[] = $group;
-    }
-
-    return $pending;
-}
-
-function hu041_get_group_by_student(array $pendingGroups, string $studentId): ?array
-{
-    foreach ($pendingGroups as $group) {
-        if ((string)$group['student_id'] === $studentId) {
-            return $group;
-        }
-    }
-    return null;
-}
-
 $message = '';
 $messageType = 'success';
 $inTransaction = false;
@@ -122,20 +38,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rejectionReason = trim((string)($_POST['rejection_reason'] ?? ''));
 
     try {
-        if ($requestStudentId === '') {
-            throw new Exception('Debe indicar la solicitud de comite a procesar.');
-        }
+        hu041_validate_committee_panel_action($action, $requestStudentId, $rejectionReason);
 
         $pendingGroups = hu041_fetch_pending_committee_requests($conn);
         $target = hu041_get_group_by_student($pendingGroups, $requestStudentId);
+
         if (!$target) {
             throw new Exception('La solicitud de comite ya no esta disponible o ya fue procesada.');
         }
 
         if ($action === 'approve_committee_request') {
-            if (empty($target['can_approve'])) {
-                throw new Exception('No se puede aprobar: ' . ($target['validation_message'] ?: 'configuracion invalida.'));
-            }
+            hu041_validate_target_committee_group($target);
 
             $tutor = $target['roles']['Tutor'][0];
             $a1 = $target['roles']['Asesor 1'][0];
@@ -191,9 +104,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $inTransaction = false;
             $message = 'Comite aprobado y creado desde solicitudes.';
         } elseif ($action === 'reject_committee_request') {
-            if ($rejectionReason === '' || strlen($rejectionReason) < 10) {
-                throw new Exception('Debe indicar un motivo de rechazo de al menos 10 caracteres.');
-            }
+            
+            hu041_validate_committee_panel_action($action, $requestStudentId, $rejectionReason);
 
             $requestIds = [];
             foreach ($target['all'] as $item) {
