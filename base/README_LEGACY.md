@@ -811,8 +811,8 @@ Agregar el siguiente bloque al archivo `config.inc`:
 
 ```php
 $google_calendar_config = [
-    'client_id'        => getenv('GOOGLE_CLIENT_ID')        ?: 'TU_CLIENT_ID.apps.googleusercontent.com',
-    'client_secret'    => getenv('GOOGLE_CLIENT_SECRET')    ?: 'TU_CLIENT_SECRET',
+  'client_id'        => getenv('GOOGLE_CLIENT_ID')        ?: '',
+  'client_secret'    => getenv('GOOGLE_CLIENT_SECRET')    ?: '',
     'redirect_uri'     => getenv('GOOGLE_REDIRECT_URI')     ?: 'http://localhost/base/auth/google_callback.php',
     'scopes'           => ['https://www.googleapis.com/auth/calendar'],
     'token_cipher'     => 'aes-256-gcm',
@@ -831,7 +831,7 @@ $google_calendar_config = [
 | `token_cipher` | Algoritmo de cifrado para guardar tokens en BD (AES-256-GCM) |
 | `token_cipher_key` | Clave de cifrado; se normaliza internamente con SHA-256 a 32 bytes |
 
-> **Seguridad:** En producción, definir las variables de entorno `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` y `GOOGLE_TOKEN_CIPHER_KEY` en el servidor en lugar de hardcodear los valores. Nunca incluir credenciales reales en el repositorio.
+> **Seguridad (implementado):** `client_id` y `client_secret` quedan vacíos si no existen variables de entorno. Esto evita credenciales hardcodeadas en repositorio. En producción es obligatorio definir `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI` y `GOOGLE_TOKEN_CIPHER_KEY`.
 
 ---
 
@@ -905,7 +905,8 @@ Para **desconectar** la cuenta:
 ```
 auth/disconnect_google.php
   → Llama a GoogleCalendarService::disconnectUser()
-  → Elimina el token de la tabla google_calendar_tokens
+  → Marca sync_enabled = 0 en google_calendar_tokens
+  → Las sincronizaciones posteriores ignoran al usuario (WHERE sync_enabled = 1)
   → Redirige a perfil.php con mensaje de éxito
 ```
 
@@ -913,7 +914,17 @@ auth/disconnect_google.php
 
 ### 7. Uso de `GoogleCalendarService`
 
-La clase `service/GoogleCalendarService.php` centraliza toda la lógica. Ejemplo de uso desde cualquier módulo:
+La clase `service/GoogleCalendarService.php` centraliza toda la lógica. Métodos públicos disponibles:
+
+- `syncExtensionRequest($userId, $eventId, $projectData)`
+- `syncProjectMinutes($userId, $eventId, $minutesData)`
+- `syncDeadline($userId, $eventId, $deadlineData)`
+- `syncProjectTimeline($userId, $eventId, $timelineData)`
+- `deleteEvent($userId, $eventType, $eventId)`
+- `isSyncEnabled($userId)`
+- `disconnectUser($userId)`
+
+Ejemplo real de sincronización de prórroga:
 
 ```php
 require_once __DIR__ . '/vendor/autoload.php';
@@ -926,19 +937,18 @@ $conn->set_charset('utf8');
 
 $gcService = new GoogleCalendarService($conn);
 
-// Verificar si el usuario tiene Google Calendar conectado
-if ($gcService->isUserConnected($userId)) {
-
-    // Crear un evento en Google Calendar
-    $gcService->createEvent($userId, [
-        'summary'     => 'Revisión de avance TFG',
-        'description' => 'Sesión de seguimiento con el comité asesor',
-        'start'       => '2026-05-10T10:00:00',
-        'end'         => '2026-05-10T11:00:00',
-    ]);
-
-    // Sincronizar todos los eventos pendientes del usuario
-    $gcService->syncPendingEvents($userId);
+if ($gcService->isSyncEnabled($userId)) {
+  $gcService->syncExtensionRequest($userId, $requestId, [
+    'project_name' => 'Proyecto Final',
+    'student_names' => 'Estudiante 1, Estudiante 2',
+    'status' => 'aprobada',
+    'request_date' => date('Y-m-d H:i:s'),
+    'extension_number' => 1,
+    'extension_duration_label' => '1 año',
+    'base_deadline' => '2029-04-04 00:00:00',
+    'new_deadline' => '2030-04-04 00:00:00',
+    'calendar_event_date' => '2030-04-04 00:00:00',
+  ]);
 }
 ```
 
@@ -951,6 +961,20 @@ Los tokens de acceso y actualización se cifran con **AES-256-GCM** antes de gua
 - La clave de cifrado definida en `token_cipher_key` se normaliza internamente con `hash('sha256', $clave, true)` para obtener 32 bytes binarios.
 - Cada token cifrado se almacena como un JSON con tres campos: `iv` (vector de inicialización), `tag` (etiqueta GCM) y `data` (texto cifrado), todos en Base64.
 - Nunca se guarda el token en texto plano.
+- La sincronización solo utiliza tokens con `sync_enabled = 1`.
+
+Consulta rápida de verificación en BD:
+
+```sql
+SELECT
+  id_user,
+  JSON_VALID(access_token) AS access_json_ok,
+  JSON_EXTRACT(access_token, '$.iv') IS NOT NULL AS has_iv,
+  JSON_EXTRACT(access_token, '$.tag') IS NOT NULL AS has_tag,
+  JSON_EXTRACT(access_token, '$.data') IS NOT NULL AS has_data,
+  sync_enabled
+FROM google_calendar_tokens;
+```
 
 ---
 
@@ -974,6 +998,14 @@ SetEnv GOOGLE_REDIRECT_URI     "http://localhost/base/auth/google_callback.php"
 SetEnv GOOGLE_TOKEN_CIPHER_KEY "una_clave_aleatoria_larga_y_segura"
 ```
 
+Checklist antes de migrar a producción:
+
+1. Registrar en Google Cloud el `GOOGLE_REDIRECT_URI` exacto del servidor productivo (https).
+2. Definir las 4 variables de entorno en Apache o en variables del sistema del servidor.
+3. Verificar que `openssl` esté habilitado en `php.ini`.
+4. Re-conectar Google Calendar para usuarios que tuvieran tokens de un ambiente anterior.
+5. Confirmar en `google_calendar_sync_log` que aparezcan estados `synced` y revisar `failed`/`skipped`.
+
 ---
 
 ### 10. Solución de problemas comunes
@@ -983,6 +1015,8 @@ SetEnv GOOGLE_TOKEN_CIPHER_KEY "una_clave_aleatoria_larga_y_segura"
 | `redirect_uri_mismatch` | URI de callback no registrada en Google Cloud | Verificar que el URI en `config.inc` coincida exactamente con el registrado en Google Cloud Console |
 | `invalid_grant` al usar el refresh_token | Token revocado o expirado | El usuario debe volver a conectar su cuenta desde `perfil.php` |
 | Error `No se encontró la configuración de Google Calendar` | `$google_calendar_config` no definido en `config.inc` | Agregar el bloque de configuración indicado en el paso 4 |
+| `Error al sincronizar con Google Calendar` en log | Token antiguo o credenciales/redirect no consistentes con el ambiente actual | Revisar `apache/logs/error.log`, validar variables de entorno y forzar reconexión OAuth del usuario |
+| Estado `skipped` en `google_calendar_sync_log` | Usuario sin conexión activa (`sync_enabled = 0` o sin token) | Conectar Google Calendar desde `perfil.php` |
 | Eventos no se crean en Google | Usuario no conectado o token sin permisos de escritura | Verificar que el scope `calendar` esté incluido y reconectar la cuenta |
 | Error de cifrado al guardar token | `token_cipher_key` vacía o `openssl` no habilitado | Definir la clave y habilitar la extensión `openssl` en `php.ini` |
 | La pantalla de consentimiento bloquea usuarios externos | App en modo prueba sin usuarios autorizados | Agregar el correo del usuario en "Usuarios de prueba" en Google Cloud Console |

@@ -1,5 +1,11 @@
 {
-    "require-dev": {},
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "php-mock/php-mock-phpunit": "^2.7",
+        "codeception/codeception": "5.3.*",
+        "codeception/module-phpbrowser": "4.*",
+        "codeception/module-asserts": "3.3.*"
+    },
     "scripts": {
         "test": "phpunit -c phpunit.unit.xml --colors=always --testdox",
         "test:unit": "phpunit -c phpunit.unit.xml --colors=always --testdox",
@@ -20,7 +26,7 @@
     "config": {
         "platform-check": false,
         "platform": {
-            "php": "8.0.30"
+            "php": "8.2.12"
         },
         "audit": {
             "block-insecure": false
