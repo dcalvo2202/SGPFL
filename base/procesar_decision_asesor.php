@@ -178,10 +178,8 @@ try {
         }
 
         $subject = 'Solicitud Aprobada - Comité Asesor SGPFL';
-        $message_body = "
-        <html><head><meta charset='UTF-8'></head><body>
-        <div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6;'>
-            <p>Estimado/a <strong>{$solicitud['full_name']}</strong>,</p>
+        require_once __DIR__ . '/inc/email_template_helper.php';
+        $message_body = wrapEmailBody("
             <p>Su solicitud para integrar comité asesor ha sido <strong style='color: #198754;'>APROBADA</strong>.</p>
             <p><strong>Rol aprobado:</strong> " . htmlspecialchars($solicitud['committee_role'] ?? '-') . "</p>
             {$credentials_html}
@@ -190,12 +188,10 @@ try {
             " . ($temp_password !== '' ? '<p>Por seguridad, le recomendamos cambiar su contraseña después del primer inicio de sesión.</p>' : '') . "
             <p>Puede acceder al sistema en: <a href='{$base_url}login.php'>{$base_url}login.php</a></p>
             <p style='margin-top:20px;'>Atentamente,<br>Subdirección - Escuela de Informática<br>Universidad Nacional de Costa Rica</p>
-            <p style='font-size:12px; color:#777;'>" . date('d/m/Y H:i') . "</p>
-        </div>
-        </body></html>";
+        ", "Estimado/a <strong>" . htmlspecialchars($solicitud['full_name']) . "</strong>,");
 
-        $headers = "From: no-reply@una.cr\r\n";
-        $headers .= "Reply-To: no-reply@una.cr\r\n";
+        $headers = "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
+        $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8\r\n";
         @mail($solicitud['email'], $subject, $message_body, $headers);
@@ -240,10 +236,8 @@ try {
         $reintentos_msg = "<p>Puede corregir los documentos y volver a enviar su solicitud cuando lo considere necesario.</p>";
 
         $subject = 'Solicitud Rechazada - Comité Asesor SGPFL';
-        $message_body = "
-        <html><head><meta charset='UTF-8'></head><body>
-        <div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6;'>
-            <p>Estimado/a <strong>{$solicitud['full_name']}</strong>,</p>
+        require_once __DIR__ . '/inc/email_template_helper.php';
+        $message_body = wrapEmailBody("
             <p>Su solicitud para integrar comité asesor ha sido <strong style='color: #dc3545;'>RECHAZADA</strong>.</p>
             <p><strong>Motivo:</strong></p>
             <blockquote style='border-left: 3px solid #dc3545; padding-left: 15px; color: #555;'>
@@ -252,12 +246,10 @@ try {
             {$reintentos_msg}
             <p>Para reenviar su solicitud, visite: <a href='{$base_url}registro.php'>{$base_url}registro.php</a></p>
             <p style='margin-top:20px;'>Atentamente,<br>Subdirección - Escuela de Informática<br>Universidad Nacional de Costa Rica</p>
-            <p style='font-size:12px; color:#777;'>" . date('d/m/Y H:i') . "</p>
-        </div>
-        </body></html>";
+        ", "Estimado/a <strong>" . htmlspecialchars($solicitud['full_name']) . "</strong>,");
 
-        $headers = "From: no-reply@una.cr\r\n";
-        $headers .= "Reply-To: no-reply@una.cr\r\n";
+        $headers = "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
+        $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8\r\n";
         @mail($solicitud['email'], $subject, $message_body, $headers);

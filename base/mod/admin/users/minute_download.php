@@ -63,6 +63,16 @@ function normalize_download_file_name(string $file_name): string
     return mb_substr($file_name, 0, 255);
 }
 
+function build_readable_minute_name(string $session_date, int $minute_number, string $project_name): string
+{
+    $clean_name = preg_replace('/[^\w\s\-áéíóúñÁÉÍÓÚÑ]/u', '', $project_name);
+    $clean_name = preg_replace('/\s+/', '_', trim($clean_name));
+    $clean_name = mb_substr($clean_name, 0, 25);
+    $date_obj = DateTime::createFromFormat('Y-m-d', $session_date);
+    $date_str = $date_obj ? $date_obj->format('Y-m-d') : '';
+    return 'Minuta_' . $minute_number . '_' . $date_str . '_' . $clean_name . '.pdf';
+}
+
 function drain_remaining_results(mysqli $connection): void
 {
     while ($connection->more_results()) {
@@ -93,8 +103,16 @@ try {
             pm.file_name,
             pm.mime_type,
             pm.file_size,
-            pm.file_data
+            pm.file_data,
+            p.nombre AS project_name,
+            (
+                SELECT COUNT(*) + 1
+                FROM project_minutes pm2
+                WHERE pm2.project_id = pm.project_id
+                AND pm2.session_date < pm.session_date
+            ) AS minute_number
         FROM project_minutes pm
+        LEFT JOIN proyecto_aprobado p ON p.id_aprobado = pm.project_id
         WHERE pm.id = ?
         LIMIT 1
     ";
@@ -156,7 +174,11 @@ try {
         }
     }
 
-    $file_name = normalize_download_file_name((string)$minute['file_name']);
+    $file_name = build_readable_minute_name(
+        (string)$minute['session_date'],
+        (int)($minute['minute_number'] ?? 1),
+        (string)($minute['project_name'] ?? 'Proyecto')
+    );
     $mime_type = trim((string)$minute['mime_type']);
     $file_size = (int)$minute['file_size'];
     $file_data = $minute['file_data'];

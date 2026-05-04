@@ -3,6 +3,7 @@ if (!function_exists('sendDefenseAgreementMail')) {
     function sendDefenseAgreementMail(int $proyecto_id): array
     {
         include __DIR__ . '/../../../inc/db/bdcommon.inc';
+        require_once __DIR__ . '/../../../config.inc';
 
         $conn = new mysqli($db_host, $usuario, $clave, $db);
         if ($conn->connect_error) {
@@ -42,8 +43,8 @@ if (!function_exists('sendDefenseAgreementMail')) {
         $fecha_defensa  = $agreement['fecha_defensa'] ?? '';
         $project_name   = $agreement['proyecto_nombre'] ?? 'Proyecto no identificado';
 
-        $correo_destino = 'malcolm.chaves.obando@est.una.ac.cr';
-        $from_email = 'macochaves13@gmail.com';
+        $correo_destino = SYSTEM_EMAIL_REPLY_TO;
+        $from_email = SYSTEM_EMAIL_FROM;
 
         $subject = "Acuerdo de defensa pública - " . $codigo_acuerdo;
 
@@ -77,7 +78,7 @@ if (!function_exists('sendDefenseAgreementMail')) {
             <div class="footer">
             <table>
                 <tr>
-                <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
                 <td class="divider"></td>
                 <td>
                     <strong>Escuela de Informática</strong><br>
@@ -94,8 +95,8 @@ if (!function_exists('sendDefenseAgreementMail')) {
         </body>
         </html>';
 
-        $headers = "From: {$from_email}\r\n";
-        $headers .= "Reply-To: {$from_email}\r\n";
+        $headers = "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
+        $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8\r\n";
 

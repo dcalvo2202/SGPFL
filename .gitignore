@@ -762,6 +762,7 @@ base/.phpunit.cache/test-results
 base/tests/_output/failed
 base/.phpunit.cache/test-results
 base/vendor/
+base/actas/
 Styles_fonts.md
 Plan Pruebas de usabilidad con usuarios Lider Tecnico.docx
 Plan Pruebas de usabilidad con usuarios Product Owner.docx

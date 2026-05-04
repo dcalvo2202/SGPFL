@@ -22,6 +22,15 @@ try {
         throw new Exception("Error de conexión: " . $conn->connect_error);
     }
 
+function build_readable_proposal_name(string $title, string $original_extension = 'pdf'): string
+{
+    $clean_title = preg_replace('/[^\w\s\-áéíóúñÁÉÍÓÚÑ]/u', '', $title);
+    $clean_title = preg_replace('/\s+/', '_', trim($clean_title));
+    $clean_title = mb_substr($clean_title, 0, 40);
+    $ext = $original_extension ?: 'pdf';
+    return 'Propuesta_TFG_' . $clean_title . '.' . $ext;
+}
+
     // Validar ID del archivo
     $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
     if ($id <= 0) {
@@ -30,7 +39,7 @@ try {
     }
 
     // Consultar información del archivo y permisos
-    $sql = "SELECT id, user_id, file_name, mime_type, file_size, document FROM tfg_proposals WHERE id = ?";
+    $sql = "SELECT id, user_id, title, file_name, mime_type, file_size, document FROM tfg_proposals WHERE id = ?";
     $stmt = $conn->prepare($sql);
     if (!$stmt) {
         http_response_code(500);
@@ -85,9 +94,11 @@ try {
     }
 
     // Configurar headers para descarga
+    $original_ext = pathinfo($row['file_name'] ?? '', PATHINFO_EXTENSION);
+    $readable_name = build_readable_proposal_name($row['title'] ?? 'Propuesta', $original_ext);
     header('Content-Type: ' . ($row['mime_type'] ?: 'application/octet-stream'));
     header('Content-Length: ' . (int)$row['file_size']);
-    header('Content-Disposition: attachment; filename="' . basename(str_replace('"', '', $row['file_name'])) . '"');
+    header('Content-Disposition: attachment; filename="' . $readable_name . '"');
     header('Cache-Control: no-cache, must-revalidate');
     // header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
     header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');

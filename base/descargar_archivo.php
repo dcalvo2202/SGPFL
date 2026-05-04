@@ -94,9 +94,11 @@ try {
             $data = decompressData($data);
         }
         
-        // Entregar archivo
+        // Entregar archivo - usar nombre original del archivo
+        $download_name = basename($file['file_name']);
+        $download_name = preg_replace('/[^\w\-.áéíóúñÁÉÍÓÚÑ]/u', '_', $download_name);
         header('Content-Type: ' . $file['mime_type']);
-        header('Content-Disposition: attachment; filename="' . $file['file_name'] . '"');
+        header('Content-Disposition: attachment; filename="' . $download_name . '"');
         header('Content-Length: ' . strlen($data));
         header('Cache-Control: no-cache, must-revalidate');
         

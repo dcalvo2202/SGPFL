@@ -3,6 +3,7 @@
 include_once __DIR__ . '/../../../lib/mysession/mySession.class.php';
 include_once __DIR__ . '/../../../lib/mysession/mySession.conf.php';
 include __DIR__ . '/../../../lang/lang.es';
+require_once __DIR__ . '/../../../config.inc';
 date_default_timezone_set('America/Costa_Rica');
 
 try {
@@ -45,12 +46,11 @@ try {
     $historial_url = $base_url . "historial_documentos.php";
     $historial_url_secretaria = $base_url . "panel_subdireccion.php";
     
-    //$estudiante_email = $user_info['email'];
-    $secretaria_email = "david.calvo.hernandez@est.una.ac.cr";
+    $secretaria_email = defined('SYSTEM_EMAIL_REPLY_TO') ? SYSTEM_EMAIL_REPLY_TO : 'escinf@una.cr';
     
     // Configuración del correo
-    $headers = "From: david.calvo.hernandez@est.una.ac.cr\r\n";
-    $headers .= "Reply-To: david.calvo.hernandez@est.una.ac.cr\r\n";
+    $headers = "From: " . (defined('SYSTEM_EMAIL_FROM_NAME') ? SYSTEM_EMAIL_FROM_NAME : 'SGPFL') . " <" . (defined('SYSTEM_EMAIL_FROM') ? SYSTEM_EMAIL_FROM : 'noreply@una.cr') . ">\r\n";
+    $headers .= "Reply-To: " . (defined('SYSTEM_EMAIL_REPLY_TO') ? SYSTEM_EMAIL_REPLY_TO : 'escinf@una.cr') . "\r\n";
     $headers  = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
@@ -100,7 +100,7 @@ try {
             <div class="footer">
             <table>
                 <tr>
-                <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
                 <td class="divider"></td>
                 <td>
                     <strong>Escuela de Informática</strong><br>
@@ -192,7 +192,7 @@ try {
             <div class="footer">
             <table>
                 <tr>
-                <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
                 <td class="divider"></td>
                 <td>
                     <strong>Escuela de Informática</strong><br>
@@ -279,7 +279,7 @@ try {
             <div class="footer">
             <table>
                 <tr>
-                <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
                 <td class="divider"></td>
                 <td>
                     <strong>Escuela de Informática</strong><br>
@@ -371,7 +371,7 @@ try {
             <div class="footer">
             <table>
                 <tr>
-                <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
                 <td class="divider"></td>
                 <td>
                     <strong>Escuela de Informática</strong><br>
@@ -458,7 +458,7 @@ try {
             <div class="footer">
             <table>
                 <tr>
-                <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
                 <td class="divider"></td>
                 <td>
                     <strong>Escuela de Informática</strong><br>
@@ -547,7 +547,7 @@ try {
             <div class="footer">
             <table>
                 <tr>
-                <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
                 <td class="divider"></td>
                 <td>
                     <strong>Escuela de Informática</strong><br>

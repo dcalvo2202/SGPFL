@@ -215,7 +215,8 @@ try {
 
         $headers = "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-        $headers .= "From: noreply@una.cr\r\n";
+        $headers .= "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
+        $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
         
         $mail_sent = @mail($advisor_email, "Contraseña Actualizada - SGPFL", $confirm_message, $headers);
         error_log("Email de confirmación enviado a " . $advisor_email . ": " . ($mail_sent ? "Éxito" : "Falló"));

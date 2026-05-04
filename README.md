@@ -6,7 +6,7 @@ El contenido abarca los archivos de configuración principales, la estructura de
 
 A lo largo del documento se detallan los siguientes aspectos:
 
-* Archivos de configuración del sistema (`config.inc`, `dbcommon.inc`).
+* Archivos de configuración del sistema (`config.inc`, `bdcommon.inc`).
 * Integración con el servidor LDAP y sincronización con la base de datos.
 * Configuración de versiones y dependencias (LDAPv3, PHP, MySQL).
 * Parámetros de envío de correos electrónicos (archivos `php.ini` y `sendmail.ini`).

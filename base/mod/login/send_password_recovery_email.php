@@ -190,8 +190,8 @@ try {
     // Headers para HTML
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: noreply@una.cr\r\n";
-    $headers .= "Reply-To: escinf@una.cr\r\n";
+    $headers .= "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
+    $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
     // Enviar correo

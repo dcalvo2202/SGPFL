@@ -174,7 +174,7 @@ function sendDeadlineEmail($to, $data) {
       <div class="footer">
         <table>
           <tr>
-            <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+            <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
             <td class="divider"></td>
             <td>
               <strong>Escuela de Informática</strong><br>
@@ -193,7 +193,7 @@ function sendDeadlineEmail($to, $data) {
 
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: " . constant('DEADLINE_FROM_EMAIL') . "\r\n";
+    $headers .= "From: " . constant('DEADLINE_FROM_NAME') . " <" . constant('DEADLINE_FROM_EMAIL') . ">\r\n";
     $headers .= "Reply-To: " . constant('DEADLINE_FROM_EMAIL') . "\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 

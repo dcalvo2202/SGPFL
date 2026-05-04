@@ -13,6 +13,7 @@ $user_rol = $mySessionController->getVar("rol");
 
 // Incluir la configuración de la base de datos
 include __DIR__ . '/../../../inc/db/bdcommon.inc';
+require_once __DIR__ . '/../../../config.inc';
 
 include_once(__DIR__ . '/../../../inc/tfg_final_functions.php');
 require_once(__DIR__ . '/../../../inc/archive_functions.php');
@@ -237,11 +238,11 @@ try {
             $student_name = $student_info['nombre'];
             $project_title = $student_info['title'];
             
-            // Configuración del correo (mismo estilo que tfg_update_document.php)
+            // Configuración del correo
             $headers = "MIME-Version: 1.0\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-            $headers .= "From: noreply@una.cr\r\n";
-            $headers .= "Reply-To: escinf@una.cr\r\n";
+            $headers .= "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
+            $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
             
             $subject = "Notificación de Revisión de Documento Final de TFG";
             $status_display = ($new_status === 'Aprobado para Defensa') ? 'Aprobado para Defensa' : 'Correcciones Requeridas';
@@ -308,7 +309,7 @@ try {
                 <div class="footer">
                 <table>
                     <tr>
-                    <td><img src="http://www.escinf.una.ac.cr/templates/zt_zizia/images/logo.png" alt="Escuela de Informática"></td>
+                    <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
                     <td class="divider"></td>
                     <td>
                         <strong>Escuela de Informática</strong><br>

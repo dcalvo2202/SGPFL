@@ -27,6 +27,15 @@ try {
         throw new Exception("Error de conexión: " . $conn->connect_error);
     }
 
+    function build_readable_tfg_file_name(string $original_name): string
+    {
+        $ext = pathinfo($original_name, PATHINFO_EXTENSION);
+        if (empty($ext)) {
+            $ext = 'pdf';
+        }
+        return 'Archivo_TFG_' . date('Ymd') . '.' . $ext;
+    }
+
     // Validar ID del archivo
     $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
     if ($id <= 0) {
@@ -72,9 +81,10 @@ try {
     }
 
     // Configurar headers para descarga
+    $readable_name = build_readable_tfg_file_name($row['file_name'] ?? 'documento');
     header('Content-Type: ' . ($row['mime_type'] ?: 'application/octet-stream'));
     header('Content-Length: ' . (int)$row['file_size']);
-    header('Content-Disposition: attachment; filename="' . basename(str_replace('"', '', $row['file_name'])) . '"');
+    header('Content-Disposition: attachment; filename="' . $readable_name . '"');
     header('Cache-Control: no-cache, must-revalidate');
     header('Pragma: public');
     header('Expires: 0');

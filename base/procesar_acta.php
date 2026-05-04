@@ -76,6 +76,117 @@ function formatearHora($hora)
     return date('H:i', $timestamp);
 }
 
+function numeroEnPalabrasBasico($numero)
+{
+    $mapa = [
+        0 => 'cero',
+        1 => 'uno',
+        2 => 'dos',
+        3 => 'tres',
+        4 => 'cuatro',
+        5 => 'cinco',
+        6 => 'seis',
+        7 => 'siete',
+        8 => 'ocho',
+        9 => 'nueve',
+        10 => 'diez',
+        11 => 'once',
+        12 => 'doce',
+        13 => 'trece',
+        14 => 'catorce',
+        15 => 'quince',
+        16 => 'dieciseis',
+        17 => 'diecisiete',
+        18 => 'dieciocho',
+        19 => 'diecinueve',
+        20 => 'veinte',
+        21 => 'veintiuno',
+        22 => 'veintidos',
+        23 => 'veintitres',
+        24 => 'veinticuatro',
+        25 => 'veinticinco',
+        26 => 'veintiseis',
+        27 => 'veintisiete',
+        28 => 'veintiocho',
+        29 => 'veintinueve',
+        30 => 'treinta',
+        40 => 'cuarenta',
+        50 => 'cincuenta',
+        60 => 'sesenta',
+        70 => 'setenta',
+        80 => 'ochenta',
+        90 => 'noventa'
+    ];
+
+    $numero = (int) $numero;
+    if (isset($mapa[$numero])) {
+        return $mapa[$numero];
+    }
+
+    $decenas = (int) (floor($numero / 10) * 10);
+    $unidad = $numero % 10;
+
+    if (!isset($mapa[$decenas])) {
+        return (string) $numero;
+    }
+
+    return $mapa[$decenas] . ' y ' . ($mapa[$unidad] ?? (string) $unidad);
+}
+
+function anioEnPalabras($anio)
+{
+    $anio = (int) $anio;
+    if ($anio < 2000 || $anio > 2099) {
+        return (string) $anio;
+    }
+
+    $resto = $anio - 2000;
+    if ($resto === 0) {
+        return 'dos mil';
+    }
+
+    return 'dos mil ' . numeroEnPalabrasBasico($resto);
+}
+
+function fechaEnPalabras($fecha)
+{
+    if (empty($fecha)) {
+        return '';
+    }
+
+    $timestamp = strtotime($fecha);
+    if ($timestamp === false) {
+        return $fecha;
+    }
+
+    $dia = numeroEnPalabrasBasico((int) date('j', $timestamp));
+    $mes = nombreMes(date('n', $timestamp));
+    $anio = anioEnPalabras(date('Y', $timestamp));
+
+    return $dia . ' de ' . $mes . ' del año ' . $anio;
+}
+
+function horaEnPalabras($hora)
+{
+    if (empty($hora)) {
+        return '';
+    }
+
+    $timestamp = strtotime($hora);
+    if ($timestamp === false) {
+        return $hora;
+    }
+
+    $horaNumero = (int) date('H', $timestamp);
+    $minutos = (int) date('i', $timestamp);
+
+    if ($minutos !== 0) {
+        return date('H:i', $timestamp);
+    }
+
+    return numeroEnPalabrasBasico($horaNumero);
+}
+
 function nombreArchivoSeguro($texto)
 {
     $texto = @iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $texto);
@@ -100,6 +211,86 @@ function dibujarFirma($pdf, $x, $y, $w, $nombre, $cargo)
     $pdf->SetX($x);
     $pdf->SetFont('Arial', '', 8.5);
     $pdf->MultiCell($w, 3.8, pdfText($cargo), 0, 'C');
+}
+
+function xmlEscape($texto)
+{
+    return htmlspecialchars((string) $texto, ENT_XML1, 'UTF-8');
+}
+
+function generarDocxDesdePlantilla($templatePath, $outputPath, array $reemplazos, array $opciones = [])
+{
+    if (!class_exists('ZipArchive')) {
+        throw new RuntimeException('ZipArchive no está disponible en el servidor.');
+    }
+
+    if (!file_exists($templatePath)) {
+        throw new RuntimeException('No se encontró la plantilla DOCX.');
+    }
+
+    if (!copy($templatePath, $outputPath)) {
+        throw new RuntimeException('No se pudo copiar la plantilla DOCX.');
+    }
+
+    $zip = new ZipArchive();
+    if ($zip->open($outputPath) !== true) {
+        throw new RuntimeException('No se pudo abrir el archivo DOCX.');
+    }
+
+    $documentXml = $zip->getFromName('word/document.xml');
+    if ($documentXml === false) {
+        $zip->close();
+        throw new RuntimeException('No se encontró el contenido principal del DOCX.');
+    }
+
+    // Reemplazos especiales para postulante 2 opcional
+    if (!empty($opciones['sin_postulante2'])) {
+        // Si no hay postulante 2, remover su información del documento
+        // Reemplazar sus nombres con espacios en blanco
+        $documentXml = str_replace($reemplazos['{{postulante2_nombre}}'], '', $documentXml);
+        $documentXml = str_replace($reemplazos['{{postulante2_cedula}}'], '', $documentXml);
+        // También remover los placeholders sin procesar
+        $documentXml = str_replace('{{postulante2_nombre}}', '', $documentXml);
+        $documentXml = str_replace('{{postulante2_cedula}}', '', $documentXml);
+    }
+
+    foreach ($reemplazos as $key => $value) {
+        $documentXml = str_replace($key, $value, $documentXml);
+    }
+
+    $dom = new DOMDocument();
+    $dom->preserveWhiteSpace = false;
+    $dom->formatOutput = true;
+    
+    libxml_use_internal_errors(true);
+    if (!$dom->loadXML($documentXml)) {
+        $zip->close();
+        $errors = libxml_get_errors();
+        libxml_clear_errors();
+        $errorMsg = 'XML inválido tras reemplazo';
+        if (!empty($errors)) {
+            $errorMsg .= ': ' . $errors[0]->message;
+        }
+        throw new RuntimeException($errorMsg);
+    }
+    libxml_clear_errors();
+
+    // Limpiar párrafos vacíos innecesarios (solo en espacios entre secciones)
+    $xpath = new DOMXPath($dom);
+    $xpath->registerNamespace('w', 'http://schemas.openxmlformats.org/wordprocessingml/2006/main');
+    
+    // Remover párrafos que solo contienen elementos vacíos <t/> o solo espacios
+    $emptyParagraphs = $xpath->query('//w:p[not(.//w:t[normalize-space()])]');
+    foreach ($emptyParagraphs as $para) {
+        // Solo remover si está entre dos párrafos normales (no es parte de una estructura importante)
+        if ($para->parentNode) {
+            $para->parentNode->removeChild($para);
+        }
+    }
+
+    $zip->deleteName('word/document.xml');
+    $zip->addFromString('word/document.xml', $dom->saveXML());
+    $zip->close();
 }
 
 /*
@@ -146,8 +337,11 @@ $observaciones_detalle = limpiar($_POST['observaciones_detalle'] ?? '');
 $hay_segundo_postulante = ($nombre_estudiante_2 !== '' || $cedula_estudiante_2 !== '');
 
 $fecha_larga = formatearFechaLarga($fecha);
+$fecha_larga_texto = fechaEnPalabras($fecha);
 $hora_inicio_fmt = formatearHora($hora_inicio);
 $hora_cierre_fmt = formatearHora($hora_cierre);
+$hora_inicio_texto = horaEnPalabras($hora_inicio);
+$hora_cierre_texto = horaEnPalabras($hora_cierre);
 
 if ($hay_segundo_postulante) {
     $postulantes_nombres = $nombre_estudiante_1 . ' y ' . $nombre_estudiante_2;
@@ -190,8 +384,8 @@ if ($mencion !== '') {
     $texto_mencion = 'Mención honorífica otorgada: ' . $mencion . '.';
 }
 
-$parrafo_inicial = 'ACTA N.° ' . $numero_acta . '. En la fecha ' . $fecha_larga .
-    ', a las ' . $hora_inicio_fmt . ' horas, se reunieron las personas integrantes del Tribunal Examinador conformado por ' .
+$parrafo_inicial = 'ACTA N.° ' . $numero_acta . '. En la fecha ' . $fecha_larga . ' (' . $fecha_larga_texto . ')' .
+    ', a las ' . $hora_inicio_fmt . ' (' . $hora_inicio_texto . ') horas, se reunieron las personas integrantes del Tribunal Examinador conformado por ' .
     $presidente_nombre . ', ' . $presidente_cargo . '; ' .
     $director_nombre . ', ' . $director_cargo . '; ' .
     $tutor_nombre . ', ' . $tutor_cargo . '; y ' .
@@ -213,6 +407,7 @@ $timestamp = date("Ymd_His");
 $base_nombre = nombreArchivoSeguro($postulantes_nombres ?: 'Acta');
 
 $filename_pdf = $dir . 'Acta_' . $base_nombre . '_' . $timestamp . '.pdf';
+$filename_docx = $dir . 'Acta_' . $base_nombre . '_' . $timestamp . '.docx';
 $filename_csv = $dir . 'Acta_' . $base_nombre . '_' . $timestamp . '.csv';
 
 /*
@@ -337,6 +532,60 @@ if ($hay_segundo_postulante) {
 
 /* Guardar PDF */
 $pdf->Output('F', $filename_pdf);
+
+/*
+|--------------------------------------------------------------------------
+| GENERAR DOCX
+|--------------------------------------------------------------------------
+*/
+$docx_generado = false;
+$docx_error = '';
+try {
+    $docx_template = __DIR__ . '/templates/ACTA PRES.PUB-BORRADOR.docx';
+    $observaciones_docx = $observaciones_detalle;
+    if ($observaciones_docx === '') {
+        $observaciones_docx = $tipo_observaciones;
+    }
+
+    $reemplazos_docx = [
+        '{{numero_acta}}' => xmlEscape($numero_acta),
+        '{{hora_inicio_texto}}' => xmlEscape($hora_inicio_texto),
+        '{{hora_cierre_texto}}' => xmlEscape($hora_cierre_texto),
+        '{{fecha_larga_texto}}' => xmlEscape($fecha_larga_texto),
+        '{{modalidad_sesion}}' => xmlEscape($modalidad_sesion),
+        '{{plataforma}}' => xmlEscape($plataforma),
+        '{{titulo_tfg}}' => xmlEscape($titulo_tfg),
+        '{{postulantes_nombres}}' => xmlEscape($postulantes_nombres),
+        '{{postulantes_cedulas}}' => xmlEscape($postulantes_cedulas),
+        '{{modalidad_tfg}}' => xmlEscape($modalidad_tfg),
+        '{{grado}}' => xmlEscape($grado),
+        '{{presidente_nombre}}' => xmlEscape($presidente_nombre),
+        '{{presidente_cargo}}' => xmlEscape($presidente_cargo),
+        '{{director_nombre}}' => xmlEscape($director_nombre),
+        '{{director_cargo}}' => xmlEscape($director_cargo),
+        '{{tutor_nombre}}' => xmlEscape($tutor_nombre),
+        '{{tutor_cargo}}' => xmlEscape($tutor_cargo),
+        '{{asesor_nombre}}' => xmlEscape($asesor_nombre),
+        '{{asesor_cargo}}' => xmlEscape($asesor_cargo),
+        '{{resultado}}' => xmlEscape($resultado),
+        '{{nota}}' => xmlEscape($nota),
+        '{{tipo_observaciones}}' => xmlEscape($tipo_observaciones),
+        '{{mencion}}' => xmlEscape($mencion),
+        '{{postulante1_nombre}}' => xmlEscape($nombre_estudiante_1),
+        '{{postulante1_cedula}}' => xmlEscape($cedula_estudiante_1),
+        '{{postulante2_nombre}}' => xmlEscape(!empty($nombre_estudiante_2) ? $nombre_estudiante_2 : ''),
+        '{{postulante2_cedula}}' => xmlEscape(!empty($cedula_estudiante_2) ? $cedula_estudiante_2 : ''),
+        '{{observaciones_detalle}}' => xmlEscape($observaciones_docx),
+    ];
+
+    generarDocxDesdePlantilla($docx_template, $filename_docx, $reemplazos_docx, [
+        'sin_postulante2' => !$hay_segundo_postulante
+    ]);
+    $docx_generado = true;
+} catch (Throwable $e) {
+    $docx_error = htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8');
+    error_log('DOCX acta: ' . $e->getMessage());
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -510,6 +759,7 @@ try {
 |--------------------------------------------------------------------------
 */
 $pdf_url = htmlspecialchars($filename_pdf, ENT_QUOTES, 'UTF-8');
+$docx_url = htmlspecialchars($filename_docx, ENT_QUOTES, 'UTF-8');
 $csv_url = htmlspecialchars($filename_csv, ENT_QUOTES, 'UTF-8');
 ?>
 <!DOCTYPE html>
@@ -573,22 +823,40 @@ $csv_url = htmlspecialchars($filename_csv, ENT_QUOTES, 'UTF-8');
             padding:4px 6px;
             border-radius:6px;
         }
+        .alert-error{
+            background:#f8d7da;
+            color:#721c24;
+            padding:12px 16px;
+            border-radius:8px;
+            margin-bottom:16px;
+            border:1px solid #f5c6cb;
+        }
     </style>
 </head>
 <body>
     <div class="contenedor">
         <h1>Acta generada correctamente</h1>
 
+        <?php if (!$docx_generado && $docx_error): ?>
+            <div class="alert-error">
+                <strong>Error al generar DOCX:</strong> <?php echo $docx_error; ?>
+            </div>
+        <?php endif; ?>
+
         <p class="detalle">
             Se generaron ambos archivos del acta:
         </p>
 
         <ul class="detalle">
+            <li><strong>DOCX:</strong> <span class="archivo"><?php echo $docx_generado ? $docx_url : 'No disponible'; ?></span></li>
             <li><strong>PDF:</strong> <span class="archivo"><?php echo $pdf_url; ?></span></li>
             <li><strong>CSV:</strong> <span class="archivo"><?php echo $csv_url; ?></span></li>
         </ul>
 
         <div class="acciones">
+            <?php if ($docx_generado): ?>
+                <a class="btn btn-pdf" href="<?php echo $docx_url; ?>" target="_blank">Ver DOCX</a>
+            <?php endif; ?>
             <a class="btn btn-pdf" href="<?php echo $pdf_url; ?>" target="_blank">Ver PDF</a>
             <a class="btn btn-csv" href="<?php echo $csv_url; ?>" download>Descargar CSV</a>
             <a class="btn btn-volver" href="generar_acta.php">Generar otra acta</a>

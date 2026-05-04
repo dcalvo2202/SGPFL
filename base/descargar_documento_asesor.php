@@ -73,9 +73,13 @@ try {
     $stmt->close();
     $conn->close();
 
-    // Enviar archivo
+    // Enviar archivo - nombre limpio basado en tipo de documento
+    $type_labels = ['cv' => 'Curriculum', 'id_copy' => 'Cedula', 'cover_letter' => 'Carta_Presentacion'];
+    $label = $type_labels[$type] ?? 'Documento';
+    $extension = pathinfo($doc['file_name'], PATHINFO_EXTENSION);
+    $download_name = $label . '_Asesor.' . ($extension ?: 'pdf');
     header('Content-Type: ' . $doc['mime_type']);
-    header('Content-Disposition: inline; filename="' . $doc['file_name'] . '"');
+    header('Content-Disposition: inline; filename="' . $download_name . '"');
     header('Content-Length: ' . $doc['file_size']);
     header('Cache-Control: no-cache, must-revalidate');
     header('Expires: 0');

@@ -55,6 +55,15 @@ function normalize_download_file_name(string $file_name): string
     return mb_substr($file_name, 0, 255);
 }
 
+function build_readable_file_name(string $project_name, string $identifier, string $type = 'aprobacion'): string
+{
+    $clean_name = preg_replace('/[^\w\s\-áéíóúñÁÉÍÓÚÑ]/u', '', $project_name);
+    $clean_name = preg_replace('/\s+/', '_', trim($clean_name));
+    $clean_name = mb_substr($clean_name, 0, 50);
+    $type_label = 'Acta_Aprobacion';
+    return $type_label . '_' . $clean_name . '.pdf';
+}
+
 $approval_id = isset($_GET['approval_id']) ? (int)$_GET['approval_id'] : 0;
 
 if ($approval_id <= 0) {
@@ -156,7 +165,11 @@ try {
 
     $file_size = strlen((string)$documento_blob);
     $mime_type = 'application/pdf';
-    $file_name = normalize_download_file_name((string)$agreement['identificador'] . '.pdf');
+    $file_name = build_readable_file_name(
+        (string)$agreement['nombre'],
+        (string)$agreement['identificador'],
+        'aprobacion'
+    );
 
     // Registrar la descarga
     try {

@@ -35,16 +35,28 @@ try {
     }
     $conn->set_charset("utf8");
 
+    function build_readable_final_name(string $title, string $original_extension = 'pdf'): string
+    {
+        $clean_title = preg_replace('/[^\w\s\-áéíóúñÁÉÍÓÚÑ]/u', '', $title);
+        $clean_title = preg_replace('/\s+/', '_', trim($clean_title));
+        $clean_title = mb_substr($clean_title, 0, 40);
+        $ext = $original_extension ?: 'pdf';
+        return 'Trabajo_Final_' . $clean_title . '.' . $ext;
+    }
+
     // Obtener información del documento y verificar permisos
     $sql = "SELECT 
                 fd.id,
                 fd.submitted_by,
+                fd.proposal_id,
+                p.title AS proposal_title,
                 f.file_name,
                 f.mime_type,
                 f.file_size,
                 f.file_data
             FROM tfg_final_documents fd
             INNER JOIN tfg_files f ON fd.file_id = f.id
+            LEFT JOIN tfg_proposals p ON fd.proposal_id = p.id
             WHERE fd.id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $document_id);
@@ -85,9 +97,11 @@ try {
     }
 
     // Preparar headers para descarga (forzar descarga)
+    $original_ext = pathinfo($document['file_name'] ?? '', PATHINFO_EXTENSION);
+    $readable_name = build_readable_final_name($document['proposal_title'] ?? 'Documento', $original_ext);
     header('Content-Type: ' . ($document['mime_type'] ?: 'application/octet-stream'));
     header('Content-Length: ' . (int)$document['file_size']);
-    header('Content-Disposition: attachment; filename="' . basename(str_replace('"', '', $document['file_name'])) . '"');
+    header('Content-Disposition: attachment; filename="' . $readable_name . '"');
     header('Cache-Control: no-cache, must-revalidate');
     header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
 

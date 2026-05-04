@@ -468,21 +468,20 @@ try {
     }
 
     // =============================== NOTIFICACIÓN POR CORREO ===============================
-    $secretaria_email = 'rodri100ro@gmail.com';
-    $from_email = 'rodri100ro@gmail.com';
+    $secretaria_email = SYSTEM_EMAIL_REPLY_TO;
+    $from_email = SYSTEM_EMAIL_FROM;
 
-    $headers = "From: {$from_email}\r\n";
-    $headers .= "Reply-To: {$from_email}\r\n";
+    $headers = "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
+    $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8\r\n";
 
     $panel_subdireccion_url = $base_url . 'panel_subdireccion.php';
 
+    require_once __DIR__ . '/inc/email_template_helper.php';
+    
     $subject_secretaria = 'Notificación: Solicitud de Comité Asesor en revisión - SGPFL';
-    $message_secretaria = '
-    <html><head><meta charset="UTF-8"></head><body>
-      <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
-        <p>Estimada/o Secretaría/o de Subdirección,</p>
+    $message_secretaria_content = '
         <p>Se ha recibido una nueva solicitud para <strong>integrar un Comité Asesor</strong> en el SGPFL.</p>
         <p><strong>Datos del solicitante:</strong></p>
         <ul>
@@ -495,33 +494,26 @@ try {
           <li><strong>Institución:</strong> ' . htmlspecialchars($institution) . '</li>
           <li><strong>Especialización:</strong> ' . htmlspecialchars($specialization) . '</li>
           <li><strong>Estudiante a asesorar:</strong> ' . htmlspecialchars($linked_student_name) . ' (ID: ' . htmlspecialchars($linked_student_id) . ')</li>
-                    <li><strong>Estado:</strong> <strong>En Revision</strong></li>
+          <li><strong>Estado:</strong> <strong>En Revision</strong></li>
         </ul>
         <p>Puede ingresar al sistema para visualizar las solicitudes pendientes:</p>
-        <p><a href="' . htmlspecialchars($panel_subdireccion_url) . '">' . htmlspecialchars($panel_subdireccion_url) . '</a></p>
-        <p style="margin-top:20px; font-size:12px; color:#777;">' . date('d/m/Y') . '</p>
-      </div>
-    </body></html>';
+        <p><a href="' . htmlspecialchars($panel_subdireccion_url) . '">' . htmlspecialchars($panel_subdireccion_url) . '</a></p>';
+    $message_secretaria = wrapEmailBody($message_secretaria_content, "Estimada/o Secretaría/o de Subdirección,");
 
     // Enviar correo a la Secretaría de Subdirección
     @mail($secretaria_email, $subject_secretaria, $message_secretaria, $headers);
 
     $subject_applicant = 'Confirmación: Solicitud para Comité Asesor recibida - SGPFL';
-    $message_applicant = '
-    <html><head><meta charset="UTF-8"></head><body>
-      <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
-        <p>Estimado/a ' . htmlspecialchars($full_name) . ',</p>
-                <p>Le confirmamos que su solicitud para integrar un <strong>Comité Asesor</strong> fue recibida correctamente.</p>
+    $message_applicant_content = '
+        <p>Le confirmamos que su solicitud para integrar un <strong>Comité Asesor</strong> fue recibida correctamente.</p>
         <ul>
           <li><strong>Fecha:</strong> ' . date('d/m/Y H:i') . '</li>
-                    <li><strong>Tipo de postulación:</strong> ' . htmlspecialchars($postulation_type) . '</li>
-                    <li><strong>Rol solicitado:</strong> ' . htmlspecialchars($committee_role) . '</li>
-                    <li><strong>Estado actual:</strong> <strong>En Revision</strong></li>
+          <li><strong>Tipo de postulación:</strong> ' . htmlspecialchars($postulation_type) . '</li>
+          <li><strong>Rol solicitado:</strong> ' . htmlspecialchars($committee_role) . '</li>
+          <li><strong>Estado actual:</strong> <strong>En Revision</strong></li>
         </ul>
-        <p>La Subdirección revisará la información y los documentos aportados. Recibirá una notificación cuando exista un resultado.</p>
-        <p style="margin-top:20px; font-size:12px; color:#777;">' . date('d/m/Y') . '</p>
-      </div>
-    </body></html>';
+        <p>La Subdirección revisará la información y los documentos aportados. Recibirá una notificación cuando exista un resultado.</p>';
+    $message_applicant = wrapEmailBody($message_applicant_content, "Estimado/a <strong>" . htmlspecialchars($full_name) . "</strong>,");
 
     // Enviar correo al solicitante
     @mail($email, $subject_applicant, $message_applicant, $headers);

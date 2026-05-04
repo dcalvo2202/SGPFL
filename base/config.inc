@@ -81,6 +81,22 @@ $google_calendar_config = [
     'token_cipher_key' => getenv('GOOGLE_TOKEN_CIPHER_KEY') ?: 'CAMBIAR_ESTA_CLAVE_EN_PRODUCCION',
 ];
 
+// ============================================
+// CONFIGURACIÓN DE CORREO ELECTRÓNICO
+// ============================================
+if (!defined('SYSTEM_EMAIL_FROM')) {
+    define('SYSTEM_EMAIL_FROM', 'noreply@una.cr');
+}
+if (!defined('SYSTEM_EMAIL_FROM_NAME')) {
+    define('SYSTEM_EMAIL_FROM_NAME', 'SGPFL - Escuela de Informática');
+}
+if (!defined('SYSTEM_EMAIL_REPLY_TO')) {
+    define('SYSTEM_EMAIL_REPLY_TO', 'escinf@una.cr');
+}
+if (!defined('SYSTEM_EMAIL_LOGO_URL')) {
+    define('SYSTEM_EMAIL_LOGO_URL', 'https://localhost/base/img/logo.webp');
+}
+
 // Configuración de alertas de vencimiento
 if (!defined('DEADLINE_THRESHOLDS')) {
     define('DEADLINE_THRESHOLDS', [30, 15, 7, 3, 1]); // Días antes del vencimiento
@@ -89,10 +105,10 @@ if (!defined('DEADLINE_EMAIL_ENABLED')) {
     define('DEADLINE_EMAIL_ENABLED', true);
 }
 if (!defined('DEADLINE_FROM_EMAIL')) {
-    define('DEADLINE_FROM_EMAIL', 'noreply@una.cr\r\n');
+    define('DEADLINE_FROM_EMAIL', SYSTEM_EMAIL_FROM);
 }
 if (!defined('DEADLINE_FROM_NAME')) {
-    define('DEADLINE_FROM_NAME', 'SGPFL - Escuela de Informática');
+    define('DEADLINE_FROM_NAME', SYSTEM_EMAIL_FROM_NAME);
 }
 
 

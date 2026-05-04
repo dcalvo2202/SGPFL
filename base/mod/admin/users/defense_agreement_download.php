@@ -55,6 +55,15 @@ function normalize_download_file_name(string $file_name): string
     return mb_substr($file_name, 0, 255);
 }
 
+function build_readable_file_name(string $project_name, string $agreement_code, string $type = 'defensa'): string
+{
+    $clean_name = preg_replace('/[^\w\s\-áéíóúñÁÉÍÓÚÑ]/u', '', $project_name);
+    $clean_name = preg_replace('/\s+/', '_', trim($clean_name));
+    $clean_name = mb_substr($clean_name, 0, 50);
+    $type_label = $type === 'defensa' ? 'Acta_Defensa' : 'Acta_Aprobacion';
+    return $type_label . '_' . $clean_name . '.pdf';
+}
+
 $defense_id = isset($_GET['defense_id']) ? (int)$_GET['defense_id'] : 0;
 
 if ($defense_id <= 0) {
@@ -159,7 +168,11 @@ try {
 
     $file_size = filesize($file_path);
     $mime_type = (string)$agreement['mime_type'] ?: 'application/octet-stream';
-    $file_name = normalize_download_file_name((string)$agreement['archivo_nombre']);
+    $file_name = build_readable_file_name(
+        (string)$agreement['proyecto_nombre'],
+        (string)$agreement['codigo_acuerdo'],
+        'defensa'
+    );
 
     // Registrar la descarga
     try {

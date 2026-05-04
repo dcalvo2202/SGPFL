@@ -10,6 +10,7 @@ $user_rol = $mySessionController->getVar("rol");
 
 // Incluir la configuración de la base de datos
 include __DIR__ . '/../../../inc/db/bdcommon.inc';
+require_once __DIR__ . '/../../../config.inc';
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
 header('Content-Type: application/json');
@@ -206,29 +207,33 @@ try {
     }
 
     // 4. Send email notification
+    require_once __DIR__ . '/../../../inc/email_template_helper.php';
     $to = "david.calvo.hernandez@est.una.ac.cr";//$proposal['email'];
     $subject = "Actualización de estado - Propuesta TFG";
-    $message = "Estimado/a " . $proposal['nombre'] . ",\n\n";
-    $message .= "Su propuesta de TFG \"" . $proposal['title'] . "\" ha sido revisada.\n\n";
-    $message .= "Nuevo estado: " . $display_status . "\n";
+    
+    $email_content = "<p>Su propuesta de TFG <strong>\"" . htmlspecialchars($proposal['title']) . "\"</strong> ha sido revisada.</p>";
+    $email_content .= "<p><strong>Nuevo estado:</strong> " . htmlspecialchars($display_status) . "</p>";
     if (!empty($comments)) {
-        $message .= "Comentarios: " . $comments . "\n";
+        $email_content .= "<p><strong>Comentarios:</strong> " . nl2br(htmlspecialchars($comments)) . "</p>";
     }
     
     // Agregar información del timeline si fue aprobada
     if ($review_status === 'Cumple requisitos') {
-        $message .= "\n¡Su propuesta ha sido aprobada!\n";
-        $message .= "A partir de hoy, tiene 12 meses (1 año) para completar su TFG.\n";
-        $message .= "Fecha límite: " . date('d/m/Y', strtotime('+12 months')) . "\n";
-        $message .= "\nPuede subir su documento final desde el panel de estudiante.\n";
+        $email_content .= "<p style='color: #198754;'><strong>¡Su propuesta ha sido aprobada!</strong></p>";
+        $email_content .= "<p>A partir de hoy, tiene <strong>12 meses (1 año)</strong> para completar su TFG.</p>";
+        $email_content .= "<p><strong>Fecha límite:</strong> " . date('d/m/Y', strtotime('+12 months')) . "</p>";
+        $email_content .= "<p>Puede subir su documento final desde el panel de estudiante.</p>";
     }
     
-    $message .= "\nPuede revisar su propuesta en el panel de estudiante.\n\n";
-    $message .= "Saludos,\nEscuela de Informática - UNA";
+    $email_content .= "<p>Puede revisar su propuesta en el panel de estudiante.</p>";
+    $email_content .= "<p style='margin-top: 20px;'>Saludos,<br>Escuela de Informática - UNA</p>";
+    
+    $message = wrapEmailBody($email_content, "Estimado/a <strong>" . htmlspecialchars($proposal['nombre']) . "</strong>,");
 
-    $headers = "From: david.calvo.hernandez@est.una.ac.cr\r\n";
-    $headers .= "Reply-To: david.calvo.hernandez@est.una.ac.cr\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers = "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
+    $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8\r\n";
     
     if (mail($to, $subject, $message, $headers)) {
         error_log("Correo enviado exitosamente a: " . $to);
