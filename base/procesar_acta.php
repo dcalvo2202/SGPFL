@@ -180,11 +180,11 @@ function horaEnPalabras($hora)
     $horaNumero = (int) date('H', $timestamp);
     $minutos = (int) date('i', $timestamp);
 
-    if ($minutos !== 0) {
-        return date('H:i', $timestamp);
+    if ($minutos === 0) {
+        return numeroEnPalabrasBasico($horaNumero);
     }
 
-    return numeroEnPalabrasBasico($horaNumero);
+    return numeroEnPalabrasBasico($horaNumero) . ' con ' . numeroEnPalabrasBasico($minutos);
 }
 
 function nombreArchivoSeguro($texto)
@@ -374,7 +374,7 @@ $texto_modalidad .= '.';
 $texto_resultado = 'ARTÍCULO 4: El Tribunal Examinador acordó por unanimidad / mayoría otorgar el resultado de "' .
     $resultado . '" con una calificación de ' . $nota . '.';
 
-$texto_observaciones = 'Observaciones: ' . $tipo_observaciones . '.';
+$texto_observaciones = $tipo_observaciones . ':';
 if ($tipo_observaciones === 'Con Observaciones' && $observaciones_detalle !== '') {
     $texto_observaciones .= ' ' . $observaciones_detalle;
 }
