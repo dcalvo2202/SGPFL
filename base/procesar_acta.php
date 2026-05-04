@@ -218,6 +218,106 @@ function xmlEscape($texto)
     return htmlspecialchars((string) $texto, ENT_XML1, 'UTF-8');
 }
 
+function reemplazarPlaceholdersDocx(DOMDocument $dom, array $reemplazos)
+{
+    if (empty($reemplazos)) {
+        return;
+    }
+
+    $xpath = new DOMXPath($dom);
+    $xpath->registerNamespace('w', 'http://schemas.openxmlformats.org/wordprocessingml/2006/main');
+
+    $placeholders = array_keys($reemplazos);
+    $paragraphs = $xpath->query('//w:p');
+
+    foreach ($paragraphs as $para) {
+        $textNodes = $xpath->query('.//w:t', $para);
+        if ($textNodes->length === 0) {
+            continue;
+        }
+
+        $nodes = [];
+        foreach ($textNodes as $node) {
+            $nodes[] = $node;
+        }
+
+        $rebuild = function () use (&$nodes) {
+            $fullText = '';
+            $positions = [];
+            $offset = 0;
+            foreach ($nodes as $node) {
+                $text = $node->nodeValue;
+                $start = $offset;
+                $end = $start + strlen($text);
+                $positions[] = [$start, $end];
+                $fullText .= $text;
+                $offset = $end;
+            }
+            return [$fullText, $positions];
+        };
+
+        [$fullText, $positions] = $rebuild();
+
+        $changed = true;
+        while ($changed) {
+            $changed = false;
+            foreach ($placeholders as $placeholder) {
+                $pos = strpos($fullText, $placeholder);
+                if ($pos === false) {
+                    continue;
+                }
+
+                $startPos = $pos;
+                $endPos = $pos + strlen($placeholder);
+                $firstIndex = null;
+                $lastIndex = null;
+
+                foreach ($positions as $index => $range) {
+                    [$start, $end] = $range;
+                    if ($end <= $startPos) {
+                        continue;
+                    }
+                    if ($start >= $endPos) {
+                        break;
+                    }
+                    if ($firstIndex === null) {
+                        $firstIndex = $index;
+                    }
+                    $lastIndex = $index;
+                }
+
+                if ($firstIndex === null || $lastIndex === null) {
+                    continue;
+                }
+
+                $firstNode = $nodes[$firstIndex];
+                $lastNode = $nodes[$lastIndex];
+
+                $prefix = '';
+                $suffix = '';
+                $firstStart = $positions[$firstIndex][0];
+                $lastStart = $positions[$lastIndex][0];
+
+                if ($firstStart < $startPos) {
+                    $prefix = substr($firstNode->nodeValue, 0, $startPos - $firstStart);
+                }
+                if ($endPos > $lastStart) {
+                    $suffix = substr($lastNode->nodeValue, $endPos - $lastStart);
+                }
+
+                $firstNode->nodeValue = $prefix . $reemplazos[$placeholder] . $suffix;
+                for ($i = $firstIndex + 1; $i <= $lastIndex; $i++) {
+                    $nodes[$i]->nodeValue = '';
+                }
+
+                [$fullText, $positions] = $rebuild();
+                $changed = true;
+                break;
+            }
+        }
+    }
+}
+
 function generarDocxDesdePlantilla($templatePath, $outputPath, array $reemplazos, array $opciones = [])
 {
     if (!class_exists('ZipArchive')) {
@@ -243,21 +343,6 @@ function generarDocxDesdePlantilla($templatePath, $outputPath, array $reemplazos
         throw new RuntimeException('No se encontró el contenido principal del DOCX.');
     }
 
-    // Reemplazos especiales para postulante 2 opcional
-    if (!empty($opciones['sin_postulante2'])) {
-        // Si no hay postulante 2, remover su información del documento
-        // Reemplazar sus nombres con espacios en blanco
-        $documentXml = str_replace($reemplazos['{{postulante2_nombre}}'], '', $documentXml);
-        $documentXml = str_replace($reemplazos['{{postulante2_cedula}}'], '', $documentXml);
-        // También remover los placeholders sin procesar
-        $documentXml = str_replace('{{postulante2_nombre}}', '', $documentXml);
-        $documentXml = str_replace('{{postulante2_cedula}}', '', $documentXml);
-    }
-
-    foreach ($reemplazos as $key => $value) {
-        $documentXml = str_replace($key, $value, $documentXml);
-    }
-
     $dom = new DOMDocument();
     $dom->preserveWhiteSpace = false;
     $dom->formatOutput = true;
@@ -274,6 +359,13 @@ function generarDocxDesdePlantilla($templatePath, $outputPath, array $reemplazos
         throw new RuntimeException($errorMsg);
     }
     libxml_clear_errors();
+
+    if (!empty($opciones['sin_postulante2'])) {
+        $reemplazos['{{postulante2_nombre}}'] = '';
+        $reemplazos['{{postulante2_cedula}}'] = '';
+    }
+
+    reemplazarPlaceholdersDocx($dom, $reemplazos);
 
     // Limpiar párrafos vacíos innecesarios (solo en espacios entre secciones)
     $xpath = new DOMXPath($dom);
