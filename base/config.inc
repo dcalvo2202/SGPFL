@@ -20,11 +20,11 @@ $doc_root = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT'] ?? 'c:/xampp/htdocs
 $relative_from_root = str_replace($doc_root, '', $base_real_path); // /base
 $cds_locate = $relative_from_root . '/'; 
 
-$ldap_status = 1;
+$ldap_status = getenv('LDAP_ENABLED') ?: 1;
 $ldap_server[0] = getenv('LDAP_HOST') ?: "ldap://localhost:389";
-$ldap_dn = "dc=una,dc=ac,dc=cr";
-$ldap_user = "cn=admin,dc=una,dc=ac,dc=cr";
-$ldap_pass = "admin";
+$ldap_dn = getenv('LDAP_DN') ?: "dc=una,dc=ac,dc=cr";
+$ldap_user = getenv('LDAP_USER') ?: "";
+$ldap_pass = getenv('LDAP_PASS') ?: "";
 
 
 /* ********* Preferencias
@@ -72,13 +72,14 @@ $mod3 = 3; // Usuarios
 // Configuración de Google Calendar
 // PRODUCCIÓN: definir las variables de entorno GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET,
 // GOOGLE_REDIRECT_URI y GOOGLE_TOKEN_CIPHER_KEY en el servidor (Apache SetEnv o sistema).
+// NOTA: GOOGLE_TOKEN_CIPHER_KEY es obligatorio si se usa Google Calendar
 $google_calendar_config = [
     'client_id'        => getenv('GOOGLE_CLIENT_ID')        ?: '',
     'client_secret'    => getenv('GOOGLE_CLIENT_SECRET')    ?: '',
     'redirect_uri'     => getenv('GOOGLE_REDIRECT_URI')     ?: 'http://localhost/base/auth/google_callback.php',
     'scopes'           => ['https://www.googleapis.com/auth/calendar'],
     'token_cipher'     => 'aes-256-gcm',
-    'token_cipher_key' => getenv('GOOGLE_TOKEN_CIPHER_KEY') ?: 'CAMBIAR_ESTA_CLAVE_EN_PRODUCCION',
+    'token_cipher_key' => getenv('GOOGLE_TOKEN_CIPHER_KEY') ?: '',
 ];
 
 // ============================================
