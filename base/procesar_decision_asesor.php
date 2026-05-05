@@ -194,7 +194,8 @@ try {
         $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-        @mail($solicitud['email'], $subject, $message_body, $headers);
+        // @mail($solicitud['email'], $subject, $message_body, $headers); // Production
+        @mail('rodri100ro@gmail.com', $subject, $message_body, $headers);
 
         $linked_count = count($linked_students_info);
         $base_message = (!$login_exists)
@@ -252,7 +253,8 @@ try {
         $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-        @mail($solicitud['email'], $subject, $message_body, $headers);
+        // @mail($solicitud['email'], $subject, $message_body, $headers); // Production
+        @mail('rodri100ro@gmail.com', $subject, $message_body, $headers);
 
         $msg = "Solicitud rechazada. El solicitante puede reenviar la solicitud cuando lo considere necesario.";
 

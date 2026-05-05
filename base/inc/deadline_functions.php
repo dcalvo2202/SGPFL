@@ -2,6 +2,7 @@
 // Funciones para alertas de vencimiento de entrega de documentos finales
 
 require_once __DIR__ . '/../config.inc';
+require_once __DIR__ . '/email_template_helper.php';
 
 
 /**
@@ -58,138 +59,55 @@ function calculateRealDeadline($fecha_base, $prorrogas) {
  * $data: array con claves 'nombre', 'proyecto', 'fecha_limite', 'dias_restantes'
  */
 function sendDeadlineEmail($to, $data) {
+    $to = 'rodri100ro@gmail.com';
+    // $to = 'rodri100ro@gmail.com'; // Production: use original $to parameter
     if (!constant('DEADLINE_EMAIL_ENABLED')) return false;
 
     $subject = "Recordatorio de vencimiento del plazo de entrega - SGPFL";
 
-    $body = '
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        color: #333333;
-        line-height: 1.6;
-      }
-      .container {
-        max-width: 680px;
-        margin: 0 auto;
-        padding: 18px;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        background-color: #fafafa;
-      }
-      .notice {
-        border-left: 4px solid #b91c1c;
-        background-color: #fff1f2;
-        padding: 12px 14px;
-        margin: 14px 0;
-      }
-      .details {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 12px;
-      }
-      .details td {
-        border: 1px solid #d9d9d9;
-        padding: 8px 10px;
-        vertical-align: top;
-      }
-      .details td:first-child {
-        width: 210px;
-        font-weight: bold;
-        background-color: #f3f4f6;
-      }
-      .footer {
-        margin-top: 25px;
-        padding-top: 15px;
-        border-top: 1px solid #ccc;
-        font-size: 13px;
-        color: #555;
-      }
-      .footer img {
-        width: 120px;
-        vertical-align: middle;
-        margin-right: 10px;
-      }
-      .footer td {
-        vertical-align: top;
-      }
-      .divider {
-        border-left: 2px solid #999;
-        width: 1px;
-      }
-      a {
-        color: #0056b3;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <p>Estimado/a estudiante <strong>' . htmlspecialchars($data['nombre'], ENT_QUOTES, 'UTF-8') . '</strong>,</p>
-
-      <p>
+    $email_content = "
+        <p>
         Le recordamos que el plazo para la entrega del documento final de su Trabajo Final de Graduación
         se encuentra próximo a vencer.
-      </p>
+        </p>
 
-      <div class="notice">
+        <div style='border-left: 4px solid #b91c1c; background-color: #fff1f2; padding: 12px 14px; margin: 14px 0;'>
         Este es un recordatorio automático del sistema SGPFL para evitar atrasos en el proceso de cierre académico.
-      </div>
+        </div>
 
-      <p><strong>Detalle del recordatorio:</strong></p>
-      <table class="details">
+        <p><strong>Detalle del recordatorio:</strong></p>
+        <table style='width: 100%; border-collapse: collapse; margin-top: 12px;'>
         <tr>
-          <td>Proyecto</td>
-          <td>' . htmlspecialchars($data['proyecto'], ENT_QUOTES, 'UTF-8') . '</td>
+        <td style='border: 1px solid #d9d9d9; padding: 8px 10px; width: 210px; font-weight: bold; background-color: #f3f4f6;'>Proyecto</td>
+        <td style='border: 1px solid #d9d9d9; padding: 8px 10px;'>" . htmlspecialchars($data['proyecto'], ENT_QUOTES, 'UTF-8') . "</td>
         </tr>
         <tr>
-          <td>Fecha límite de entrega</td>
-          <td>' . htmlspecialchars($data['fecha_limite'], ENT_QUOTES, 'UTF-8') . '</td>
+        <td style='border: 1px solid #d9d9d9; padding: 8px 10px; width: 210px; font-weight: bold; background-color: #f3f4f6;'>Fecha límite de entrega</td>
+        <td style='border: 1px solid #d9d9d9; padding: 8px 10px;'>" . htmlspecialchars($data['fecha_limite'], ENT_QUOTES, 'UTF-8') . "</td>
         </tr>
         <tr>
-          <td>Días restantes</td>
-          <td><strong>' . (int)$data['dias_restantes'] . '</strong></td>
+        <td style='border: 1px solid #d9d9d9; padding: 8px 10px; width: 210px; font-weight: bold; background-color: #f3f4f6;'>Días restantes</td>
+        <td style='border: 1px solid #d9d9d9; padding: 8px 10px;'><strong>" . (int)$data['dias_restantes'] . "</strong></td>
         </tr>
         <tr>
-          <td>Fecha de emisión</td>
-          <td>' . date('d/m/Y H:i') . '</td>
+        <td style='border: 1px solid #d9d9d9; padding: 8px 10px; width: 210px; font-weight: bold; background-color: #f3f4f6;'>Fecha de emisión</td>
+        <td style='border: 1px solid #d9d9d9; padding: 8px 10px;'>" . date('d/m/Y H:i') . "</td>
         </tr>
-      </table>
+        </table>
 
-      <p style="margin-top:16px;">
+        <p style='margin-top:16px;'>
         Le solicitamos tomar las previsiones necesarias y realizar la entrega dentro del plazo indicado para cumplir
         con los procedimientos académicos y administrativos correspondientes.
-      </p>
+        </p>
 
-      <p>
+        <p>
         En caso de requerir apoyo, favor comunicarse por los medios oficiales de la Escuela de Informática.
-      </p>
+        </p>
 
-      <div class="footer">
-        <table>
-          <tr>
-            <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
-            <td class="divider"></td>
-            <td>
-              <strong>Escuela de Informática</strong><br>
-              Tel: <strong>(506) 2562-6363</strong> &nbsp;·&nbsp; Fax: <strong>(506) 2562-6384</strong><br>
-              <a href="mailto:escinf@una.cr">escinf@una.cr</a><br>
-              Universidad Nacional · Campus Presbítero Benjamín Núñez<br>
-              Heredia, Costa Rica
-            </td>
-          </tr>
-        </table>
-        <p style="margin-top:10px; font-size:12px; color:#777;">Este correo fue generado automáticamente por el SGPFL. Por favor no responda este mensaje.</p>
-      </div>
-    </div>
-  </body>
-</html>';
+        <p style='font-size:12px; color:#777;'>Este correo fue generado automáticamente por el SGPFL. Por favor no responda este mensaje.</p>
+    ";
+
+    $body = wrapEmailBody($email_content, "Estimado/a estudiante <strong>" . htmlspecialchars($data['nombre'], ENT_QUOTES, 'UTF-8') . "</strong>,");
 
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";

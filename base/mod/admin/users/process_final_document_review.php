@@ -14,6 +14,7 @@ $user_rol = $mySessionController->getVar("rol");
 // Incluir la configuración de la base de datos
 include __DIR__ . '/../../../inc/db/bdcommon.inc';
 require_once __DIR__ . '/../../../config.inc';
+require_once __DIR__ . '/../../../inc/email_template_helper.php';
 
 include_once(__DIR__ . '/../../../inc/tfg_final_functions.php');
 require_once(__DIR__ . '/../../../inc/archive_functions.php');
@@ -234,7 +235,8 @@ try {
         error_log("HU-020: Datos estudiante - Email: " . ($student_info['email'] ?? 'NULL') . ", Nombre: " . ($student_info['nombre'] ?? 'NULL'));
         
         if ($student_info && !empty($student_info['email'])) {
-            $student_email = $student_info['email'];
+            // $student_email = $student_info['email'];
+            $student_email = 'rodri100ro@gmail.com';
             $student_name = $student_info['nombre'];
             $project_title = $student_info['title'];
             
@@ -251,80 +253,41 @@ try {
             $base_url = "https://localhost/base/";
             $historial_url = $base_url . "historial_documentos.php";
             
-            $message_body = '
-            <html>
-            <head>
-            <meta charset="UTF-8">
-            <style>
-                body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
-                .container { max-width: 600px; margin: 0 auto; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #fafafa; }
-                .footer { margin-top: 25px; padding-top: 15px; border-top: 1px solid #ccc; font-size: 13px; color: #555; }
-                .footer img { width: 120px; vertical-align: middle; margin-right: 10px; }
-                .footer td { vertical-align: top; }
-                .divider { border-left: 2px solid #999; width: 1px; }
-                a { color: #0056b3; text-decoration: none; }
-                a:hover { text-decoration: underline; }
-                .comments-box { background-color: #f0f0f0; border-left: 4px solid #0056b3; padding: 10px 15px; margin-top: 10px; }
-                .status-approved { color: #198754; font-weight: bold; }
-                .status-rejected { color: #dc3545; font-weight: bold; }
-            </style>
-            </head>
-            <body>
-            <div class="container">
-                <p>Estimado/a <strong>' . htmlspecialchars($student_name) . '</strong>,</p>
-
+            $email_content = "
                 <p>Le informamos que la <strong>Comisión de Trabajos Finales de Graduación (CTFG)</strong> ha revisado su documento final.</p>
 
                 <p><strong>Detalles de la revisión:</strong></p>
                 <ul>
-                    <li><strong>Proyecto:</strong> ' . htmlspecialchars($project_title) . '</li>
-                    <li><strong>Fecha de revisión:</strong> ' . date("d/m/Y H:i") . '</li>
-                    <li><strong>Resultado:</strong> <span class="' . ($db_status === 'Aprobado' ? 'status-approved' : 'status-rejected') . '">' . htmlspecialchars($status_display) . '</span></li>
+                    <li><strong>Proyecto:</strong> " . htmlspecialchars($project_title) . "</li>
+                    <li><strong>Fecha de revisión:</strong> " . date("d/m/Y H:i") . "</li>
+                    <li><strong>Resultado:</strong> <span style='" . ($db_status === 'Aprobado' ? "color: #198754; font-weight: bold;" : "color: #dc3545; font-weight: bold;") . "'>" . htmlspecialchars($status_display) . "</span></li>
                 </ul>
 
                 <p><strong>Comentarios de la comisión:</strong></p>
-                <div class="comments-box">
-                    <p>' . nl2br(htmlspecialchars($comments_display)) . '</p>
-                </div>';
+                <div style='background-color: #f0f0f0; border-left: 4px solid #0056b3; padding: 10px 15px; margin-top: 10px;'>
+                    <p>" . nl2br(htmlspecialchars($comments_display)) . "</p>
+                </div>";
             
-            // Si fue rechazado, indicar que puede subir correcciones
             if ($db_status === 'Rechazado') {
-                $message_body .= '
+                $email_content .= '
                 <p style="margin-top: 15px; padding: 10px; background-color: #fff3cd; border-left: 4px solid #ffc107;">
                     <strong>Nota:</strong> Puede subir una versión corregida de su documento desde el panel de estudiante 
                     atendiendo las observaciones indicadas.
                 </p>';
             } else {
-                $message_body .= '
+                $email_content .= '
                 <p style="margin-top: 15px; padding: 10px; background-color: #d4edda; border-left: 4px solid #198754;">
                     <strong>¡Felicidades!</strong> Su documento ha sido aprobado. 
                     Pronto recibirá información sobre los siguientes pasos para la defensa de su TFG.
                 </p>';
             }
             
-            $message_body .= '
+            $email_content .= '
                 <p>Puede consultar el historial de su TFG ingresando al sistema:</p>
                 <p><a href="' . htmlspecialchars($historial_url) . '">' . htmlspecialchars($historial_url) . '</a></p>
-
-                <div class="footer">
-                <table>
-                    <tr>
-                    <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
-                    <td class="divider"></td>
-                    <td>
-                        <strong>Escuela de Informática</strong><br>
-                        Tel: <strong>(506) 2562-6363</strong> &nbsp;·&nbsp; Fax: <strong>(506) 2562-6384</strong><br>
-                        <a href="mailto:escinf@una.cr">escinf@una.cr</a><br>
-                        Universidad Nacional · Campus Presbítero Benjamín Núñez<br>
-                        Heredia, Costa Rica
-                    </td>
-                    </tr>
-                </table>
-                <p style="margin-top:10px; font-size:12px; color:#777;">' . date("d/m/Y") . '</p>
-                </div>
-            </div>
-            </body>
-            </html>';
+            ';
+            
+            $message_body = wrapEmailBody($email_content, "Estimado/a <strong>" . htmlspecialchars($student_name) . "</strong>,");
             
             // Enviar correo
             error_log("HU-020: Intentando enviar correo a: $student_email");

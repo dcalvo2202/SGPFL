@@ -94,9 +94,6 @@ if (!defined('SYSTEM_EMAIL_FROM_NAME')) {
 if (!defined('SYSTEM_EMAIL_REPLY_TO')) {
     define('SYSTEM_EMAIL_REPLY_TO', 'escinf@una.cr');
 }
-if (!defined('SYSTEM_EMAIL_LOGO_URL')) {
-    define('SYSTEM_EMAIL_LOGO_URL', 'https://localhost/base/img/logo.webp');
-}
 
 // Configuración de alertas de vencimiento
 if (!defined('DEADLINE_THRESHOLDS')) {

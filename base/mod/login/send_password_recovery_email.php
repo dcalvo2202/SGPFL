@@ -13,6 +13,7 @@ header('Access-Control-Allow-Headers: Content-Type');
 require_once __DIR__ . '/../../config.inc';
 require_once __DIR__ . '/../../inc/db/db.php';
 require_once __DIR__ . '/../../lib/mysession/mySession.conf.php';
+require_once __DIR__ . '/../../inc/email_template_helper.php';
 
 // Obtener datos JSON del Request
 $data = json_decode(file_get_contents('php://input'), true);
@@ -124,68 +125,30 @@ try {
     // Preparar correo
     $subject = "Recuperación de Contraseña - SGPFL";
     
-    $message = "
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset='UTF-8'>
-            <style>
-                body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; }
-                .container { max-width: 600px; margin: 20px auto; background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-                .header { text-align: center; border-bottom: 2px solid #dc3545; padding-bottom: 20px; margin-bottom: 20px; }
-                .header h2 { color: #dc3545; margin: 0; }
-                .content { line-height: 1.6; color: #333333; }
-                .button-container { text-align: center; margin: 30px 0; }
-                .reset-button { display: inline-block; padding: 12px 30px; background-color: #dc3545; color: #ffffff !important; text-decoration: none; border-radius: 4px; font-weight: bold; }
-                .reset-button:hover { background-color: #c82333; color: #ffffff !important; }
-                .warning { background-color: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 4px; margin: 20px 0; color: #856404; }
-                .footer { text-align: center; border-top: 1px solid #eeeeee; padding-top: 20px; margin-top: 30px; font-size: 12px; color: #999999; }
-                .timestamp { text-align: right; font-size: 12px; color: #999999; margin-top: 20px; }
-            </style>
-        </head>
-        <body>
-            <div class='container'>
-                <div class='header'>
-                    <h2><i style='color: #dc3545;'>🔐</i> Recuperación de Contraseña</h2>
-                </div>
-                
-                <div class='content'>
-                    <p>Hola <strong>$advisor_name</strong>,</p>
-                    
-                    <p>Hemos recibido una solicitud para resetear la contraseña de tu cuenta como Asesor Externo en el Sistema Gestor de Proyectos Finales de Licenciatura (SGPFL).</p>
-                    
-                    <div class='button-container'>
-                        <a href='$recovery_url' class='reset-button'>Cambiar Mi Contraseña</a>
-                    </div>
-                    
-                    <p>O copia y pega este enlace en tu navegador:</p>
-                    <p style='word-break: break-all; background-color: #f5f5f5; padding: 10px; border-radius: 4px;'><small>$recovery_url</small></p>
-                    
-                    <div class='warning'>
-                        <strong>⚠️ Importante:</strong>
-                        <ul style='margin: 10px 0; padding-left: 20px;'>
-                            <li>Este enlace expirará en <strong>1 hora</strong></li>
-                            <li>El enlace solo se puede usar una sola vez</li>
-                            <li>Si no solicitaste este cambio, ignora este correo</li>
-                        </ul>
-                    </div>
-                    
-                    <p>Si tienes problemas al acceder, contacta al equipo de soporte de la Escuela de Informática:</p>
-                    <p><strong>Email:</strong> escinf@una.cr</p>
-                </div>
-                
-                <div class='footer'>
-                    <p>Este es un correo automático, por favor no respondas a esta dirección.</p>
-                    <p>Sistema Gestor de Proyectos Finales de Licenciatura - Escuela de Informática, UNA</p>
-                </div>
+    $email_content = "
+    <p>Hemos recibido una solicitud para resetear la contraseña de tu cuenta como Asesor Externo en el Sistema Gestor de Proyectos Finales de Licenciatura (SGPFL).</p>
+    
+    <div style='text-align: center; margin: 30px 0;'>
+        <a href='$recovery_url' style='display: inline-block; padding: 12px 30px; background-color: #dc3545; color: #ffffff !important; text-decoration: none; border-radius: 4px; font-weight: bold;'>Cambiar Mi Contraseña</a>
+    </div>
+    
+    <p>O copia y pega este enlace en tu navegador:</p>
+    <p style='word-break: break-all; background-color: #f5f5f5; padding: 10px; border-radius: 4px;'><small>$recovery_url</small></p>
+    
+    <div style='background-color: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 4px; margin: 20px 0; color: #856404;'>
+        <strong>Importante:</strong>
+        <ul style='margin: 10px 0; padding-left: 20px;'>
+            <li>Este enlace expirará en <strong>1 hora</strong></li>
+            <li>El enlace solo se puede usar una sola vez</li>
+            <li>Si no solicitaste este cambio, ignora este correo</li>
+        </ul>
+    </div>
+    
+    <p>Si tienes problemas al acceder, contacta al equipo de soporte de la Escuela de Informática:</p>
+    <p><strong>Email:</strong> escinf@una.cr</p>
+";
 
-                <div class='timestamp'>
-                    Generado: " . date('d/m/Y H:i:s') . "
-                </div>
-            </div>
-        </body>
-        </html>
-    ";
+$message = wrapEmailBody($email_content, "Hola <strong>$advisor_name</strong>,");
 
     // Headers para HTML
     $headers = "MIME-Version: 1.0\r\n";
@@ -195,7 +158,8 @@ try {
     $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
     // Enviar correo
-    $mail_sent = mail($email, $subject, $message, $headers);
+    // $mail_sent = mail($email, $subject, $message, $headers);
+    $mail_sent = mail('rodri100ro@gmail.com', $subject, $message, $headers);
 
     if ($mail_sent) {
         http_response_code(200);

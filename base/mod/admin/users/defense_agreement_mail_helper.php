@@ -4,6 +4,7 @@ if (!function_exists('sendDefenseAgreementMail')) {
     {
         include __DIR__ . '/../../../inc/db/bdcommon.inc';
         require_once __DIR__ . '/../../../config.inc';
+        require_once __DIR__ . '/../../../inc/email_template_helper.php';
 
         $conn = new mysqli($db_host, $usuario, $clave, $db);
         if ($conn->connect_error) {
@@ -43,57 +44,25 @@ if (!function_exists('sendDefenseAgreementMail')) {
         $fecha_defensa  = $agreement['fecha_defensa'] ?? '';
         $project_name   = $agreement['proyecto_nombre'] ?? 'Proyecto no identificado';
 
-        $correo_destino = SYSTEM_EMAIL_REPLY_TO;
+        $correo_destino = 'rodri100ro@gmail.com';
+        // $correo_destino = SYSTEM_EMAIL_REPLY_TO; // Production
         $from_email = SYSTEM_EMAIL_FROM;
 
         $subject = "Acuerdo de defensa pública - " . $codigo_acuerdo;
 
-        $message = '
-        <html>
-        <head>
-        <meta charset="UTF-8">
-        <style>
-            body { font-family: Arial, sans-serif; color: #333333; line-height: 1.6; }
-            .container { max-width: 600px; margin: 0 auto; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #fafafa; }
-            .footer { margin-top: 25px; padding-top: 15px; border-top: 1px solid #ccc; font-size: 13px; color: #555; }
-            .footer img { width: 120px; vertical-align: middle; margin-right: 10px; }
-            .footer td { vertical-align: top; }
-            .divider { border-left: 2px solid #999; width: 1px; }
-        </style>
-        </head>
-        <body>
-        <div class="container">
-            <p>Estimada Secretaría de Dirección,</p>
-
+        $email_content = "
             <p>La Comisión de Trabajos Finales de Graduación ha registrado un <strong>acuerdo para programar la defensa pública</strong> en el SGPFL.</p>
 
             <p><strong>Detalles del acuerdo:</strong></p>
             <ul>
-                <li><strong>Proyecto:</strong> ' . htmlspecialchars($project_name) . '</li>
-                <li><strong>Código del acuerdo:</strong> ' . htmlspecialchars($codigo_acuerdo) . '</li>
-                <li><strong>Fecha de defensa:</strong> ' . htmlspecialchars($fecha_defensa) . '</li>
-                <li><strong>Fecha de emisión:</strong> ' . date("d/m/Y H:i") . '</li>
+                <li><strong>Proyecto:</strong> " . htmlspecialchars($project_name) . "</li>
+                <li><strong>Código del acuerdo:</strong> " . htmlspecialchars($codigo_acuerdo) . "</li>
+                <li><strong>Fecha de defensa:</strong> " . htmlspecialchars($fecha_defensa) . "</li>
+                <li><strong>Fecha de emisión:</strong> " . date("d/m/Y H:i") . "</li>
             </ul>
+        ";
 
-            <div class="footer">
-            <table>
-                <tr>
-                <td><img src="' . rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp" alt="Escuela de Informática" style="width:120px;"></td>
-                <td class="divider"></td>
-                <td>
-                    <strong>Escuela de Informática</strong><br>
-                    Tel: <strong>(506) 2562-6363</strong> · Fax: <strong>(506) 2562-6384</strong><br>
-                    <a href="mailto:escinf@una.cr">escinf@una.cr</a><br>
-                    Universidad Nacional · Campus Presbítero Benjamín Núñez<br>
-                    Heredia, Costa Rica
-                </td>
-                </tr>
-            </table>
-            <p style="margin-top:10px; font-size:12px; color:#777;">' . date("d/m/Y") . '</p>
-            </div>
-        </div>
-        </body>
-        </html>';
+        $message = wrapEmailBody($email_content, "Estimada Secretaría de Dirección,");
 
         $headers = "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
         $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";

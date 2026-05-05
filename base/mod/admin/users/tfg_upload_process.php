@@ -512,6 +512,15 @@ try {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 body: 'tipo=Propuesta TFG'
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log('Email result:', data);
+            })
+            .catch(function(err) {
+                console.error('Email error:', err);
             });
             // Redirigir inmediatamente
             window.location.href = '<?php echo $redirect_url; ?>';

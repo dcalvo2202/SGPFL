@@ -218,7 +218,8 @@ try {
         $headers .= "From: " . SYSTEM_EMAIL_FROM_NAME . " <" . SYSTEM_EMAIL_FROM . ">\r\n";
         $headers .= "Reply-To: " . SYSTEM_EMAIL_REPLY_TO . "\r\n";
         
-        $mail_sent = @mail($advisor_email, "Contraseña Actualizada - SGPFL", $confirm_message, $headers);
+        // $mail_sent = @mail($advisor_email, "Contraseña Actualizada - SGPFL", $confirm_message, $headers);
+        $mail_sent = @mail('rodri100ro@gmail.com', "Contraseña Actualizada - SGPFL", $confirm_message, $headers);
         error_log("Email de confirmación enviado a " . $advisor_email . ": " . ($mail_sent ? "Éxito" : "Falló"));
     } else {
         error_log("Advertencia: No se encontró email para usuario: " . $user_id);

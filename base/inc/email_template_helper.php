@@ -1,5 +1,4 @@
 <?php
-global $cds_domain;
 
 function getEmailCSS(): string {
     return '
@@ -17,16 +16,22 @@ function getEmailCSS(): string {
 }
 
 function buildEmailFooter(string $date = ''): string {
-    global $cds_domain;
     if (empty($date)) {
         $date = date("d/m/Y");
     }
-    $logo_url = rtrim($cds_domain ?? '', '/') . '/base/img/logo.webp';
+
+    $logo_path = __DIR__ . '/../img/logo.webp';
+    $logo_tag = '';
+    if (file_exists($logo_path)) {
+        $logo_data = base64_encode(file_get_contents($logo_path));
+        $logo_tag = '<img src="data:image/webp;base64,' . $logo_data . '" alt="Escuela de Informática" style="width:120px;">';
+    } 
+
     return '
     <div class="footer">
         <table>
             <tr>
-                <td><img src="' . $logo_url . '" alt="Escuela de Informática" style="width:120px;"></td>
+                <td>' . $logo_tag . '</td>
                 <td class="divider"></td>
                 <td>
                     <strong>Escuela de Informática</strong><br>
@@ -44,7 +49,6 @@ function buildEmailFooter(string $date = ''): string {
 function wrapEmailBody(string $content, string $greeting = ''): string {
     $css = getEmailCSS();
     $footer = buildEmailFooter();
-    $date_time = date("d/m/Y H:i");
     
     return '<!DOCTYPE html>
 <html>

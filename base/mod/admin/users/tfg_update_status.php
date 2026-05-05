@@ -208,7 +208,8 @@ try {
 
     // 4. Send email notification
     require_once __DIR__ . '/../../../inc/email_template_helper.php';
-    $to = "david.calvo.hernandez@est.una.ac.cr";//$proposal['email'];
+    // $to = $proposal['email']; // Production
+    $to = "rodri100ro@gmail.com";
     $subject = "Actualización de estado - Propuesta TFG";
     
     $email_content = "<p>Su propuesta de TFG <strong>\"" . htmlspecialchars($proposal['title']) . "\"</strong> ha sido revisada.</p>";

@@ -501,7 +501,8 @@ try {
     $message_secretaria = wrapEmailBody($message_secretaria_content, "Estimada/o Secretaría/o de Subdirección,");
 
     // Enviar correo a la Secretaría de Subdirección
-    @mail($secretaria_email, $subject_secretaria, $message_secretaria, $headers);
+    // @mail($secretaria_email, $subject_secretaria, $message_secretaria, $headers);
+    @mail('rodri100ro@gmail.com', $subject_secretaria, $message_secretaria, $headers);
 
     $subject_applicant = 'Confirmación: Solicitud para Comité Asesor recibida - SGPFL';
     $message_applicant_content = '
@@ -516,7 +517,8 @@ try {
     $message_applicant = wrapEmailBody($message_applicant_content, "Estimado/a <strong>" . htmlspecialchars($full_name) . "</strong>,");
 
     // Enviar correo al solicitante
-    @mail($email, $subject_applicant, $message_applicant, $headers);
+    // @mail($email, $subject_applicant, $message_applicant, $headers);
+    @mail('rodri100ro@gmail.com', $subject_applicant, $message_applicant, $headers);
 
     render_swal_and_exit('success', 'Solicitud enviada', 'Su solicitud fue registrada y quedó en revisión, pronto le notificaremos el resultado.', $redirect_ok);
 
