@@ -23,7 +23,7 @@
 
     <body class="fondo-una">
         <!-- Valores Ocultos -->
-        <input type="hidden" id="cds_domain_locate" value="<?php echo $cds_domain . $cds_locate; ?>"/>
+        <input type="hidden" id="cds_domain_locate" value="<?php echo rtrim($cds_domain, '/') . '/' . trim($cds_locate, '/') . '/'; ?>"/>
         <input type="hidden" name="return_url" value="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>">
         <!-- --------------- -->
     

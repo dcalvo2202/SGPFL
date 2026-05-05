@@ -160,6 +160,15 @@ $avisos_generales = $panel->getAvisos();
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
+                        <div class="quick-action-card" onclick="location.href='<?= $base_url ?>panel_plantillas.php'" class="border-3accent-purple">
+                            <div class="card-icon">
+                                <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                            </div>
+                            <h5>Plantillas Oficiales</h5>
+                            <p>Manejo de plantillas para el TFG</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
                         <div class="quick-action-card border-accent-red" onclick="location.href='<?= htmlspecialchars($base_url) ?>PanelRegistroAcuerdo.php'">
                             <div class="card-icon icon-red">
                                 <i class="bi bi-journal-check"></i>
