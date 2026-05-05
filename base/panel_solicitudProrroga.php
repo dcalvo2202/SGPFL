@@ -121,7 +121,26 @@ if ($prorrogas_aprobadas >= 2) {
     $mensaje_estado = 'Ya tiene una solicitud de prórroga pendiente de revisión.';
 } elseif (empty($proposal_id)) {
     $puede_solicitar = false;
-    $mensaje_estado = 'No tiene un proyecto registrado para solicitar prórroga.';
+    $mensaje_estado = 'No tiene un proyecto registrado para solicitar extensión.';
+} else {
+    // Verificar si el proyecto está concluido o cancelado
+    $conn_check = new mysqli($db_host, $usuario, $clave, $db);
+    $sql_estado = "SELECT estado FROM proyecto_aprobado WHERE proposal_id = ? LIMIT 1";
+    $stmt_estado = $conn_check->prepare($sql_estado);
+    if ($stmt_estado) {
+        $stmt_estado->bind_param("i", $proposal_id);
+        $stmt_estado->execute();
+        $result_estado = $stmt_estado->get_result();
+        if ($row_estado = $result_estado->fetch_assoc()) {
+            $estado = strtolower($row_estado['estado'] ?? '');
+            if (in_array($estado, ['concluido', 'cancelado'])) {
+                $puede_solicitar = false;
+                $mensaje_estado = 'El proyecto está concluido. No puede solicitar extensión.';
+            }
+        }
+        $stmt_estado->close();
+    }
+    $conn_check->close();
 }
 
 // Información de la prórroga a solicitar

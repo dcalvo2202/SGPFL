@@ -189,9 +189,10 @@ function horaEnPalabras($hora)
 
 function nombreArchivoSeguro($texto)
 {
+    $textoOriginal = $texto;
     $texto = @iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $texto);
     if ($texto === false) {
-        $texto = $texto;
+        $texto = $textoOriginal;
     }
 
     $texto = preg_replace('/[^a-zA-Z0-9_-]/', '_', $texto);
@@ -414,6 +415,8 @@ $tutor_nombre          = limpiar($_POST['tutor_nombre'] ?? '');
 $tutor_cargo           = limpiar($_POST['tutor_cargo'] ?? '');
 $asesor_nombre         = limpiar($_POST['asesor_nombre'] ?? '');
 $asesor_cargo          = limpiar($_POST['asesor_cargo'] ?? '');
+$asesor2_nombre        = limpiar($_POST['asesor2_nombre'] ?? '');
+$asesor2_cargo         = limpiar($_POST['asesor2_cargo'] ?? '');
 
 $resultado             = limpiar($_POST['resultado'] ?? '');
 $nota                  = limpiar($_POST['nota'] ?? '');
@@ -476,12 +479,28 @@ if ($mencion !== '') {
     $texto_mencion = 'Mención honorífica otorgada: ' . $mencion . '.';
 }
 
+$integrantesTribunal = [];
+if ($presidente_nombre !== '') {
+    $integrantesTribunal[] = $presidente_nombre . ', ' . $presidente_cargo;
+}
+if ($director_nombre !== '') {
+    $integrantesTribunal[] = $director_nombre . ', ' . $director_cargo;
+}
+if ($tutor_nombre !== '') {
+    $integrantesTribunal[] = $tutor_nombre . ', ' . $tutor_cargo;
+}
+if ($asesor_nombre !== '') {
+    $integrantesTribunal[] = $asesor_nombre . ', ' . $asesor_cargo;
+}
+if ($asesor2_nombre !== '') {
+    $integrantesTribunal[] = $asesor2_nombre . ', ' . ($asesor2_cargo !== '' ? $asesor2_cargo : 'Asesor(a)');
+}
+
+$tribunalTexto = implode('; ', $integrantesTribunal);
+
 $parrafo_inicial = 'ACTA N.° ' . $numero_acta . '. En la fecha ' . $fecha_larga . ' (' . $fecha_larga_texto . ')' .
     ', a las ' . $hora_inicio_fmt . ' (' . $hora_inicio_texto . ') horas, se reunieron las personas integrantes del Tribunal Examinador conformado por ' .
-    $presidente_nombre . ', ' . $presidente_cargo . '; ' .
-    $director_nombre . ', ' . $director_cargo . '; ' .
-    $tutor_nombre . ', ' . $tutor_cargo . '; y ' .
-    $asesor_nombre . ', ' . $asesor_cargo .
+    $tribunalTexto .
     ', con el propósito de llevar a cabo la presentación pública correspondiente a ' .
     $texto_postulantes . ', dentro de la modalidad de ' . $modalidad_tfg . '.';
 
@@ -591,6 +610,9 @@ $bottomMargin = 20;
 $pageHeight   = 297;
 $espacioDisponible = $pageHeight - $bottomMargin - $pdf->GetY();
 $altoBloqueFirmas = $hay_segundo_postulante ? 72 : 60;
+if ($asesor2_nombre !== '') {
+    $altoBloqueFirmas += 24;
+}
 
 if ($espacioDisponible < $altoBloqueFirmas) {
     $pdf->AddPage();
@@ -603,6 +625,8 @@ $wFirma   = 80;
 $saltoFila = 24;
 $saltoPost = 26;
 
+$filaOffsetPostulantes = 2;
+
 /* Tribunal - fila 1 */
 dibujarFirma($pdf, $leftX,  $startY, $wFirma, $presidente_nombre, $presidente_cargo);
 dibujarFirma($pdf, $rightX, $startY, $wFirma, $director_nombre,   $director_cargo);
@@ -612,8 +636,15 @@ $ySegundaFila = $startY + $saltoFila;
 dibujarFirma($pdf, $leftX,  $ySegundaFila, $wFirma, $tutor_nombre,  $tutor_cargo);
 dibujarFirma($pdf, $rightX, $ySegundaFila, $wFirma, $asesor_nombre, $asesor_cargo);
 
+/* Tribunal - fila 3 (asesor 2 opcional) */
+if ($asesor2_nombre !== '') {
+    $yTerceraFila = $ySegundaFila + $saltoFila;
+    dibujarFirma($pdf, 55, $yTerceraFila, 100, $asesor2_nombre, ($asesor2_cargo !== '' ? $asesor2_cargo : 'Asesor(a)'));
+    $filaOffsetPostulantes = 3;
+}
+
 /* Postulantes */
-$yPostulantes = $ySegundaFila + $saltoPost;
+$yPostulantes = $startY + ($saltoFila * $filaOffsetPostulantes) + 2;
 
 if ($hay_segundo_postulante) {
     dibujarFirma($pdf, $leftX,  $yPostulantes, $wFirma, $nombre_estudiante_1, 'Postulante');
@@ -639,6 +670,18 @@ try {
         $observaciones_docx = $tipo_observaciones;
     }
 
+    $asesor_nombre_docx = $asesor_nombre;
+    $asesor_cargo_docx = $asesor_cargo;
+    if ($asesor2_nombre !== '') {
+        if ($asesor_nombre !== '') {
+            $asesor_nombre_docx = $asesor_nombre . ' y ' . $asesor2_nombre;
+            $asesor_cargo_docx = $asesor_cargo . ' y ' . ($asesor2_cargo !== '' ? $asesor2_cargo : 'Asesor(a)');
+        } else {
+            $asesor_nombre_docx = $asesor2_nombre;
+            $asesor_cargo_docx = ($asesor2_cargo !== '' ? $asesor2_cargo : 'Asesor(a)');
+        }
+    }
+
     $reemplazos_docx = [
         '{{numero_acta}}' => xmlEscape($numero_acta),
         '{{hora_inicio_texto}}' => xmlEscape($hora_inicio_texto),
@@ -657,8 +700,10 @@ try {
         '{{director_cargo}}' => xmlEscape($director_cargo),
         '{{tutor_nombre}}' => xmlEscape($tutor_nombre),
         '{{tutor_cargo}}' => xmlEscape($tutor_cargo),
-        '{{asesor_nombre}}' => xmlEscape($asesor_nombre),
-        '{{asesor_cargo}}' => xmlEscape($asesor_cargo),
+        '{{asesor_nombre}}' => xmlEscape($asesor_nombre_docx),
+        '{{asesor_cargo}}' => xmlEscape($asesor_cargo_docx),
+        '{{asesor2_nombre}}' => xmlEscape($asesor2_nombre),
+        '{{asesor2_cargo}}' => xmlEscape($asesor2_cargo),
         '{{resultado}}' => xmlEscape($resultado),
         '{{nota}}' => xmlEscape($nota),
         '{{tipo_observaciones}}' => xmlEscape($tipo_observaciones),
@@ -725,6 +770,8 @@ fputcsv($fp, ['Tutor', $tutor_nombre]);
 fputcsv($fp, ['Cargo tutor', $tutor_cargo]);
 fputcsv($fp, ['Asesor', $asesor_nombre]);
 fputcsv($fp, ['Cargo asesor', $asesor_cargo]);
+fputcsv($fp, ['Asesor 2', $asesor2_nombre]);
+fputcsv($fp, ['Cargo asesor 2', $asesor2_cargo]);
 
 /* Resultado */
 fputcsv($fp, ['Resultado', $resultado]);
@@ -787,7 +834,7 @@ try {
             }
 
             // 2. Obtener IDs de comité (presidente, director, tutor, asesor)
-            $comite_names = array_filter([$presidente_nombre, $director_nombre, $tutor_nombre, $asesor_nombre]);
+            $comite_names = array_filter([$presidente_nombre, $director_nombre, $tutor_nombre, $asesor_nombre, $asesor2_nombre]);
             foreach ($comite_names as $nombre) {
                 $stmtComite = $gc_conn->prepare("SELECT id FROM sis_user WHERE nombre LIKE ? LIMIT 1");
                 if ($stmtComite) {
@@ -813,6 +860,7 @@ try {
                 $director_nombre,
                 $tutor_nombre,
                 $asesor_nombre,
+                $asesor2_nombre,
             ]);
 
             $minutesData = [

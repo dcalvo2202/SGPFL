@@ -70,6 +70,15 @@ class ProrrogaLogic {
      * @return array ['success' => bool, 'message' => string, 'id' => int|null]
      */
     public function crearSolicitud($proposal_id, $user_id, $extension_number, $reason, $archivos = []) {
+        // Validar que el proyecto no esté concluido o cancelado
+        if ($this->estaProyectoConcluido($proposal_id)) {
+            return [
+                'success' => false,
+                'message' => 'El proyecto ya está concluido. No puede solicitar prórroga.',
+                'id' => null
+            ];
+        }
+
         // Validar que no tenga más de 2 prórrogas aprobadas
         $aprobadas = $this->contarProrrogasAprobadas($proposal_id);
         if ($aprobadas >= 2) {
@@ -331,6 +340,30 @@ class ProrrogaLogic {
         $stmt->close();
         
         return $tiene;
+    }
+
+    /**
+     * Verificar si el proyecto está concluso o cancelado
+     * @param int $proposal_id
+     * @return bool
+     */
+    public function estaProyectoConcluido($proposal_id) {
+        $sql = "SELECT estado FROM proyecto_aprobado WHERE proposal_id = ? LIMIT 1";
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) return false;
+        
+        $stmt->bind_param("i", $proposal_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($row = $result->fetch_assoc()) {
+            $estado = strtolower($row['estado'] ?? '');
+            $stmt->close();
+            return in_array($estado, ['concluido', 'cancelado', 'Concluido', 'Cancelado']);
+        }
+        
+        $stmt->close();
+        return false;
     }
 
     /**

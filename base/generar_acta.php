@@ -222,6 +222,9 @@ if (!empty($datosProyecto['asesor_2_nombre']) &&
     $asesoresDisponibles[] = $datosProyecto['asesor_2_nombre'];
 }
 
+$asesor1Default = $asesoresDisponibles[0] ?? '';
+$asesor2Default = $asesoresDisponibles[1] ?? '';
+
 $valoresForm = [
     'numero_acta'        => '',
     'fecha'              => date('Y-m-d'),
@@ -249,8 +252,10 @@ $valoresForm = [
     'director_cargo'      => valorParametro($parametrosActa, 'acta_director_cargo', 'Director(a) de la Escuela de Informática'),
     'tutor_nombre'        => $datosProyecto['tutor_nombre'] ?? '',
     'tutor_cargo'         => valorParametro($parametrosActa, 'acta_tutor_cargo', 'Tutor(a)'),
-    'asesor_nombre'       => $asesoresDisponibles[0] ?? '',
+    'asesor_nombre'       => $asesor1Default,
     'asesor_cargo'        => valorParametro($parametrosActa, 'acta_asesor_cargo', 'Asesor(a)'),
+    'asesor2_nombre'      => $asesor2Default,
+    'asesor2_cargo'       => valorParametro($parametrosActa, 'acta_asesor_cargo', 'Asesor(a)'),
 
     'resultado'            => '',
     'nota'                 => '',
@@ -779,6 +784,28 @@ $valoresForm = [
                                        class="form-control"
                                        value="<?= h($valoresForm['asesor_cargo']) ?>"
                                        required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="asesor2_nombre" class="form-label fw-bold">Asesor(a) 2:</label>
+                                <select name="asesor2_nombre" id="asesor2_nombre" class="form-select">
+                                    <option value="">Seleccione...</option>
+                                    <?php foreach ($asesoresDisponibles as $asesor): ?>
+                                        <option value="<?= h($asesor) ?>"
+                                            <?= ($valoresForm['asesor2_nombre'] === $asesor) ? 'selected' : '' ?>>
+                                            <?= h($asesor) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="asesor2_cargo" class="form-label fw-bold">Cargo asesor(a) 2:</label>
+                                <input type="text"
+                                       name="asesor2_cargo"
+                                       id="asesor2_cargo"
+                                       class="form-control"
+                                       value="<?= h($valoresForm['asesor2_cargo']) ?>">
                             </div>
                         </div>
 

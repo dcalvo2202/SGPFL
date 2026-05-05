@@ -3,7 +3,7 @@
  * Procesador de solicitudes de prórroga
  * Recibe el formulario de panel_solicitudProrroga.php
  */
-include(__DIR__ . "/../login/check.php");
+include(__DIR__ . "/../../login/check.php");
 require_once __DIR__ . '/../../../lib/mysession/mySession.conf.php';
 require_once __DIR__ . '/../../../lib/mysession/mySession.class.php';
 require_once __DIR__ . '/ProrrogaLogic.php';
